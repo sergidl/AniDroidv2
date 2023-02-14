@@ -1,18 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
-using AniDroid.Adapters.Base;
-using AniDroid.Adapters.ViewModels;
-using AniDroid.AniList.Interfaces;
-using AniDroid.AniList.Models.StaffModels;
-using AniDroid.AniListObject.Staff;
-using AniDroid.Base;
+using AniDroidv2.Adapters.Base;
+using AniDroidv2.Adapters.ViewModels;
+using AniDroidv2.AniList.Interfaces;
+using AniDroidv2.AniList.Models.StaffModels;
+using AniDroidv2.AniListObject.Staff;
+using AniDroidv2.Base;
 using OneOf;
 
-namespace AniDroid.Adapters.StaffAdapters
+namespace AniDroidv2.Adapters.StaffAdapters
 {
-    public class StaffEdgeRecyclerAdapter : AniDroidRecyclerAdapter<StaffEdgeViewModel, StaffEdge>
+    public class StaffEdgeRecyclerAdapter : AniDroidv2RecyclerAdapter<StaffEdgeViewModel, StaffEdge>
     {
-        public StaffEdgeRecyclerAdapter(BaseAniDroidActivity context,
+        public StaffEdgeRecyclerAdapter(BaseAniDroidv2Activity context,
             IAsyncEnumerable<OneOf<IPagedData<StaffEdge>, IAniListError>> enumerable, RecyclerCardType cardType,
             Func<StaffEdge, StaffEdgeViewModel> createViewModelFunc) : base(context, enumerable, cardType,
             createViewModelFunc)
@@ -24,7 +24,7 @@ namespace AniDroid.Adapters.StaffAdapters
         {
             ClickAction = (viewModel, position) =>
                 StaffActivity.StartActivity(Context, viewModel.Model.Node.Id,
-                    BaseAniDroidActivity.ObjectBrowseRequestCode);
+                    BaseAniDroidv2Activity.ObjectBrowseRequestCode);
         }
     }
 }

@@ -7,7 +7,7 @@ using Android.Views;
 using Android.Widget;
 using Java.Lang;
 
-namespace AniDroid.Widgets
+namespace AniDroidv2.Widgets
 {
     public class ExpandableText : RelativeLayout
     {

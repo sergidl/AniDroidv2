@@ -1,8 +1,8 @@
 ﻿using System;
 
-namespace AniDroid.Utils.Logging
+namespace AniDroidv2.Utils.Logging
 {
-    public interface IAniDroidLogger
+    public interface IAniDroidv2Logger
     {
         void Debug(string tag, string message);
         void Info(string tag, string message);

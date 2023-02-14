@@ -1,10 +1,10 @@
-﻿using AniDroid.AniList.Interfaces;
+﻿using AniDroidv2.AniList.Interfaces;
 
-namespace AniDroid.Utils.Integration
+namespace AniDroidv2.Utils.Integration
 {
-    public class AniDroidAniListAuthConfig : IAniListAuthConfig
+    public class AniDroidv2AniListAuthConfig : IAniListAuthConfig
     {
-        public AniDroidAniListAuthConfig(string clientId, string clientSecret, string redirectUri, string authTokenUri)
+        public AniDroidv2AniListAuthConfig(string clientId, string clientSecret, string redirectUri, string authTokenUri)
         {
             ClientId = clientId;
             ClientSecret = clientSecret;

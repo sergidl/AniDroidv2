@@ -9,20 +9,20 @@ using Android.Widget;
 using AndroidX.RecyclerView.Widget;
 using AndroidX.SwipeRefreshLayout.Widget;
 using AndroidX.ViewPager.Widget;
-using AniDroid.Adapters;
-using AniDroid.Adapters.MediaAdapters;
-using AniDroid.Adapters.ViewModels;
-using AniDroid.AniList;
-using AniDroid.AniList.Enums.MediaEnums;
-using AniDroid.AniList.Interfaces;
-using AniDroid.AniList.Models.MediaModels;
-using AniDroid.Base;
-using AniDroid.Dialogs;
-using AniDroid.Utils.Comparers;
+using AniDroidv2.Adapters;
+using AniDroidv2.Adapters.MediaAdapters;
+using AniDroidv2.Adapters.ViewModels;
+using AniDroidv2.AniList;
+using AniDroidv2.AniList.Enums.MediaEnums;
+using AniDroidv2.AniList.Interfaces;
+using AniDroidv2.AniList.Models.MediaModels;
+using AniDroidv2.Base;
+using AniDroidv2.Dialogs;
+using AniDroidv2.Utils.Comparers;
 using Google.Android.Material.Snackbar;
 using Google.Android.Material.Tabs;
 
-namespace AniDroid.MediaList
+namespace AniDroidv2.MediaList
 {
     public class MediaListFragment : BaseMainActivityFragment<MediaListPresenter>, IMediaListView
     {
@@ -148,8 +148,8 @@ namespace AniDroid.MediaList
             if (error.StatusCode >= 400 && error.StatusCode <= 403)
             {
                 Toast.MakeText(Activity, "Please log in again", ToastLength.Long)?.Show();
-                Presenter.AniDroidSettings.ClearUserAuthentication();
-                Activity.RestartAniDroid();
+                Presenter.AniDroidv2Settings.ClearUserAuthentication();
+                Activity.RestartAniDroidv2();
             }
         }
 
@@ -412,25 +412,25 @@ namespace AniDroid.MediaList
                 var lists = _collection.User.MediaListOptions?.AnimeList?.SectionOrder?
                                 .Union(_collection.User.MediaListOptions.AnimeList.CustomLists ?? new List<string>()) ?? new List<string>();
 
-                if (Presenter.AniDroidSettings.AnimeListOrder?.Any() != true)
+                if (Presenter.AniDroidv2Settings.AnimeListOrder?.Any() != true)
                 {
                     // if we don't have the list order yet, go ahead and store it
-                    Presenter.AniDroidSettings.AnimeListOrder = lists.Select(x => new KeyValuePair<string, bool>(x, true)).ToList();
+                    Presenter.AniDroidv2Settings.AnimeListOrder = lists.Select(x => new KeyValuePair<string, bool>(x, true)).ToList();
                 }
 
-                retList = Presenter.AniDroidSettings.AnimeListOrder;
+                retList = Presenter.AniDroidv2Settings.AnimeListOrder;
             }
             else if (_type == MediaType.Manga)
             {
                 var lists = _collection.User.MediaListOptions?.MangaList?.SectionOrder?
                                 .Union(_collection.User.MediaListOptions.MangaList.CustomLists ?? new List<string>()) ?? new List<string>();
 
-                if (Presenter.AniDroidSettings.MangaListOrder?.Any() != true)
+                if (Presenter.AniDroidv2Settings.MangaListOrder?.Any() != true)
                 {
-                    Presenter.AniDroidSettings.MangaListOrder = lists.Select(x => new KeyValuePair<string, bool>(x, true)).ToList();
+                    Presenter.AniDroidv2Settings.MangaListOrder = lists.Select(x => new KeyValuePair<string, bool>(x, true)).ToList();
                 }
 
-                retList = Presenter.AniDroidSettings.MangaListOrder;
+                retList = Presenter.AniDroidv2Settings.MangaListOrder;
             }
 
             return retList;

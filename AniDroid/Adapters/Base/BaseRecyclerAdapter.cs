@@ -11,9 +11,9 @@ using Android.Widget;
 using AndroidX.CardView.Widget;
 using AndroidX.Core.Content;
 using AndroidX.RecyclerView.Widget;
-using AniDroid.Base;
+using AniDroidv2.Base;
 
-namespace AniDroid.Adapters.Base
+namespace AniDroidv2.Adapters.Base
 {
     public abstract class BaseRecyclerAdapter<T> : BaseRecyclerAdapter
     {
@@ -27,7 +27,7 @@ namespace AniDroid.Adapters.Base
         public List<T> Items { get; protected set; }
         public sealed override int ItemCount => Items.Count;
 
-        protected BaseRecyclerAdapter(BaseAniDroidActivity context, List<T> items, RecyclerCardType cardType) : base(context)
+        protected BaseRecyclerAdapter(BaseAniDroidv2Activity context, List<T> items, RecyclerCardType cardType) : base(context)
         {
             Items = items ?? throw new ArgumentNullException(nameof(items));
             CardType = cardType;
@@ -214,9 +214,9 @@ namespace AniDroid.Adapters.Base
     public abstract class BaseRecyclerAdapter : RecyclerView.Adapter
     {
         protected RecyclerView RecyclerView { get; private set; }
-        protected BaseAniDroidActivity Context { get; private set; }
+        protected BaseAniDroidv2Activity Context { get; private set; }
 
-        protected BaseRecyclerAdapter(BaseAniDroidActivity context)
+        protected BaseRecyclerAdapter(BaseAniDroidv2Activity context)
         {
             Context = context ?? throw new ArgumentNullException(nameof(context));
         }
@@ -227,7 +227,7 @@ namespace AniDroid.Adapters.Base
             RecyclerView = recyclerView;
         }
 
-        public void SetContext(BaseAniDroidActivity context)
+        public void SetContext(BaseAniDroidv2Activity context)
         {
             Context = context;
         }
@@ -284,8 +284,8 @@ namespace AniDroid.Adapters.Base
 
             public override void OnDrawOver(Canvas cValue, RecyclerView parent, RecyclerView.State state)
             {
-                var left = parent.PaddingLeft;
-                var right = parent.Width - parent.PaddingRight;
+                                var left = parent.PaddingLeft;
+                                var right = parent.Width - parent.PaddingRight;
 
                 var childCount = parent.ChildCount;
                 for (var i = 0; i < childCount; i++)

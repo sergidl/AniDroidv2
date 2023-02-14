@@ -1,6 +1,6 @@
 ﻿using System.Globalization;
 
-namespace AniDroid.Utils.Formatting
+namespace AniDroidv2.Utils.Formatting
 {
     public static class NumberFormatters
     {

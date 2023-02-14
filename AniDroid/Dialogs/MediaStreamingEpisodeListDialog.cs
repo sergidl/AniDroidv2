@@ -2,15 +2,15 @@
 using Android.Views;
 using AndroidX.AppCompat.App;
 using AndroidX.RecyclerView.Widget;
-using AniDroid.Adapters.MediaAdapters;
-using AniDroid.AniList.Models.MediaModels;
-using AniDroid.Base;
+using AniDroidv2.Adapters.MediaAdapters;
+using AniDroidv2.AniList.Models.MediaModels;
+using AniDroidv2.Base;
 
-namespace AniDroid.Dialogs
+namespace AniDroidv2.Dialogs
 {
     public class MediaStreamingEpisodeListDialog
     {
-        public static void Create(BaseAniDroidActivity context, List<MediaStreaming> streamingEpisodes)
+        public static void Create(BaseAniDroidv2Activity context, List<MediaStreaming> streamingEpisodes)
         {
             var dialogView = context.LayoutInflater.Inflate(Resource.Layout.View_List, null);
             dialogView.LayoutParameters = new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MatchParent,

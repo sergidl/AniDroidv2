@@ -2,14 +2,14 @@
 using Android.Views;
 using Android.Widget;
 using AndroidX.RecyclerView.Widget;
-using AniDroid.Adapters.Base;
-using AniDroid.Base;
+using AniDroidv2.Adapters.Base;
+using AniDroidv2.Base;
 
-namespace AniDroid.Adapters.MediaAdapters
+namespace AniDroidv2.Adapters.MediaAdapters
 {
     public class MediaListTabOrderRecyclerAdapter : BaseDraggableRecyclerAdapter<BaseRecyclerAdapter.StableIdItem<KeyValuePair<string, bool>>>
     {
-        public MediaListTabOrderRecyclerAdapter(BaseAniDroidActivity context, List<StableIdItem<KeyValuePair<string, bool>>> items) : base(context, items)
+        public MediaListTabOrderRecyclerAdapter(BaseAniDroidv2Activity context, List<StableIdItem<KeyValuePair<string, bool>>> items) : base(context, items)
         {
         }
 

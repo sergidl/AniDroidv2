@@ -2,7 +2,7 @@
 using Android.Graphics;
 using AndroidX.AppCompat.Graphics.Drawable;
 
-namespace AniDroid.Widgets
+namespace AniDroidv2.Widgets
 {
     public class BadgeDrawerArrowDrawable : DrawerArrowDrawable
     {

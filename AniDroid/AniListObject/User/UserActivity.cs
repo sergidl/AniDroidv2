@@ -3,16 +3,16 @@ using Android.Content;
 using Android.OS;
 using Android.Views;
 using Android.Widget;
-using AniDroid.Adapters;
-using AniDroid.Adapters.AniListActivityAdapters;
-using AniDroid.Adapters.UserAdapters;
-using AniDroid.Adapters.ViewModels;
-using AniDroid.AniList.Models;
-using AniDroid.Base;
-using AniDroid.Dialogs;
-using AniDroid.MediaList;
-using AniDroid.Utils;
-using AniDroid.Widgets;
+using AniDroidv2.Adapters;
+using AniDroidv2.Adapters.AniListActivityAdapters;
+using AniDroidv2.Adapters.UserAdapters;
+using AniDroidv2.Adapters.ViewModels;
+using AniDroidv2.AniList.Models;
+using AniDroidv2.Base;
+using AniDroidv2.Dialogs;
+using AniDroidv2.MediaList;
+using AniDroidv2.Utils;
+using AniDroidv2.Widgets;
 using MikePhil.Charting.Charts;
 using MikePhil.Charting.Components;
 using MikePhil.Charting.Data;
@@ -23,16 +23,16 @@ using System.Threading.Tasks;
 using Android.Text;
 using Android.Text.Method;
 using AndroidX.RecyclerView.Widget;
-using AniDroid.Adapters.ReviewAdapters;
-using AniDroid.AniList.Enums.MediaEnums;
-using AniDroid.AniList.Models.ActivityModels;
-using AniDroid.Favorites;
-using AniDroid.Utils.Formatting.Markdown;
+using AniDroidv2.Adapters.ReviewAdapters;
+using AniDroidv2.AniList.Enums.MediaEnums;
+using AniDroidv2.AniList.Models.ActivityModels;
+using AniDroidv2.Favorites;
+using AniDroidv2.Utils.Formatting.Markdown;
 
-namespace AniDroid.AniListObject.User
+namespace AniDroidv2.AniListObject.User
 {
     [Activity(Label = "User")]
-    [IntentFilter(new[] { Intent.ActionView }, Categories = new[] { Intent.CategoryDefault, Intent.CategoryBrowsable }, DataHost = "anilist.co", DataSchemes = new[] { "http", "https" }, DataPathPattern = @"/user/.*", Label = "AniDroid")]
+    [IntentFilter(new[] { Intent.ActionView }, Categories = new[] { Intent.CategoryDefault, Intent.CategoryBrowsable }, DataHost = "anilist.co", DataSchemes = new[] { "http", "https" }, DataPathPattern = @"/user/.*", Label = "AniDroidv2")]
     public class UserActivity : BaseAniListObjectActivity<UserPresenter>, IUserView
     {
         public const string UserIdIntentKey = "USER_ID";
@@ -69,7 +69,7 @@ namespace AniDroid.AniListObject.User
             await CreatePresenter(savedInstanceState);
         }
 
-        public static void StartActivity(BaseAniDroidActivity context, int userId, int? requestCode = null)
+        public static void StartActivity(BaseAniDroidv2Activity context, int userId, int? requestCode = null)
         {
             var intent = new Intent(context, typeof(UserActivity));
             intent.PutExtra(UserIdIntentKey, userId);

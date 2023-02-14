@@ -1,11 +1,11 @@
 ﻿using System.Linq;
 using Android.Graphics;
-using AniDroid.AniList.Enums.MediaEnums;
-using AniDroid.AniList.Models.MediaModels;
+using AniDroidv2.AniList.Enums.MediaEnums;
+using AniDroidv2.AniList.Models.MediaModels;
 
-namespace AniDroid.Adapters.ViewModels
+namespace AniDroidv2.Adapters.ViewModels
 {
-    public class MediaViewModel : AniDroidAdapterViewModel<Media>
+    public class MediaViewModel : AniDroidv2AdapterViewModel<Media>
     {
         public MediaEdge ModelEdge { get; protected set; }
         public Color ImageColor { get; protected set; }

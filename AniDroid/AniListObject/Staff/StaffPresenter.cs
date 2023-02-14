@@ -2,22 +2,22 @@
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-using AniDroid.AniList.Dto;
-using AniDroid.AniList.Enums.MediaEnums;
-using AniDroid.AniList.Interfaces;
-using AniDroid.AniList.Models.CharacterModels;
-using AniDroid.AniList.Models.MediaModels;
-using AniDroid.Base;
-using AniDroid.Utils.Interfaces;
-using AniDroid.Utils.Logging;
+using AniDroidv2.AniList.Dto;
+using AniDroidv2.AniList.Enums.MediaEnums;
+using AniDroidv2.AniList.Interfaces;
+using AniDroidv2.AniList.Models.CharacterModels;
+using AniDroidv2.AniList.Models.MediaModels;
+using AniDroidv2.Base;
+using AniDroidv2.Utils.Interfaces;
+using AniDroidv2.Utils.Logging;
 using OneOf;
 
-namespace AniDroid.AniListObject.Staff
+namespace AniDroidv2.AniListObject.Staff
 {
-    public class StaffPresenter : BaseAniDroidPresenter<IStaffView>
+    public class StaffPresenter : BaseAniDroidv2Presenter<IStaffView>
     {
-        public StaffPresenter(IAniListService service, IAniDroidSettings settings,
-            IAniDroidLogger logger) : base(service, settings, logger)
+        public StaffPresenter(IAniListService service, IAniDroidv2Settings settings,
+            IAniDroidv2Logger logger) : base(service, settings, logger)
         {
         }
 

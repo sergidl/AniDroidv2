@@ -1,8 +1,8 @@
-﻿using AniDroid.AniList.Models.StaffModels;
+﻿using AniDroidv2.AniList.Models.StaffModels;
 
-namespace AniDroid.Adapters.ViewModels
+namespace AniDroidv2.Adapters.ViewModels
 {
-    public class StaffViewModel : AniDroidAdapterViewModel<Staff>
+    public class StaffViewModel : AniDroidv2AdapterViewModel<Staff>
     {
         public StaffEdge ModelEdge { get; protected set; }
 

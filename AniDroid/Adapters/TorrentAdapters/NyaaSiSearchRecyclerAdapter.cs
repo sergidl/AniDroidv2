@@ -6,13 +6,13 @@ using Android.Content.Res;
 using Android.Graphics;
 using Android.Views;
 using AndroidX.RecyclerView.Widget;
-using AniDroid.Adapters.Base;
-using AniDroid.AniList.Interfaces;
-using AniDroid.Base;
-using AniDroid.Torrent.NyaaSi;
+using AniDroidv2.Adapters.Base;
+using AniDroidv2.AniList.Interfaces;
+using AniDroidv2.Base;
+using AniDroidv2.Torrent.NyaaSi;
 using OneOf;
 
-namespace AniDroid.Adapters.TorrentAdapters
+namespace AniDroidv2.Adapters.TorrentAdapters
 {
     public class NyaaSiSearchRecyclerAdapter : LazyLoadingRecyclerViewAdapter<NyaaSiSearchResult>
     {
@@ -20,7 +20,7 @@ namespace AniDroid.Adapters.TorrentAdapters
         private ColorStateList TrustedBackgroundColor { get; set; }
         private ColorStateList RemakeBackgroundColor { get; set; }
 
-        public NyaaSiSearchRecyclerAdapter(BaseAniDroidActivity context,
+        public NyaaSiSearchRecyclerAdapter(BaseAniDroidv2Activity context,
             IAsyncEnumerable<OneOf<IPagedData<NyaaSiSearchResult>, IAniListError>> enumerable) : base(context,
             enumerable, RecyclerCardType.Custom)
         {
@@ -28,7 +28,7 @@ namespace AniDroid.Adapters.TorrentAdapters
             CustomCardUseItemDecoration = true;
         }
 
-        public NyaaSiSearchRecyclerAdapter(BaseAniDroidActivity context,
+        public NyaaSiSearchRecyclerAdapter(BaseAniDroidv2Activity context,
             LazyLoadingRecyclerViewAdapter<NyaaSiSearchResult> adapter) : base(context, adapter)
         {
             InitializeColors();

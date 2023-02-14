@@ -1,25 +1,25 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using AniDroid.Adapters.Base;
-using AniDroid.Adapters.MediaAdapters;
-using AniDroid.AniList.Dto;
-using AniDroid.AniList.Enums.MediaEnums;
-using AniDroid.AniList.Interfaces;
-using AniDroid.AniList.Models.MediaModels;
-using AniDroid.AniListObject.Media;
-using AniDroid.Base;
-using AniDroid.Utils.Comparers;
-using AniDroid.Utils.Interfaces;
-using AniDroid.Utils.Logging;
+using AniDroidv2.Adapters.Base;
+using AniDroidv2.Adapters.MediaAdapters;
+using AniDroidv2.AniList.Dto;
+using AniDroidv2.AniList.Enums.MediaEnums;
+using AniDroidv2.AniList.Interfaces;
+using AniDroidv2.AniList.Models.MediaModels;
+using AniDroidv2.AniListObject.Media;
+using AniDroidv2.Base;
+using AniDroidv2.Utils.Comparers;
+using AniDroidv2.Utils.Interfaces;
+using AniDroidv2.Utils.Logging;
 using Google.Android.Material.Snackbar;
 
-namespace AniDroid.MediaList
+namespace AniDroidv2.MediaList
 {
-    public class MediaListPresenter : BaseAniDroidPresenter<IMediaListView>, IAniListMediaListEditPresenter
+    public class MediaListPresenter : BaseAniDroidv2Presenter<IMediaListView>, IAniListMediaListEditPresenter
     {
-        public MediaListPresenter(IAniListService service, IAniDroidSettings settings,
-            IAniDroidLogger logger) : base(service, settings, logger)
+        public MediaListPresenter(IAniListService service, IAniDroidv2Settings settings,
+            IAniDroidv2Logger logger) : base(service, settings, logger)
         {
         }
 
@@ -31,15 +31,15 @@ namespace AniDroid.MediaList
         public async Task GetMediaLists(int userId)
         {
             var mediaListResp = await AniListService.GetUserMediaList(userId,
-                View.GetMediaType(), AniDroidSettings.GroupCompletedLists, default);
+                View.GetMediaType(), AniDroidv2Settings.GroupCompletedLists, default);
 
 
             mediaListResp.Switch(error => View.OnError(error))
                 .Switch(mediaLists =>
                 {
-                    if (userId == AniDroidSettings.LoggedInUser?.Id)
+                    if (userId == AniDroidv2Settings.LoggedInUser?.Id)
                     {
-                        AniDroidSettings.UpdateLoggedInUser(mediaLists.User);
+                        AniDroidv2Settings.UpdateLoggedInUser(mediaLists.User);
                     }
 
                     View.SetCollection(mediaLists);
@@ -118,53 +118,53 @@ namespace AniDroid.MediaList
 
         public BaseRecyclerAdapter.RecyclerCardType GetCardType()
         {
-            return AniDroidSettings.CardType;
+            return AniDroidv2Settings.CardType;
         }
 
         public MediaListRecyclerAdapter.MediaListItemViewType GetMediaListItemViewType()
         {
-            return AniDroidSettings.MediaViewType;
+            return AniDroidv2Settings.MediaViewType;
         }
 
         public bool GetHighlightPriorityItems()
         {
-            return AniDroidSettings.HighlightPriorityMediaListItems;
+            return AniDroidv2Settings.HighlightPriorityMediaListItems;
         }
 
         public MediaListRecyclerAdapter.MediaListProgressDisplayType GetProgressDisplayType()
         {
-            return AniDroidSettings.MediaListProgressDisplay;
+            return AniDroidv2Settings.MediaListProgressDisplay;
         }
 
         public bool GetUseLongClickForEpisodeAdd()
         {
-            return AniDroidSettings.UseLongClickForEpisodeAdd;
+            return AniDroidv2Settings.UseLongClickForEpisodeAdd;
         }
 
         public bool GetDisplayTimeUntilAiringAsCountdown()
         {
-            return AniDroidSettings.DisplayUpcomingEpisodeTimeAsCountdown;
+            return AniDroidv2Settings.DisplayUpcomingEpisodeTimeAsCountdown;
         }
 
         public bool GetUseSwipeToRefreshOnMediaLists()
         {
-            return AniDroidSettings.UseSwipeToRefreshOnMediaLists;
+            return AniDroidv2Settings.UseSwipeToRefreshOnMediaLists;
         }
 
         public bool GetShowEpisodeAddButtonForRepeatingMedia()
         {
-            return AniDroidSettings.ShowEpisodeAddButtonForRepeatingMedia;
+            return AniDroidv2Settings.ShowEpisodeAddButtonForRepeatingMedia;
         }
 
         public MediaListSortComparer.SortDirection GetMediaListSortDirection(MediaType mediaType)
         {
             if (MediaType.Anime.Equals(mediaType))
             {
-                return AniDroidSettings.AnimeListSortDirection;
+                return AniDroidv2Settings.AnimeListSortDirection;
             }
             else if (MediaType.Manga.Equals(mediaType))
             {
-                return AniDroidSettings.MangaListSortDirection;
+                return AniDroidv2Settings.MangaListSortDirection;
             }
 
             return MediaListSortComparer.SortDirection.Ascending;
@@ -174,12 +174,12 @@ namespace AniDroid.MediaList
         {
             if (MediaType.Anime.Equals(mediaType))
             {
-                return AniDroidSettings.AnimeListSortType;
+                return AniDroidv2Settings.AnimeListSortType;
             }
 
             if (MediaType.Manga.Equals(mediaType))
             {
-                return AniDroidSettings.MangaListSortType;
+                return AniDroidv2Settings.MangaListSortType;
             }
 
             return MediaListSortComparer.MediaListSortType.NoSort;
@@ -190,24 +190,24 @@ namespace AniDroid.MediaList
         {
             if (MediaType.Anime.Equals(mediaType))
             {
-                AniDroidSettings.AnimeListSortType = sort;
-                AniDroidSettings.AnimeListSortDirection = direction;
+                AniDroidv2Settings.AnimeListSortType = sort;
+                AniDroidv2Settings.AnimeListSortDirection = direction;
             }
             else if (MediaType.Manga.Equals(mediaType))
             {
-                AniDroidSettings.MangaListSortType = sort;
-                AniDroidSettings.MangaListSortDirection = direction;
+                AniDroidv2Settings.MangaListSortType = sort;
+                AniDroidv2Settings.MangaListSortDirection = direction;
             }
         }
 
         public IList<MediaTag> GetMediaTags()
         {
-            return AniDroidSettings.MediaTagCache;
+            return AniDroidv2Settings.MediaTagCache;
         }
 
         public IList<string> GetGenres()
         {
-            return AniDroidSettings.GenreCache;
+            return AniDroidv2Settings.GenreCache;
         }
     }
 }

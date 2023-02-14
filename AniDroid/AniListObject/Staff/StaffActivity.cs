@@ -7,18 +7,18 @@ using Android.OS;
 using Android.Views;
 using Android.Widget;
 using AndroidX.RecyclerView.Widget;
-using AniDroid.Adapters;
-using AniDroid.Adapters.CharacterAdapters;
-using AniDroid.Adapters.MediaAdapters;
-using AniDroid.Adapters.ViewModels;
-using AniDroid.AniList.Enums.MediaEnums;
-using AniDroid.Base;
-using AniDroid.Utils;
+using AniDroidv2.Adapters;
+using AniDroidv2.Adapters.CharacterAdapters;
+using AniDroidv2.Adapters.MediaAdapters;
+using AniDroidv2.Adapters.ViewModels;
+using AniDroidv2.AniList.Enums.MediaEnums;
+using AniDroidv2.Base;
+using AniDroidv2.Utils;
 
-namespace AniDroid.AniListObject.Staff
+namespace AniDroidv2.AniListObject.Staff
 {
     [Activity(Label = "Staff")]
-    [IntentFilter(new[] { Intent.ActionView }, Categories = new[] { Intent.CategoryDefault, Intent.CategoryBrowsable }, DataHost = "anilist.co", DataSchemes = new[] { "http", "https" }, DataPathPattern = "/staff/.*", Label = "AniDroid")]
+    [IntentFilter(new[] { Intent.ActionView }, Categories = new[] { Intent.CategoryDefault, Intent.CategoryBrowsable }, DataHost = "anilist.co", DataSchemes = new[] { "http", "https" }, DataPathPattern = "/staff/.*", Label = "AniDroidv2")]
     public class StaffActivity : BaseAniListObjectActivity<StaffPresenter>, IStaffView
     {
         public const string StaffIdIntentKey = "STAFF_ID";
@@ -52,7 +52,7 @@ namespace AniDroid.AniListObject.Staff
             await CreatePresenter(savedInstanceState);
         }
 
-        public static void StartActivity(BaseAniDroidActivity context, int staffId, int? requestCode = null)
+        public static void StartActivity(BaseAniDroidv2Activity context, int staffId, int? requestCode = null)
         {
             var intent = new Intent(context, typeof(StaffActivity));
             intent.PutExtra(StaffIdIntentKey, staffId);

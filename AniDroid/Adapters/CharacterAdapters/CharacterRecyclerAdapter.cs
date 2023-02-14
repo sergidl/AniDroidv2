@@ -1,26 +1,26 @@
 ﻿using System;
 using System.Collections.Generic;
 using AndroidX.Core.Widget;
-using AniDroid.Adapters.Base;
-using AniDroid.Adapters.ViewModels;
-using AniDroid.AniList.Interfaces;
-using AniDroid.AniList.Models.CharacterModels;
-using AniDroid.AniListObject.Character;
-using AniDroid.Base;
+using AniDroidv2.Adapters.Base;
+using AniDroidv2.Adapters.ViewModels;
+using AniDroidv2.AniList.Interfaces;
+using AniDroidv2.AniList.Models.CharacterModels;
+using AniDroidv2.AniListObject.Character;
+using AniDroidv2.Base;
 using OneOf;
 
-namespace AniDroid.Adapters.CharacterAdapters
+namespace AniDroidv2.Adapters.CharacterAdapters
 {
-    public class CharacterRecyclerAdapter : AniDroidRecyclerAdapter<CharacterViewModel, Character>
+    public class CharacterRecyclerAdapter : AniDroidv2RecyclerAdapter<CharacterViewModel, Character>
     {
-        public CharacterRecyclerAdapter(BaseAniDroidActivity context,
+        public CharacterRecyclerAdapter(BaseAniDroidv2Activity context,
             IAsyncEnumerable<OneOf<IPagedData<Character>, IAniListError>> enumerable, RecyclerCardType cardType,
             Func<Character, CharacterViewModel> createViewModelFunc) : base(context, enumerable, cardType,
             createViewModelFunc)
         {
             ClickAction = (viewModel, position) =>
                 CharacterActivity.StartActivity(Context, viewModel.Model.Id,
-                    BaseAniDroidActivity.ObjectBrowseRequestCode);
+                    BaseAniDroidv2Activity.ObjectBrowseRequestCode);
         }
 
         public override CardItem SetupCardItemViewHolder(CardItem item)

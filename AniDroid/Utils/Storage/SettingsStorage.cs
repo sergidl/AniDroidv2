@@ -1,8 +1,8 @@
 ﻿using Android.Content;
 
-namespace AniDroid.Utils.Storage
+namespace AniDroidv2.Utils.Storage
 {
-    internal class SettingsStorage : AniDroidStorage
+    internal class SettingsStorage : AniDroidv2Storage
     {
         protected override string Group => "SETTINGS";
 

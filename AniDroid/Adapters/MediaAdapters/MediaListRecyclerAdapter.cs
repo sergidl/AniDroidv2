@@ -6,21 +6,21 @@ using Android.Graphics;
 using Android.Views;
 using Android.Widget;
 using AndroidX.RecyclerView.Widget;
-using AniDroid.Adapters.Base;
-using AniDroid.Adapters.ViewModels;
-using AniDroid.AniList.Enums.MediaEnums;
-using AniDroid.AniList.Interfaces;
-using AniDroid.AniList.Models.MediaModels;
-using AniDroid.AniListObject.Media;
-using AniDroid.Base;
-using AniDroid.MediaList;
-using AniDroid.Utils.Extensions;
+using AniDroidv2.Adapters.Base;
+using AniDroidv2.Adapters.ViewModels;
+using AniDroidv2.AniList.Enums.MediaEnums;
+using AniDroidv2.AniList.Interfaces;
+using AniDroidv2.AniList.Models.MediaModels;
+using AniDroidv2.AniListObject.Media;
+using AniDroidv2.Base;
+using AniDroidv2.MediaList;
+using AniDroidv2.Utils.Extensions;
 using Google.Android.Material.Snackbar;
 using OneOf;
 
-namespace AniDroid.Adapters.MediaAdapters
+namespace AniDroidv2.Adapters.MediaAdapters
 {
-    public class MediaListRecyclerAdapter : AniDroidRecyclerAdapter<MediaListViewModel, AniList.Models.MediaModels.MediaList>
+    public class MediaListRecyclerAdapter : AniDroidv2RecyclerAdapter<MediaListViewModel, AniList.Models.MediaModels.MediaList>
     {
         private readonly bool _isCustomList;
         private readonly string _listName;
@@ -54,7 +54,7 @@ namespace AniDroid.Adapters.MediaAdapters
             Always
         }
 
-        public MediaListRecyclerAdapter(BaseAniDroidActivity context, MediaListGroup mediaListGroup,
+        public MediaListRecyclerAdapter(BaseAniDroidv2Activity context, MediaListGroup mediaListGroup,
             RecyclerCardType cardType, Func<AniList.Models.MediaModels.MediaList, MediaListViewModel> createViewModelFunc, MediaListItemViewType viewType, bool highlightPriorityItems, bool useLongClickForEpisodeAdd, Action<MediaListViewModel, Action> episodeAddAction = null) : base(context,
             mediaListGroup.Entries.Select(createViewModelFunc).ToList(), cardType)
         {
@@ -78,7 +78,7 @@ namespace AniDroid.Adapters.MediaAdapters
                 ColorStateList.ValueOf(new Color(Context.GetThemedColor(Resource.Attribute.ListItem_VeryBehind)));
 
             ClickAction = (viewModel, position) =>
-                MediaActivity.StartActivity(Context, viewModel.Model.Media?.Id ?? 0, BaseAniDroidActivity.ObjectBrowseRequestCode);
+                MediaActivity.StartActivity(Context, viewModel.Model.Media?.Id ?? 0, BaseAniDroidv2Activity.ObjectBrowseRequestCode);
 
             // leave this as the non-edit action so we can leave the presenter out
             LongClickAction = (viewModel, position) =>
@@ -107,7 +107,7 @@ namespace AniDroid.Adapters.MediaAdapters
             }
         }
 
-        public MediaListRecyclerAdapter(BaseAniDroidActivity context, RecyclerCardType cardType,
+        public MediaListRecyclerAdapter(BaseAniDroidv2Activity context, RecyclerCardType cardType,
             IAsyncEnumerable<OneOf<IPagedData<AniList.Models.MediaModels.MediaList>, IAniListError>> enumerable,
             Func<AniList.Models.MediaModels.MediaList, MediaListViewModel> createViewModelFunc) : base(context, enumerable, cardType, createViewModelFunc)
         {

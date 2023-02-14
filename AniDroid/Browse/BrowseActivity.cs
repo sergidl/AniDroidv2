@@ -11,25 +11,25 @@ using Android.Views;
 using AndroidX.AppCompat.Widget;
 using AndroidX.CoordinatorLayout.Widget;
 using AndroidX.RecyclerView.Widget;
-using AniDroid.Adapters.Base;
-using AniDroid.Adapters.MediaAdapters;
-using AniDroid.Adapters.ViewModels;
-using AniDroid.AniList.Dto;
-using AniDroid.AniList.Enums.MediaEnums;
-using AniDroid.AniList.Interfaces;
-using AniDroid.AniList.Models.MediaModels;
-using AniDroid.AniList.Utils;
-using AniDroid.Base;
-using AniDroid.Dialogs;
-using AniDroid.MediaList;
-using AniDroid.Utils;
+using AniDroidv2.Adapters.Base;
+using AniDroidv2.Adapters.MediaAdapters;
+using AniDroidv2.Adapters.ViewModels;
+using AniDroidv2.AniList.Dto;
+using AniDroidv2.AniList.Enums.MediaEnums;
+using AniDroidv2.AniList.Interfaces;
+using AniDroidv2.AniList.Models.MediaModels;
+using AniDroidv2.AniList.Utils;
+using AniDroidv2.Base;
+using AniDroidv2.Dialogs;
+using AniDroidv2.MediaList;
+using AniDroidv2.Utils;
 using Google.Android.Material.Snackbar;
 using OneOf;
 
-namespace AniDroid.Browse
+namespace AniDroidv2.Browse
 {
     [Activity(Label = "Browse", ConfigurationChanges = Android.Content.PM.ConfigChanges.Orientation | Android.Content.PM.ConfigChanges.KeyboardHidden | Android.Content.PM.ConfigChanges.ScreenSize)]
-    public class BrowseActivity : BaseAniDroidActivity<BrowsePresenter>, IBrowseView
+    public class BrowseActivity : BaseAniDroidv2Activity<BrowsePresenter>, IBrowseView
     {
         private const string BrowseDtoIntentKey = "BROWSE_DTO";
 
@@ -136,7 +136,7 @@ namespace AniDroid.Browse
             
             await CreatePresenter(savedInstanceState);
 
-            _cardType = Presenter.AniDroidSettings.CardType;
+            _cardType = Presenter.AniDroidv2Settings.CardType;
 
             Presenter.BrowseAniListMedia(browseModel);
 
@@ -148,7 +148,7 @@ namespace AniDroid.Browse
             throw new NotImplementedException();
         }
 
-        public static void StartActivity(BaseAniDroidActivity context, BrowseMediaDto browseDto, int? requestCode = null)
+        public static void StartActivity(BaseAniDroidv2Activity context, BrowseMediaDto browseDto, int? requestCode = null)
         {
             var intent = new Intent(context, typeof(BrowseActivity));
             var dtoString = AniListJsonSerializer.Default.Serialize(browseDto);

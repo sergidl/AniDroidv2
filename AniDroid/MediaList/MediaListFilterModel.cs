@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using AniDroid.AniList.Enums.MediaEnums;
+using AniDroidv2.AniList.Enums.MediaEnums;
 
-namespace AniDroid.MediaList
+namespace AniDroidv2.MediaList
 {
     public class MediaListFilterModel
     {

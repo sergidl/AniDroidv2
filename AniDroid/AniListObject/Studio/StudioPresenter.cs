@@ -2,20 +2,20 @@
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-using AniDroid.AniList.Dto;
-using AniDroid.AniList.Interfaces;
-using AniDroid.AniList.Models.MediaModels;
-using AniDroid.Base;
-using AniDroid.Utils.Interfaces;
-using AniDroid.Utils.Logging;
+using AniDroidv2.AniList.Dto;
+using AniDroidv2.AniList.Interfaces;
+using AniDroidv2.AniList.Models.MediaModels;
+using AniDroidv2.Base;
+using AniDroidv2.Utils.Interfaces;
+using AniDroidv2.Utils.Logging;
 using OneOf;
 
-namespace AniDroid.AniListObject.Studio
+namespace AniDroidv2.AniListObject.Studio
 {
-    public class StudioPresenter : BaseAniDroidPresenter<IStudioView>
+    public class StudioPresenter : BaseAniDroidv2Presenter<IStudioView>
     {
-        public StudioPresenter(IAniListService service, IAniDroidSettings settings,
-            IAniDroidLogger logger) : base(service, settings, logger)
+        public StudioPresenter(IAniListService service, IAniDroidv2Settings settings,
+            IAniDroidv2Logger logger) : base(service, settings, logger)
         {
         }
 

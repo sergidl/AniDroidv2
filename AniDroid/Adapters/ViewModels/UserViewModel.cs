@@ -1,8 +1,8 @@
-﻿using AniDroid.AniList.Models.UserModels;
+﻿using AniDroidv2.AniList.Models.UserModels;
 
-namespace AniDroid.Adapters.ViewModels
+namespace AniDroidv2.Adapters.ViewModels
 {
-    public class UserViewModel : AniDroidAdapterViewModel<User>
+    public class UserViewModel : AniDroidv2AdapterViewModel<User>
     {
         public UserViewModel(User model, UserDetailType primaryUserDetailType, UserDetailType secondaryUserDetailType) : base(model)
         {

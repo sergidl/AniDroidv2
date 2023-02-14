@@ -1,8 +1,8 @@
 ﻿using System;
 
-namespace AniDroid.Utils.Comparers
+namespace AniDroidv2.Utils.Comparers
 {
-    public class MediaListSortComparer : BaseAniDroidComparer<AniList.Models.MediaModels.MediaList>
+    public class MediaListSortComparer : BaseAniDroidv2Comparer<AniList.Models.MediaModels.MediaList>
     {
         private readonly MediaListSortType _sort;
 

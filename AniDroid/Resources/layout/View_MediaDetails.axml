@@ -113,7 +113,7 @@
                 android:textStyle="italic"
                 android:visibility="gone" />
         </RelativeLayout>
-        <AniDroid.Widgets.ExpandableText
+        <AniDroidv2.Widgets.ExpandableText
             app:Text="Description"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -140,7 +140,7 @@
             app:justifyContent="center"
             app:showDividerHorizontal="middle"
             app:showDividerVertical="middle" />
-        <AniDroid.Widgets.DataRow
+        <AniDroidv2.Widgets.DataRow
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/Media_MediaListSummary"
@@ -241,7 +241,7 @@
                     android:layout_height="wrap_content" />
             </LinearLayout>
         </LinearLayout>
-        <AniDroid.Widgets.DataRow
+        <AniDroidv2.Widgets.DataRow
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/Media_DateRange"
@@ -257,7 +257,7 @@
             android:visibility="gone"
             android:minWidth="25px"
             android:minHeight="25px" />
-        <AniDroid.Widgets.DataRow
+        <AniDroidv2.Widgets.DataRow
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/Media_Episodes"

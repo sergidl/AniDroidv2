@@ -1,11 +1,11 @@
 ﻿using System;
-using AniDroid.AniList;
-using AniDroid.Utils.Extensions;
+using AniDroidv2.AniList;
+using AniDroidv2.Utils.Extensions;
 using MikePhil.Charting.Components;
 using MikePhil.Charting.Data;
 using MikePhil.Charting.Formatter;
 
-namespace AniDroid.Utils
+namespace AniDroidv2.Utils
 {
     public class ChartUtils
     {

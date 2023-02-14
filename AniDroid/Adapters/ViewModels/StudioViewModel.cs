@@ -1,8 +1,8 @@
-﻿using AniDroid.AniList.Models.StudioModels;
+﻿using AniDroidv2.AniList.Models.StudioModels;
 
-namespace AniDroid.Adapters.ViewModels
+namespace AniDroidv2.Adapters.ViewModels
 {
-    public class StudioViewModel : AniDroidAdapterViewModel<Studio>
+    public class StudioViewModel : AniDroidv2AdapterViewModel<Studio>
     {
         public StudioEdge StudioEdge { get; protected set; }
 

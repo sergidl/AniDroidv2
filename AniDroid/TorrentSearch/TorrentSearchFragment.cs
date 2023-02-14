@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using Android.OS;
 using Android.Views;
 using AndroidX.RecyclerView.Widget;
-using AniDroid.Adapters.TorrentAdapters;
-using AniDroid.AniList.Interfaces;
-using AniDroid.Base;
-using AniDroid.Dialogs;
-using AniDroid.Torrent.NyaaSi;
+using AniDroidv2.Adapters.TorrentAdapters;
+using AniDroidv2.AniList.Interfaces;
+using AniDroidv2.Base;
+using AniDroidv2.Dialogs;
+using AniDroidv2.Torrent.NyaaSi;
 using OneOf;
 
-namespace AniDroid.TorrentSearch
+namespace AniDroidv2.TorrentSearch
 {
     public class TorrentSearchFragment : BaseMainActivityFragment<TorrentSearchPresenter>, ITorrentSearchView
     {

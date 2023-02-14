@@ -197,5 +197,10 @@
     <item>02-04-2021|Lots of behind-the-scenes changes</item>
     <item>05-23-2021|Adding ability to control whether Start and End dates are assigned when editing a list item. Check the Media List Settings!</item>
     <item>05-24-2021|Fixed bug that caused the keyboard to popup when opening the app</item>
+	<item>02-14-2023|Forking the original app</item>
+	<item>02-14-2023|Changed app icon</item>
+	<item>02-14-2023|Changed app name</item>
+	<item>02-14-2023|Fixed bug that causes crash when haves a notification with modified or deleted Media</item>
+	<item>02-14-2023|Modified notifications view</item>
   </array>
 </resources>

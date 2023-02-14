@@ -3,14 +3,14 @@ using System.Threading.Tasks;
 using Android.Content;
 using Android.Widget;
 using AndroidX.AppCompat.App;
-using AniDroid.Base;
-using AniDroid.Utils.Listeners;
+using AniDroidv2.Base;
+using AniDroidv2.Utils.Listeners;
 
-namespace AniDroid.Dialogs
+namespace AniDroidv2.Dialogs
 {
     public static class AniListActivityCreateDialog
     {
-        public static void CreateNewActivity(BaseAniDroidActivity context, Func<string, Task> saveAction)
+        public static void CreateNewActivity(BaseAniDroidv2Activity context, Func<string, Task> saveAction)
         {
             var dialog = new AlertDialog.Builder(context, context.GetThemedResourceId(Resource.Attribute.Dialog_Theme)).Create();
             var dialogView = context.LayoutInflater.Inflate(Resource.Layout.Dialog_AniListActivityCreate, null);
@@ -39,7 +39,7 @@ namespace AniDroid.Dialogs
             dialog.Show();
         }
 
-        public static void CreateEditActivity(BaseAniDroidActivity context, string oldText, Func<string, Task> saveAction, Func<Task> deleteAction)
+        public static void CreateEditActivity(BaseAniDroidv2Activity context, string oldText, Func<string, Task> saveAction, Func<Task> deleteAction)
         {
             var dialog = new AlertDialog.Builder(context, context.GetThemedResourceId(Resource.Attribute.Dialog_Theme)).Create();
             var dialogView = context.LayoutInflater.Inflate(Resource.Layout.Dialog_AniListActivityCreate, null);

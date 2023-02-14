@@ -9,9 +9,9 @@ using Google.Android.Material.FloatingActionButton;
 using Google.Android.Material.Snackbar;
 using Java.Interop;
 
-namespace AniDroid.Utils.Behaviors
+namespace AniDroidv2.Utils.Behaviors
 {
-    [Register("AniDroid.Utils.Behaviors.FloatingActionButtonScrollBehavior")]
+    [Register("AniDroidv2.Utils.Behaviors.FloatingActionButtonScrollBehavior")]
     public class FloatingActionButtonScrollBehavior : CoordinatorLayout.Behavior
     {
         public FloatingActionButtonScrollBehavior(Context context, IAttributeSet attr) { }

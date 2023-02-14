@@ -2,9 +2,9 @@
 using Microsoft.AppCenter.Analytics;
 using Exception = System.Exception;
 
-namespace AniDroid.Utils.Logging
+namespace AniDroidv2.Utils.Logging
 {
-    public class AppCenterLogger : IAniDroidLogger
+    public class AppCenterLogger : IAniDroidv2Logger
     {
         public void Debug(string tag, string message)
         {

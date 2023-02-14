@@ -3,32 +3,32 @@ using System.Collections.Generic;
 using Android.Util;
 using Android.Views;
 using AndroidX.Core.Widget;
-using AniDroid.Adapters.Base;
-using AniDroid.Adapters.ViewModels;
-using AniDroid.AniList.Interfaces;
-using AniDroid.AniList.Models.MediaModels;
-using AniDroid.AniList.Models.UserModels;
-using AniDroid.AniListObject.Media;
-using AniDroid.Base;
+using AniDroidv2.Adapters.Base;
+using AniDroidv2.Adapters.ViewModels;
+using AniDroidv2.AniList.Interfaces;
+using AniDroidv2.AniList.Models.MediaModels;
+using AniDroidv2.AniList.Models.UserModels;
+using AniDroidv2.AniListObject.Media;
+using AniDroidv2.Base;
 using Google.Android.Material.Snackbar;
 using OneOf;
 
-namespace AniDroid.Adapters.MediaAdapters
+namespace AniDroidv2.Adapters.MediaAdapters
 {
-    public class MediaRecyclerAdapter : AniDroidRecyclerAdapter<MediaViewModel, Media>
+    public class MediaRecyclerAdapter : AniDroidv2RecyclerAdapter<MediaViewModel, Media>
     {
         public UserMediaListOptions UserMediaListOptions { get; set; }
 
         private int? _cardWidth;
 
-        public MediaRecyclerAdapter(BaseAniDroidActivity context,
+        public MediaRecyclerAdapter(BaseAniDroidv2Activity context,
             IAsyncEnumerable<OneOf<IPagedData<Media>, IAniListError>> enumerable, RecyclerCardType cardType,
             Func<Media, MediaViewModel> createViewModelFunc) : base(context, enumerable, cardType, createViewModelFunc)
         {
             SetDefaultClickActions();
         }
 
-        public MediaRecyclerAdapter(BaseAniDroidActivity context, List<MediaViewModel> items, RecyclerCardType cardType)
+        public MediaRecyclerAdapter(BaseAniDroidv2Activity context, List<MediaViewModel> items, RecyclerCardType cardType)
             : base(context, items, cardType)
         {
             SetDefaultClickActions();
@@ -37,7 +37,7 @@ namespace AniDroid.Adapters.MediaAdapters
         private void SetDefaultClickActions()
         {
             ClickAction = (viewModel, position) =>
-                MediaActivity.StartActivity(Context, viewModel.Model.Id, BaseAniDroidActivity.ObjectBrowseRequestCode);
+                MediaActivity.StartActivity(Context, viewModel.Model.Id, BaseAniDroidv2Activity.ObjectBrowseRequestCode);
 
             LongClickAction = (viewModel, position) =>
                 Context.DisplaySnackbarMessage(viewModel.Model.Title?.UserPreferred, Snackbar.LengthLong);

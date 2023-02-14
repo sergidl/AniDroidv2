@@ -1,20 +1,20 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
-using AniDroid.AniList.Interfaces;
-using AniDroid.AniList.Models.CharacterModels;
-using AniDroid.AniList.Models.MediaModels;
-using AniDroid.AniList.Models.StaffModels;
-using AniDroid.AniList.Models.StudioModels;
-using AniDroid.Base;
-using AniDroid.Utils.Interfaces;
-using AniDroid.Utils.Logging;
+using AniDroidv2.AniList.Interfaces;
+using AniDroidv2.AniList.Models.CharacterModels;
+using AniDroidv2.AniList.Models.MediaModels;
+using AniDroidv2.AniList.Models.StaffModels;
+using AniDroidv2.AniList.Models.StudioModels;
+using AniDroidv2.Base;
+using AniDroidv2.Utils.Interfaces;
+using AniDroidv2.Utils.Logging;
 using OneOf;
 
-namespace AniDroid.Favorites
+namespace AniDroidv2.Favorites
 {
-    public class FavoritesPresenter : BaseAniDroidPresenter<IFavoritesView>
+    public class FavoritesPresenter : BaseAniDroidv2Presenter<IFavoritesView>
     {
-        public FavoritesPresenter(IAniListService service, IAniDroidSettings settings, IAniDroidLogger logger) : base(service, settings, logger)
+        public FavoritesPresenter(IAniListService service, IAniDroidv2Settings settings, IAniDroidv2Logger logger) : base(service, settings, logger)
         {
         }
 

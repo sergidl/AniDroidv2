@@ -5,15 +5,15 @@ using Android.Content;
 using Android.OS;
 using Android.Views;
 using Android.Widget;
-using AniDroid.AniList.Interfaces;
-using AniDroid.Base;
+using AniDroidv2.AniList.Interfaces;
+using AniDroidv2.Base;
 using Google.Android.Material.Snackbar;
 using Toolbar = AndroidX.AppCompat.Widget.Toolbar;
 
-namespace AniDroid.About
+namespace AniDroidv2.About
 {
-    [Activity(Label = "About AniDroid")]
-    public class AboutActivity : BaseAniDroidActivity
+    [Activity(Label = "About AniDroidv2")]
+    public class AboutActivity : BaseAniDroidv2Activity
     {
         public override void OnError(IAniListError error)
         {
@@ -25,7 +25,7 @@ namespace AniDroid.About
             SetContentView(Resource.Layout.Activity_About);
 
             var toolbar = FindViewById<Toolbar>(Resource.Id.About_Toolbar);
-            toolbar.Title = "About AniDroid";
+            toolbar.Title = "About AniDroidv2";
 
             SetSupportActionBar(toolbar);
             SupportActionBar.SetHomeAsUpIndicator(Resource.Drawable.ic_arrow_back_white_24px);
@@ -47,7 +47,7 @@ namespace AniDroid.About
             throw new NotImplementedException();
         }
 
-        public static void StartActivity(BaseAniDroidActivity context)
+        public static void StartActivity(BaseAniDroidv2Activity context)
         {
             var intent = new Intent(context, typeof(AboutActivity));
             context.StartActivity(intent);

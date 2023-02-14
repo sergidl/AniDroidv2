@@ -12,7 +12,7 @@ using AndroidX.Core.Content;
 using Square.Picasso;
 using Exception = Java.Lang.Exception;
 
-namespace AniDroid.Utils.Formatting.Markdown
+namespace AniDroidv2.Utils.Formatting.Markdown
 {
     public static class MarkdownSpannableFormatter
     {

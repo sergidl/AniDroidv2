@@ -1,23 +1,23 @@
 ﻿using System;
 using System.Threading;
 using System.Threading.Tasks;
-using AniDroid.AniList.Dto;
-using AniDroid.AniList.Enums.MediaEnums;
-using AniDroid.AniList.Interfaces;
-using AniDroid.AniListObject.Media;
-using AniDroid.Base;
-using AniDroid.Utils.Interfaces;
-using AniDroid.Utils.Logging;
+using AniDroidv2.AniList.Dto;
+using AniDroidv2.AniList.Enums.MediaEnums;
+using AniDroidv2.AniList.Interfaces;
+using AniDroidv2.AniListObject.Media;
+using AniDroidv2.Base;
+using AniDroidv2.Utils.Interfaces;
+using AniDroidv2.Utils.Logging;
 using Google.Android.Material.Snackbar;
 
-namespace AniDroid.SearchResults
+namespace AniDroidv2.SearchResults
 {
-    public class SearchResultsPresenter : BaseAniDroidPresenter<ISearchResultsView>, IAniListMediaListEditPresenter
+    public class SearchResultsPresenter : BaseAniDroidv2Presenter<ISearchResultsView>, IAniListMediaListEditPresenter
     {
         private const int PageSize = 20;
 
-        public SearchResultsPresenter(IAniListService service, IAniDroidSettings settings,
-            IAniDroidLogger logger) : base(service, settings, logger)
+        public SearchResultsPresenter(IAniListService service, IAniDroidv2Settings settings,
+            IAniDroidv2Logger logger) : base(service, settings, logger)
         {
         }
 

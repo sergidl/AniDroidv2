@@ -4,14 +4,14 @@ using Android.OS;
 using Android.Views;
 using AndroidX.RecyclerView.Widget;
 using AndroidX.SwipeRefreshLayout.Widget;
-using AniDroid.Adapters.AniListActivityAdapters;
-using AniDroid.AniList.Interfaces;
-using AniDroid.AniList.Models.ActivityModels;
-using AniDroid.Base;
-using AniDroid.Dialogs;
+using AniDroidv2.Adapters.AniListActivityAdapters;
+using AniDroidv2.AniList.Interfaces;
+using AniDroidv2.AniList.Models.ActivityModels;
+using AniDroidv2.Base;
+using AniDroidv2.Dialogs;
 using OneOf;
 
-namespace AniDroid.Home
+namespace AniDroidv2.Home
 {
     public class HomeFragment : BaseMainActivityFragment<HomePresenter>, IHomeView
     {
@@ -43,8 +43,8 @@ namespace AniDroid.Home
         {
             CreatePresenter(savedInstanceState).GetAwaiter().GetResult();
 
-            _isAuthenticated = Presenter.AniDroidSettings.IsUserAuthenticated;
-            _isFollowingOnly = _isAuthenticated && !Presenter.AniDroidSettings.ShowAllAniListActivity;
+            _isAuthenticated = Presenter.AniDroidv2Settings.IsUserAuthenticated;
+            _isFollowingOnly = _isAuthenticated && !Presenter.AniDroidv2Settings.ShowAllAniListActivity;
 
             var listView = LayoutInflater.Inflate(Resource.Layout.View_SwipeRefreshList, container, false);
             _recyclerView = listView.FindViewById<RecyclerView>(Resource.Id.List_RecyclerView);
@@ -57,7 +57,7 @@ namespace AniDroid.Home
 
             _recyclerView.SetAdapter(_recyclerAdapter);
 
-            if (Presenter.AniDroidSettings.UseSwipeToRefreshHomeScreen)
+            if (Presenter.AniDroidv2Settings.UseSwipeToRefreshHomeScreen)
             {
                 _swipeRefreshLayout.Enabled = true;
                 _swipeRefreshLayout.Refresh += (sender, e) =>

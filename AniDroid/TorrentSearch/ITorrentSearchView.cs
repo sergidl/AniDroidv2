@@ -1,12 +1,12 @@
 ﻿using System.Collections.Generic;
-using AniDroid.AniList.Interfaces;
-using AniDroid.Base;
-using AniDroid.Torrent.NyaaSi;
+using AniDroidv2.AniList.Interfaces;
+using AniDroidv2.Base;
+using AniDroidv2.Torrent.NyaaSi;
 using OneOf;
 
-namespace AniDroid.TorrentSearch
+namespace AniDroidv2.TorrentSearch
 {
-    public interface ITorrentSearchView : IAniDroidView
+    public interface ITorrentSearchView : IAniDroidv2View
     {
         void ShowNyaaSiSearchResults(
             IAsyncEnumerable<OneOf<IPagedData<NyaaSiSearchResult>, IAniListError>> searchEnumerable);

@@ -11,21 +11,21 @@ using AndroidX.AppCompat.App;
 using AndroidX.AppCompat.Widget;
 using AndroidX.RecyclerView.Widget;
 using AndroidX.Transitions;
-using AniDroid.Adapters.General;
-using AniDroid.AniList;
-using AniDroid.AniList.Enums.MediaEnums;
-using AniDroid.AniList.Models.MediaModels;
-using AniDroid.Base;
-using AniDroid.MediaList;
-using AniDroid.Widgets;
+using AniDroidv2.Adapters.General;
+using AniDroidv2.AniList;
+using AniDroidv2.AniList.Enums.MediaEnums;
+using AniDroidv2.AniList.Models.MediaModels;
+using AniDroidv2.Base;
+using AniDroidv2.MediaList;
+using AniDroidv2.Widgets;
 using AlertDialog = AndroidX.AppCompat.App.AlertDialog;
 using Toolbar = AndroidX.AppCompat.Widget.Toolbar;
 
-namespace AniDroid.Dialogs
+namespace AniDroidv2.Dialogs
 {
     public static class MediaListFilterDialog
     {
-        public static void Create(BaseAniDroidActivity context, IMediaListView view, MediaType type, IList<string> genres, IList<MediaTag> tags)
+        public static void Create(BaseAniDroidv2Activity context, IMediaListView view, MediaType type, IList<string> genres, IList<MediaTag> tags)
         {
             var dialog =
                 new MediaListFilterDialogFragment(context, view, type, genres, tags)
@@ -43,7 +43,7 @@ namespace AniDroid.Dialogs
             public const string BackstackTag = "MEDIALIST_FILTER_DIALOG";
             private const int MinimumYear = 1950;
 
-            private readonly BaseAniDroidActivity _context;
+            private readonly BaseAniDroidv2Activity _context;
             private readonly IMediaListView _mediaListView;
             private readonly MediaListFilterModel _mediaListFilterModel;
             private readonly MediaType _type;
@@ -67,7 +67,7 @@ namespace AniDroid.Dialogs
             private ICollection<string> _selectedTags;
             private ICollection<string> _selectedStreamingOn;
 
-            public MediaListFilterDialogFragment(BaseAniDroidActivity context, IMediaListView mediaListView, MediaType type, IList<string> genres, IList<MediaTag> tags)
+            public MediaListFilterDialogFragment(BaseAniDroidv2Activity context, IMediaListView mediaListView, MediaType type, IList<string> genres, IList<MediaTag> tags)
             {
                 _context = context;
                 _mediaListView = mediaListView;

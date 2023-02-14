@@ -1,8 +1,8 @@
-﻿using AniDroid.Base;
+﻿using AniDroidv2.Base;
 
-namespace AniDroid.Login
+namespace AniDroidv2.Login
 {
-    public interface ILoginView : IAniDroidView
+    public interface ILoginView : IAniDroidv2View
     {
         string GetAuthCode();
         void OnErrorAuthorizing();

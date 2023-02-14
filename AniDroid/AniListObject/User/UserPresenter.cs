@@ -1,24 +1,24 @@
 ﻿using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
-using AniDroid.AniList.Dto;
-using AniDroid.AniList.Enums;
-using AniDroid.AniList.Enums.UserEnums;
-using AniDroid.AniList.Interfaces;
-using AniDroid.AniList.Models.ActivityModels;
-using AniDroid.AniList.Models.ReviewModels;
-using AniDroid.Base;
-using AniDroid.Utils.Interfaces;
-using AniDroid.Utils.Logging;
+using AniDroidv2.AniList.Dto;
+using AniDroidv2.AniList.Enums;
+using AniDroidv2.AniList.Enums.UserEnums;
+using AniDroidv2.AniList.Interfaces;
+using AniDroidv2.AniList.Models.ActivityModels;
+using AniDroidv2.AniList.Models.ReviewModels;
+using AniDroidv2.Base;
+using AniDroidv2.Utils.Interfaces;
+using AniDroidv2.Utils.Logging;
 using Google.Android.Material.Snackbar;
 using OneOf;
 
-namespace AniDroid.AniListObject.User
+namespace AniDroidv2.AniListObject.User
 {
-    public class UserPresenter : BaseAniDroidPresenter<IUserView>, IAniListActivityPresenter
+    public class UserPresenter : BaseAniDroidv2Presenter<IUserView>, IAniListActivityPresenter
     {
-        public UserPresenter(IAniListService service, IAniDroidSettings settings,
-            IAniDroidLogger logger) : base(service, settings, logger)
+        public UserPresenter(IAniListService service, IAniDroidv2Settings settings,
+            IAniDroidv2Logger logger) : base(service, settings, logger)
         {
         }
 
@@ -34,7 +34,7 @@ namespace AniDroid.AniListObject.User
 
             userResp.Switch(user =>
                 {
-                    if (AniDroidSettings.IsUserAuthenticated && user.Id != AniDroidSettings.LoggedInUser.Id)
+                    if (AniDroidv2Settings.IsUserAuthenticated && user.Id != AniDroidv2Settings.LoggedInUser.Id)
                     {
                         View.SetCanFollow();
                         View.SetCanMessage();
@@ -51,7 +51,7 @@ namespace AniDroid.AniListObject.User
 
         public int? GetCurrentUserId()
         {
-            return AniDroidSettings.LoggedInUser?.Id;
+            return AniDroidv2Settings.LoggedInUser?.Id;
         }
 
         public IAsyncEnumerable<OneOf<IPagedData<AniListActivity>, IAniListError>> GetUserActivityEnumerable(int userId, int count)

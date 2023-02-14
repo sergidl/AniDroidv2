@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
-using AniDroid.AniList.Dto;
-using AniDroid.AniList.Models.MediaModels;
+using AniDroidv2.AniList.Dto;
+using AniDroidv2.AniList.Models.MediaModels;
 
-namespace AniDroid.Browse
+namespace AniDroidv2.Browse
 {
     public interface IBrowsePresenter
     {

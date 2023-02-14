@@ -3,16 +3,16 @@ using System.Collections.Generic;
 using Android.Content;
 using Android.Text;
 using Android.Views;
-using AniDroid.Adapters.Base;
-using AniDroid.AniList.Models.MediaModels;
-using AniDroid.Base;
-using AniDroid.Utils;
+using AniDroidv2.Adapters.Base;
+using AniDroidv2.AniList.Models.MediaModels;
+using AniDroidv2.Base;
+using AniDroidv2.Utils;
 
-namespace AniDroid.Adapters.MediaAdapters
+namespace AniDroidv2.Adapters.MediaAdapters
 {
     public class MediaStreamingEpisodesRecyclerAdapter : BaseRecyclerAdapter<MediaStreaming>
     {
-        public MediaStreamingEpisodesRecyclerAdapter(BaseAniDroidActivity context, List<MediaStreaming> items) : base(context, items, RecyclerCardType.Vertical)
+        public MediaStreamingEpisodesRecyclerAdapter(BaseAniDroidv2Activity context, List<MediaStreaming> items) : base(context, items, RecyclerCardType.Vertical)
         {
         }
 

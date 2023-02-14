@@ -1,22 +1,22 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
-using AniDroid.AniList.Dto;
-using AniDroid.AniList.Enums;
-using AniDroid.AniList.Interfaces;
-using AniDroid.AniList.Models.ActivityModels;
-using AniDroid.AniListObject;
-using AniDroid.Base;
-using AniDroid.Utils.Interfaces;
-using AniDroid.Utils.Logging;
+using AniDroidv2.AniList.Dto;
+using AniDroidv2.AniList.Enums;
+using AniDroidv2.AniList.Interfaces;
+using AniDroidv2.AniList.Models.ActivityModels;
+using AniDroidv2.AniListObject;
+using AniDroidv2.Base;
+using AniDroidv2.Utils.Interfaces;
+using AniDroidv2.Utils.Logging;
 using Google.Android.Material.Snackbar;
 using OneOf;
 
-namespace AniDroid.Home
+namespace AniDroidv2.Home
 {
-    public class HomePresenter : BaseAniDroidPresenter<IHomeView>, IAniListActivityPresenter
+    public class HomePresenter : BaseAniDroidv2Presenter<IHomeView>, IAniListActivityPresenter
     {
-        public HomePresenter(IAniListService service, IAniDroidSettings settings,
-            IAniDroidLogger logger) : base(service, settings, logger)
+        public HomePresenter(IAniListService service, IAniDroidv2Settings settings,
+            IAniDroidv2Logger logger) : base(service, settings, logger)
         {
         }
 
@@ -27,13 +27,13 @@ namespace AniDroid.Home
 
         public IAsyncEnumerable<OneOf<IPagedData<AniListActivity>, IAniListError>> GetAniListActivity(bool isFollowingOnly)
         {
-            AniDroidSettings.ShowAllAniListActivity = !isFollowingOnly;
+            AniDroidv2Settings.ShowAllAniListActivity = !isFollowingOnly;
             return AniListService.GetAniListActivity(new AniListActivityDto {IsFollowing = isFollowingOnly}, 20);
         }
 
         public int? GetUserId()
         {
-            return AniDroidSettings.LoggedInUser?.Id;
+            return AniDroidv2Settings.LoggedInUser?.Id;
         }
 
         public async Task ToggleActivityLikeAsync(AniListActivity activity, int activityPosition)

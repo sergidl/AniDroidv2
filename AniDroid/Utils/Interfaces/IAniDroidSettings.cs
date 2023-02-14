@@ -1,22 +1,22 @@
 ﻿using System;
 using System.Collections.Generic;
-using AniDroid.Adapters.Base;
-using AniDroid.Adapters.MediaAdapters;
-using AniDroid.AniList.Models.MediaModels;
-using AniDroid.AniList.Models.UserModels;
-using AniDroid.Base;
-using AniDroid.Main;
-using AniDroid.Utils.Comparers;
+using AniDroidv2.Adapters.Base;
+using AniDroidv2.Adapters.MediaAdapters;
+using AniDroidv2.AniList.Models.MediaModels;
+using AniDroidv2.AniList.Models.UserModels;
+using AniDroidv2.Base;
+using AniDroidv2.Main;
+using AniDroidv2.Utils.Comparers;
 
-namespace AniDroid.Utils.Interfaces
+namespace AniDroidv2.Utils.Interfaces
 {
-    public interface IAniDroidSettings
+    public interface IAniDroidv2Settings
     {
         #region Unauthenticated Settings
 
         int HighestVersionUsed { get; set; }
         BaseRecyclerAdapter.RecyclerCardType CardType { get; set; }
-        BaseAniDroidActivity.AniDroidTheme Theme { get; set; }
+        BaseAniDroidv2Activity.AniDroidv2Theme Theme { get; set; }
         bool DisplayBanners { get; set; }
         bool DisplayUpcomingEpisodeTimeAsCountdown { get; set; }
         bool UseSwipeToRefreshHomeScreen { get; set; }

@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using AniDroid.Adapters.MediaAdapters;
-using AniDroid.Base;
-using AniDroid.Utils.Comparers;
+using AniDroidv2.Adapters.MediaAdapters;
+using AniDroidv2.Base;
+using AniDroidv2.Utils.Comparers;
 
-namespace AniDroid.Settings.MediaListSettings
+namespace AniDroidv2.Settings.MediaListSettings
 {
-    public interface IMediaListSettingsView : IAniDroidView
+    public interface IMediaListSettingsView : IAniDroidv2View
     {
         void CreateGroupCompletedSettingItem(bool groupCompleted);
         void CreateMediaListViewTypeSettingItem(MediaListRecyclerAdapter.MediaListItemViewType viewType);

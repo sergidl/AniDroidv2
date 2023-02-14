@@ -4,15 +4,15 @@ using System.Linq;
 using Android.Views;
 using Android.Widget;
 using AndroidX.AppCompat.App;
-using AniDroid.AniList.Enums.UserEnums;
-using AniDroid.Base;
-using AniDroid.Widgets;
+using AniDroidv2.AniList.Enums.UserEnums;
+using AniDroidv2.Base;
+using AniDroidv2.Widgets;
 
-namespace AniDroid.Dialogs
+namespace AniDroidv2.Dialogs
 {
     public static class CustomScoringDialog
     {
-        public static void Create(BaseAniDroidActivity context, List<string> customScoringMethods,
+        public static void Create(BaseAniDroidv2Activity context, List<string> customScoringMethods,
             ScoreFormat scoreFormat, List<float?> scores, Action<List<float?>> onSaveAction)
         {
             var random = new Random();

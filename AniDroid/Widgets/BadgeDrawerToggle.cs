@@ -5,7 +5,7 @@ using AndroidX.AppCompat.App;
 using AndroidX.AppCompat.Widget;
 using AndroidX.DrawerLayout.Widget;
 
-namespace AniDroid.Widgets
+namespace AniDroidv2.Widgets
 {
     public class BadgeDrawerToggle : ActionBarDrawerToggle
     {

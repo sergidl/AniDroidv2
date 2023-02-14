@@ -1,10 +1,10 @@
 ﻿using System.Linq;
-using AniDroid.AniList.Models;
-using AniDroid.AniList.Models.RecommendationModels;
+using AniDroidv2.AniList.Models;
+using AniDroidv2.AniList.Models.RecommendationModels;
 
-namespace AniDroid.Adapters.ViewModels
+namespace AniDroidv2.Adapters.ViewModels
 {
-    public class RecommendationEdgeViewModel : AniDroidAdapterViewModel<ConnectionEdge<Recommendation>>
+    public class RecommendationEdgeViewModel : AniDroidv2AdapterViewModel<ConnectionEdge<Recommendation>>
     {
         private RecommendationEdgeViewModel(ConnectionEdge<Recommendation> model, RecommendationDetailType primaryRecommendationDetailType, RecommendationDetailType secondaryRecommendationDetailType) : base(model)
         {

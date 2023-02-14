@@ -3,24 +3,26 @@ using System.Collections.Generic;
 using Android.Views;
 using Android.Widget;
 using AndroidX.RecyclerView.Widget;
-using AniDroid.Adapters.Base;
-using AniDroid.Adapters.ViewModels;
-using AniDroid.AniList.Interfaces;
-using AniDroid.AniList.Models.ActivityModels;
-using AniDroid.Base;
-using AniDroid.Utils;
+using AniDroidv2.Adapters.Base;
+using AniDroidv2.Adapters.ViewModels;
+using AniDroidv2.AniList.Interfaces;
+using AniDroidv2.AniList.Models.ActivityModels;
+using AniDroidv2.Base;
+using AniDroidv2.Utils;
 using OneOf;
 
-namespace AniDroid.Adapters.UserAdapters
+namespace AniDroidv2.Adapters.UserAdapters
 {
-    public class AniListNotificationRecyclerAdapter : AniDroidRecyclerAdapter<AniListNotificationViewModel, AniListNotification>
+    public class AniListNotificationRecyclerAdapter : AniDroidv2RecyclerAdapter<AniListNotificationViewModel, AniListNotification>
     {
         private readonly int _unreadCount;
 
-        public AniListNotificationRecyclerAdapter(BaseAniDroidActivity context,
-            IAsyncEnumerable<OneOf<IPagedData<AniListNotification>, IAniListError>> enumerable, int unreadCount,
-            Func<AniListNotification, AniListNotificationViewModel> createViewModelFunc) : base(context, enumerable,
-            RecyclerCardType.Custom, createViewModelFunc)
+        public AniListNotificationRecyclerAdapter(
+            BaseAniDroidv2Activity context,
+            IAsyncEnumerable<OneOf<IPagedData<AniListNotification>,IAniListError>> enumerable,
+            int unreadCount,
+            Func<AniListNotification, AniListNotificationViewModel> createViewModelFunc) : 
+            base(context, enumerable, RecyclerCardType.Custom, createViewModelFunc)
         {
             _unreadCount = unreadCount;
             CustomCardUseItemDecoration = true;

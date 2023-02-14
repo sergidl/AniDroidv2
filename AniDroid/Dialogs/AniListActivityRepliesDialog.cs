@@ -8,21 +8,21 @@ using Android.Views;
 using Android.Widget;
 using AndroidX.AppCompat.App;
 using AndroidX.RecyclerView.Widget;
-using AniDroid.Adapters.AniListActivityAdapters;
-using AniDroid.Adapters.ViewModels;
-using AniDroid.AniList.Models.ActivityModels;
-using AniDroid.AniListObject;
-using AniDroid.AniListObject.User;
-using AniDroid.Base;
-using AniDroid.Utils;
-using AniDroid.Utils.Listeners;
+using AniDroidv2.Adapters.AniListActivityAdapters;
+using AniDroidv2.Adapters.ViewModels;
+using AniDroidv2.AniList.Models.ActivityModels;
+using AniDroidv2.AniListObject;
+using AniDroidv2.AniListObject.User;
+using AniDroidv2.Base;
+using AniDroidv2.Utils;
+using AniDroidv2.Utils.Listeners;
 using Google.Android.Material.TextField;
 
-namespace AniDroid.Dialogs
+namespace AniDroidv2.Dialogs
 {
     public class AniListActivityRepliesDialog
     {
-        public static void Create(BaseAniDroidActivity context, AniListActivity activity, int activityPosition, IAniListActivityPresenter activityPresenter, int? currentUserId, Action<int, string> replyAction, Action<int> likeAction)
+        public static void Create(BaseAniDroidv2Activity context, AniListActivity activity, int activityPosition, IAniListActivityPresenter activityPresenter, int? currentUserId, Action<int, string> replyAction, Action<int> likeAction)
         {
             var view = context.LayoutInflater.Inflate(Resource.Layout.Dialog_AniListActivityReply, null);
             var recycler = view.FindViewById<RecyclerView>(Resource.Id.AniListActivityReply_Recycler);
@@ -87,7 +87,7 @@ namespace AniDroid.Dialogs
             a.Show();
         }
 
-        private static void PopulateLikesContainer(BaseAniDroidActivity context, AniListActivity activity, ViewGroup container)
+        private static void PopulateLikesContainer(BaseAniDroidv2Activity context, AniListActivity activity, ViewGroup container)
         {
             var imageSize = (int) TypedValue.ApplyDimension(ComplexUnitType.Dip, 40, context.Resources.DisplayMetrics);
             var padding = (int) TypedValue.ApplyDimension(ComplexUnitType.Dip, 2, context.Resources.DisplayMetrics);
@@ -113,7 +113,7 @@ namespace AniDroid.Dialogs
             profileImages.ForEach(container.AddView);
         }
 
-        private static void CreateEditReply(BaseAniDroidActivity context, string oldText, Func<string, Task> saveAction, Func<Task> deleteAction)
+        private static void CreateEditReply(BaseAniDroidv2Activity context, string oldText, Func<string, Task> saveAction, Func<Task> deleteAction)
         {
             var dialog = new AlertDialog.Builder(context, context.GetThemedResourceId(Resource.Attribute.Dialog_Theme)).Create();
             var dialogView = context.LayoutInflater.Inflate(Resource.Layout.Dialog_AniListActivityCreate, null);

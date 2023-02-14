@@ -2,12 +2,12 @@
 using System.Threading.Tasks;
 using Android.OS;
 using Android.Views;
-using AniDroid.Main;
+using AniDroidv2.Main;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace AniDroid.Base
+namespace AniDroidv2.Base
 {
-    public abstract class BaseMainActivityFragment<T> : BaseMainActivityFragment where T : BaseAniDroidPresenter
+    public abstract class BaseMainActivityFragment<T> : BaseMainActivityFragment where T : BaseAniDroidv2Presenter
     {
         protected T Presenter { get; set; }
 
@@ -18,12 +18,12 @@ namespace AniDroid.Base
                 return;
             }
 
-            Presenter = AniDroidApplication.ServiceProvider.GetService<T>();
+            Presenter = AniDroidv2Application.ServiceProvider.GetService<T>();
             await Presenter.BaseInit(this).ConfigureAwait(false);
         }
     }
 
-    public abstract class BaseMainActivityFragment : BaseAniDroidFragment
+    public abstract class BaseMainActivityFragment : BaseAniDroidv2Fragment
     {
         protected new MainActivity Activity => base.Activity as MainActivity;
 

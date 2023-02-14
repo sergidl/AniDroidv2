@@ -2,12 +2,12 @@
 using Android.OS;
 using Android.Views;
 using AndroidX.Fragment.App;
-using AniDroid.AniList.Interfaces;
+using AniDroidv2.AniList.Interfaces;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace AniDroid.Base
+namespace AniDroidv2.Base
 {
-    public abstract class BaseAniDroidFragment<T> : BaseAniDroidFragment where T : BaseAniDroidPresenter
+    public abstract class BaseAniDroidv2Fragment<T> : BaseAniDroidv2Fragment where T : BaseAniDroidv2Presenter
     {
         protected T Presenter { get; set; }
 
@@ -18,16 +18,16 @@ namespace AniDroid.Base
                 return;
             }
 
-            Presenter = AniDroidApplication.ServiceProvider.GetService<T>();
+            Presenter = AniDroidv2Application.ServiceProvider.GetService<T>();
             await Presenter.BaseInit(this).ConfigureAwait(false);
         }
     }
 
-    public abstract class BaseAniDroidFragment : Fragment, IAniDroidView
+    public abstract class BaseAniDroidv2Fragment : Fragment, IAniDroidv2View
     {
         private bool _pendingRecreate;
 
-        protected new BaseAniDroidActivity Activity => base.Activity as BaseAniDroidActivity;
+        protected new BaseAniDroidv2Activity Activity => base.Activity as BaseAniDroidv2Activity;
         protected new LayoutInflater LayoutInflater => Activity.LayoutInflater;
 
         public abstract string FragmentName { get; }

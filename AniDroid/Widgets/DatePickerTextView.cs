@@ -6,7 +6,7 @@ using Android.Util;
 using Android.Views;
 using Android.Widget;
 
-namespace AniDroid.Widgets
+namespace AniDroidv2.Widgets
 {
     public class DatePickerTextView : RelativeLayout
     {

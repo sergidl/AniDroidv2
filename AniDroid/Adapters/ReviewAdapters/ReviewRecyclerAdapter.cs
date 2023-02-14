@@ -4,18 +4,18 @@ using Android.App;
 using Android.Content;
 using Android.Views;
 using Android.Widget;
-using AniDroid.Adapters.Base;
-using AniDroid.Adapters.ViewModels;
-using AniDroid.AniList.Interfaces;
-using AniDroid.AniList.Models.ReviewModels;
-using AniDroid.Base;
+using AniDroidv2.Adapters.Base;
+using AniDroidv2.Adapters.ViewModels;
+using AniDroidv2.AniList.Interfaces;
+using AniDroidv2.AniList.Models.ReviewModels;
+using AniDroidv2.Base;
 using OneOf;
 
-namespace AniDroid.Adapters.ReviewAdapters
+namespace AniDroidv2.Adapters.ReviewAdapters
 {
-    public class ReviewRecyclerAdapter : AniDroidRecyclerAdapter<ReviewViewModel, Review>
+    public class ReviewRecyclerAdapter : AniDroidv2RecyclerAdapter<ReviewViewModel, Review>
     {
-        public ReviewRecyclerAdapter(BaseAniDroidActivity context,
+        public ReviewRecyclerAdapter(BaseAniDroidv2Activity context,
             IAsyncEnumerable<OneOf<IPagedData<Review>, IAniListError>> enumerable, RecyclerCardType cardType,
             Func<Review, ReviewViewModel> createViewModelFunc) : base(context, enumerable, cardType,
             createViewModelFunc)

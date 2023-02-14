@@ -7,15 +7,15 @@ using Android.OS;
 using Android.Views;
 using Android.Widget;
 using AndroidX.RecyclerView.Widget;
-using AniDroid.Adapters;
-using AniDroid.Adapters.MediaAdapters;
-using AniDroid.Adapters.ViewModels;
-using AniDroid.Base;
+using AniDroidv2.Adapters;
+using AniDroidv2.Adapters.MediaAdapters;
+using AniDroidv2.Adapters.ViewModels;
+using AniDroidv2.Base;
 
-namespace AniDroid.AniListObject.Studio
+namespace AniDroidv2.AniListObject.Studio
 {
     [Activity(Label = "Studio")]
-    [IntentFilter(new[] { Intent.ActionView }, Categories = new[] { Intent.CategoryDefault, Intent.CategoryBrowsable }, DataHost = "anilist.co", DataSchemes = new[] { "http", "https" }, DataPathPattern = "/studio/.*", Label = "AniDroid")]
+    [IntentFilter(new[] { Intent.ActionView }, Categories = new[] { Intent.CategoryDefault, Intent.CategoryBrowsable }, DataHost = "anilist.co", DataSchemes = new[] { "http", "https" }, DataPathPattern = "/studio/.*", Label = "AniDroidv2")]
     public class StudioActivity : BaseAniListObjectActivity<StudioPresenter>, IStudioView
     {
         public const string StudioIdIntentKey = "STUDIO_ID";
@@ -49,7 +49,7 @@ namespace AniDroid.AniListObject.Studio
             await CreatePresenter(savedInstanceState);
         }
 
-        public static void StartActivity(BaseAniDroidActivity context, int studioId, int? requestCode = null)
+        public static void StartActivity(BaseAniDroidv2Activity context, int studioId, int? requestCode = null)
         {
             var intent = new Intent(context, typeof(StudioActivity));
             intent.PutExtra(StudioIdIntentKey, studioId);

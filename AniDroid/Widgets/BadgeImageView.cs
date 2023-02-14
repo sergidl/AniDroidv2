@@ -3,7 +3,7 @@ using Android.Graphics;
 using Android.Util;
 using AndroidX.AppCompat.Widget;
 
-namespace AniDroid.Widgets
+namespace AniDroidv2.Widgets
 {
     public class BadgeImageView : AppCompatImageView
     {

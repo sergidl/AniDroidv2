@@ -3,16 +3,16 @@ using Android.Views;
 using Android.Widget;
 using AndroidX.AppCompat.Widget;
 using AndroidX.RecyclerView.Widget;
-using AniDroid.Base;
-using AniDroid.Utils.Extensions;
+using AniDroidv2.Base;
+using AniDroidv2.Utils.Extensions;
 
-namespace AniDroid.Adapters.Base
+namespace AniDroidv2.Adapters.Base
 {
     public abstract class BaseDraggableRecyclerAdapter<T> : BaseRecyclerAdapter<T> where T : BaseRecyclerAdapter.IStableIdItem
     {
         private readonly ItemTouchHelper _touchHelper;
 
-        protected BaseDraggableRecyclerAdapter(BaseAniDroidActivity context, List<T> items) : base(context, items, RecyclerCardType.Custom)
+        protected BaseDraggableRecyclerAdapter(BaseAniDroidv2Activity context, List<T> items) : base(context, items, RecyclerCardType.Custom)
         {
             HasStableIds = true;
 

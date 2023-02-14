@@ -25,7 +25,7 @@ using System.Text;
 using Android.Runtime;
 using System.Collections.Generic;
 
-namespace AniDroid.Utils {
+namespace AniDroidv2.Utils {
 	/// <summary>
 	/// Base injection attribute, to include a ResourceId
 	/// which should refer to an Android view resource id.

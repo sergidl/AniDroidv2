@@ -4,13 +4,13 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Threading.Tasks;
-using AniDroid.AniList.DataTypes;
-using AniDroid.AniList.Interfaces;
-using AniDroid.AniList.Service;
+using AniDroidv2.AniList.DataTypes;
+using AniDroidv2.AniList.Interfaces;
+using AniDroidv2.AniList.Service;
 using HtmlAgilityPack;
 using OneOf;
 
-namespace AniDroid.Torrent.NyaaSi
+namespace AniDroidv2.Torrent.NyaaSi
 {
     public class NyaaSiService
     {

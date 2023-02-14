@@ -1,13 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace AniDroid.Utils.Comparers
+namespace AniDroidv2.Utils.Comparers
 {
-    public abstract class BaseAniDroidComparer<T> : IComparer<T>
+    public abstract class BaseAniDroidv2Comparer<T> : IComparer<T>
     {
         private readonly SortDirection _direction;
 
-        protected BaseAniDroidComparer(SortDirection direction)
+        protected BaseAniDroidv2Comparer(SortDirection direction)
         {
             _direction = direction;
         }

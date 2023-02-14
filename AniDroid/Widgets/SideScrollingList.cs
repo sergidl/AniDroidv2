@@ -4,7 +4,7 @@ using Android.Views;
 using Android.Widget;
 using AndroidX.RecyclerView.Widget;
 
-namespace AniDroid.Widgets
+namespace AniDroidv2.Widgets
 {
     public class SideScrollingList : RelativeLayout
     {

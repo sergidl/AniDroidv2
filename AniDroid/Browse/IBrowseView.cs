@@ -1,12 +1,12 @@
 ﻿using System.Collections.Generic;
-using AniDroid.AniList.Interfaces;
-using AniDroid.AniList.Models.MediaModels;
-using AniDroid.Base;
+using AniDroidv2.AniList.Interfaces;
+using AniDroidv2.AniList.Models.MediaModels;
+using AniDroidv2.Base;
 using OneOf;
 
-namespace AniDroid.Browse
+namespace AniDroidv2.Browse
 {
-    public interface IBrowseView : IAniDroidView
+    public interface IBrowseView : IAniDroidv2View
     {
         void ShowMediaSearchResults(IAsyncEnumerable<OneOf<IPagedData<Media>, IAniListError>> mediaEnumerable);
         void UpdateMediaListItem(AniList.Models.MediaModels.MediaList mediaList);

@@ -1,12 +1,12 @@
 ﻿using System.Collections.Generic;
-using AniDroid.AniList.Interfaces;
-using AniDroid.AniList.Models.MediaModels;
-using AniDroid.Base;
+using AniDroidv2.AniList.Interfaces;
+using AniDroidv2.AniList.Models.MediaModels;
+using AniDroidv2.Base;
 using OneOf;
 
-namespace AniDroid.CurrentSeason
+namespace AniDroidv2.CurrentSeason
 {
-    public interface ICurrentSeasonView : IAniDroidView
+    public interface ICurrentSeasonView : IAniDroidv2View
     {
         void ShowCurrentTv(IAsyncEnumerable<OneOf<IPagedData<Media>, IAniListError>> mediaEnumerable);
         void ShowCurrentMovies(IAsyncEnumerable<OneOf<IPagedData<Media>, IAniListError>> mediaEnumerable);

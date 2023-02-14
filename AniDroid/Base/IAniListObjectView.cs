@@ -1,6 +1,6 @@
-﻿namespace AniDroid.Base
+﻿namespace AniDroidv2.Base
 {
-    public interface IAniListObjectView : IAniDroidView
+    public interface IAniListObjectView : IAniDroidv2View
     {
         void Share();
         void SetLoadingShown();

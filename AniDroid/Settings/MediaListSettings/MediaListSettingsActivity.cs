@@ -7,20 +7,20 @@ using Android.OS;
 using Android.Views;
 using Android.Widget;
 using AndroidX.CoordinatorLayout.Widget;
-using AniDroid.Adapters.MediaAdapters;
-using AniDroid.AniList.Interfaces;
-using AniDroid.Base;
-using AniDroid.Dialogs;
-using AniDroid.Main;
-using AniDroid.Utils;
-using AniDroid.Utils.Comparers;
+using AniDroidv2.Adapters.MediaAdapters;
+using AniDroidv2.AniList.Interfaces;
+using AniDroidv2.Base;
+using AniDroidv2.Dialogs;
+using AniDroidv2.Main;
+using AniDroidv2.Utils;
+using AniDroidv2.Utils.Comparers;
 using Google.Android.Material.Snackbar;
 using Toolbar = AndroidX.AppCompat.Widget.Toolbar;
 
-namespace AniDroid.Settings.MediaListSettings
+namespace AniDroidv2.Settings.MediaListSettings
 {
     [Activity(Label = "Media List Settings")]
-    public class MediaListSettingsActivity : BaseAniDroidActivity<MediaListSettingsPresenter>, IMediaListSettingsView
+    public class MediaListSettingsActivity : BaseAniDroidv2Activity<MediaListSettingsPresenter>, IMediaListSettingsView
     {
         [InjectView(Resource.Id.Settings_CoordLayout)]
         private CoordinatorLayout _coordLayout;

@@ -1,4 +1,4 @@
-﻿namespace AniDroid.Utils.Extensions
+﻿namespace AniDroidv2.Utils.Extensions
 {
     public static class NumberExtensions
     {

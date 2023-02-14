@@ -1,26 +1,26 @@
 ﻿using System;
 using System.Collections.Generic;
 using Android.Views;
-using AniDroid.Adapters.Base;
-using AniDroid.Adapters.ViewModels;
-using AniDroid.AniList.Interfaces;
-using AniDroid.AniList.Models.StaffModels;
-using AniDroid.AniListObject.Staff;
-using AniDroid.Base;
+using AniDroidv2.Adapters.Base;
+using AniDroidv2.Adapters.ViewModels;
+using AniDroidv2.AniList.Interfaces;
+using AniDroidv2.AniList.Models.StaffModels;
+using AniDroidv2.AniListObject.Staff;
+using AniDroidv2.Base;
 using OneOf;
 
-namespace AniDroid.Adapters.StaffAdapters
+namespace AniDroidv2.Adapters.StaffAdapters
 {
-    public class StaffRecyclerAdapter : AniDroidRecyclerAdapter<StaffViewModel, Staff>
+    public class StaffRecyclerAdapter : AniDroidv2RecyclerAdapter<StaffViewModel, Staff>
     {
-        public StaffRecyclerAdapter(BaseAniDroidActivity context,
+        public StaffRecyclerAdapter(BaseAniDroidv2Activity context,
             IAsyncEnumerable<OneOf<IPagedData<Staff>, IAniListError>> enumerable, RecyclerCardType cardType,
             Func<Staff, StaffViewModel> createViewModelFunc) : base(context, enumerable, cardType, createViewModelFunc)
         {
             SetDefaultClickActions();
         }
 
-        public StaffRecyclerAdapter(BaseAniDroidActivity context, List<StaffViewModel> items, RecyclerCardType cardType)
+        public StaffRecyclerAdapter(BaseAniDroidv2Activity context, List<StaffViewModel> items, RecyclerCardType cardType)
             : base(context, items, cardType)
         {
             SetDefaultClickActions();
@@ -35,7 +35,7 @@ namespace AniDroid.Adapters.StaffAdapters
         private void SetDefaultClickActions()
         {
             ClickAction = (viewModel, position) =>
-                StaffActivity.StartActivity(Context, viewModel.Model.Id, BaseAniDroidActivity.ObjectBrowseRequestCode);
+                StaffActivity.StartActivity(Context, viewModel.Model.Id, BaseAniDroidv2Activity.ObjectBrowseRequestCode);
         }
     }
 }

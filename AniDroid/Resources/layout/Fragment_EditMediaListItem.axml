@@ -49,7 +49,7 @@
                         android:textSize="14dp"
                         android:textColor="?Primary_Dark"
                         android:layout_gravity="top" />
-                    <AniDroid.Widgets.Picker
+                    <AniDroidv2.Widgets.Picker
                         android:id="@+id/EditMediaListItem_ScorePicker"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
@@ -111,7 +111,7 @@
                             android:textSize="14dp"
                             android:textColor="?Primary_Dark"
                             android:layout_gravity="top" />
-                        <AniDroid.Widgets.Picker
+                        <AniDroidv2.Widgets.Picker
                             android:id="@+id/EditMediaListItem_ProgressPicker"
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
@@ -135,7 +135,7 @@
                             android:textSize="14dp"
                             android:textColor="?Primary_Dark"
                             android:layout_gravity="top" />
-                        <AniDroid.Widgets.Picker
+                        <AniDroidv2.Widgets.Picker
                             android:id="@+id/EditMediaListItem_VolumeProgressPicker"
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
@@ -160,7 +160,7 @@
                         android:textSize="14dp"
                         android:textColor="?Primary_Dark"
                         android:layout_gravity="top" />
-                    <AniDroid.Widgets.Picker
+                    <AniDroidv2.Widgets.Picker
                         android:id="@+id/EditMediaListItem_RewatchedPicker"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
@@ -191,7 +191,7 @@
                         android:textSize="14dp"
                         android:textColor="?Primary_Dark"
                         android:layout_gravity="top" />
-                    <AniDroid.Widgets.DatePickerTextView
+                    <AniDroidv2.Widgets.DatePickerTextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:id="@+id/EditMediaListItem_StartDate" />
@@ -211,7 +211,7 @@
                         android:textSize="14dp"
                         android:textColor="?Primary_Dark"
                         android:layout_gravity="top" />
-                    <AniDroid.Widgets.DatePickerTextView
+                    <AniDroidv2.Widgets.DatePickerTextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:id="@+id/EditMediaListItem_FinishDate" />

@@ -7,7 +7,7 @@ using Android.Views;
 using Android.Widget;
 using AndroidX.Core.Content;
 
-namespace AniDroid.Widgets
+namespace AniDroidv2.Widgets
 {
     public class DataRow : RelativeLayout
     {

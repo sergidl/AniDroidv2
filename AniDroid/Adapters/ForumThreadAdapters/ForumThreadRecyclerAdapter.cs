@@ -2,18 +2,18 @@
 using System.Collections.Generic;
 using Android.Content;
 using Android.Views;
-using AniDroid.Adapters.Base;
-using AniDroid.Adapters.ViewModels;
-using AniDroid.AniList.Interfaces;
-using AniDroid.AniList.Models.ForumModels;
-using AniDroid.Base;
+using AniDroidv2.Adapters.Base;
+using AniDroidv2.Adapters.ViewModels;
+using AniDroidv2.AniList.Interfaces;
+using AniDroidv2.AniList.Models.ForumModels;
+using AniDroidv2.Base;
 using OneOf;
 
-namespace AniDroid.Adapters.ForumThreadAdapters
+namespace AniDroidv2.Adapters.ForumThreadAdapters
 {
-    public class ForumThreadRecyclerAdapter : AniDroidRecyclerAdapter<ForumThreadViewModel, ForumThread>
+    public class ForumThreadRecyclerAdapter : AniDroidv2RecyclerAdapter<ForumThreadViewModel, ForumThread>
     {
-        public ForumThreadRecyclerAdapter(BaseAniDroidActivity context,
+        public ForumThreadRecyclerAdapter(BaseAniDroidv2Activity context,
             IAsyncEnumerable<OneOf<IPagedData<ForumThread>, IAniListError>> enumerable,
             Func<ForumThread, ForumThreadViewModel> createViewModelFunc) : base(context, enumerable,
             RecyclerCardType.Horizontal, createViewModelFunc)

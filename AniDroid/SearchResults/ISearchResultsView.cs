@@ -1,17 +1,17 @@
 ﻿using System.Collections.Generic;
-using AniDroid.AniList.Interfaces;
-using AniDroid.AniList.Models.CharacterModels;
-using AniDroid.AniList.Models.ForumModels;
-using AniDroid.AniList.Models.MediaModels;
-using AniDroid.AniList.Models.StaffModels;
-using AniDroid.AniList.Models.StudioModels;
-using AniDroid.AniList.Models.UserModels;
-using AniDroid.Base;
+using AniDroidv2.AniList.Interfaces;
+using AniDroidv2.AniList.Models.CharacterModels;
+using AniDroidv2.AniList.Models.ForumModels;
+using AniDroidv2.AniList.Models.MediaModels;
+using AniDroidv2.AniList.Models.StaffModels;
+using AniDroidv2.AniList.Models.StudioModels;
+using AniDroidv2.AniList.Models.UserModels;
+using AniDroidv2.Base;
 using OneOf;
 
-namespace AniDroid.SearchResults
+namespace AniDroidv2.SearchResults
 {
-    public interface ISearchResultsView : IAniDroidView
+    public interface ISearchResultsView : IAniDroidv2View
     {
         void ShowMediaSearchResults(IAsyncEnumerable<OneOf<IPagedData<Media>, IAniListError>> mediaEnumerable);
         void ShowCharacterSearchResults(IAsyncEnumerable<OneOf<IPagedData<Character>, IAniListError>> characterEnumerable);

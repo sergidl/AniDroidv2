@@ -2,21 +2,21 @@
 using System.Collections.Generic;
 using System.Linq;
 using Android.Views;
-using AniDroid.Adapters.Base;
-using AniDroid.AniList.Dto;
-using AniDroid.AniList.Enums.MediaEnums;
-using AniDroid.AniList.Models.MediaModels;
-using AniDroid.Base;
-using AniDroid.Browse;
+using AniDroidv2.Adapters.Base;
+using AniDroidv2.AniList.Dto;
+using AniDroidv2.AniList.Enums.MediaEnums;
+using AniDroidv2.AniList.Models.MediaModels;
+using AniDroidv2.Base;
+using AniDroidv2.Browse;
 
-namespace AniDroid.Adapters.MediaAdapters
+namespace AniDroidv2.Adapters.MediaAdapters
 {
     public class MediaTagsRecyclerAdapter : BaseRecyclerAdapter<MediaTag>
     {
         private readonly List<bool> _spoilerTags;
         private readonly MediaType _mediaType;
 
-        public MediaTagsRecyclerAdapter(BaseAniDroidActivity context, List<MediaTag> items, MediaType mediaType) : base(context, items, RecyclerCardType.Horizontal)
+        public MediaTagsRecyclerAdapter(BaseAniDroidv2Activity context, List<MediaTag> items, MediaType mediaType) : base(context, items, RecyclerCardType.Horizontal)
         {
             _spoilerTags = items.Select(x => x.IsGeneralSpoiler || x.IsMediaSpoiler).ToList();
             _mediaType = mediaType;
@@ -74,7 +74,7 @@ namespace AniDroid.Adapters.MediaAdapters
             var itemPos = (int) senderView?.GetTag(Resource.Id.Object_Position);
             var item = Items[itemPos];
 
-            BrowseActivity.StartActivity(Context, new BrowseMediaDto {Type = _mediaType, IncludedTags = new List<string> {item.Name}}, BaseAniDroidActivity.ObjectBrowseRequestCode);
+            BrowseActivity.StartActivity(Context, new BrowseMediaDto {Type = _mediaType, IncludedTags = new List<string> {item.Name}}, BaseAniDroidv2Activity.ObjectBrowseRequestCode);
         }
     }
 }

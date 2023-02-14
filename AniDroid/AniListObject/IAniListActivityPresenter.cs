@@ -1,7 +1,7 @@
 ﻿using System.Threading.Tasks;
-using AniDroid.AniList.Models.ActivityModels;
+using AniDroidv2.AniList.Models.ActivityModels;
 
-namespace AniDroid.AniListObject
+namespace AniDroidv2.AniListObject
 {
     public interface IAniListActivityPresenter
     {

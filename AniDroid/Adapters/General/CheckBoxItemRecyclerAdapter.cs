@@ -3,16 +3,16 @@ using System.Collections.Generic;
 using Android.Views;
 using Android.Widget;
 using AndroidX.RecyclerView.Widget;
-using AniDroid.Adapters.Base;
-using AniDroid.Base;
+using AniDroidv2.Adapters.Base;
+using AniDroidv2.Base;
 
-namespace AniDroid.Adapters.General
+namespace AniDroidv2.Adapters.General
 {
     public class CheckBoxItemRecyclerAdapter : BaseRecyclerAdapter<CheckBoxItemRecyclerAdapter.CheckBoxItem>
     {
         public bool ToggleDescription { get; set; }
 
-        public CheckBoxItemRecyclerAdapter(BaseAniDroidActivity context, List<CheckBoxItem> items) : base(context,
+        public CheckBoxItemRecyclerAdapter(BaseAniDroidv2Activity context, List<CheckBoxItem> items) : base(context,
             items, RecyclerCardType.Custom)
         {
         }

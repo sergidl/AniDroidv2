@@ -1,6 +1,6 @@
-﻿using AniDroid.Base;
+﻿using AniDroidv2.Base;
 
-namespace AniDroid.AniListObject.Studio
+namespace AniDroidv2.AniListObject.Studio
 {
     public interface IStudioView : IAniListObjectView
     {

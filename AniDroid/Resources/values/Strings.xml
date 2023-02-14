@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <string name="AppName">AniDroid</string>
+  <string name="AppName">AniDroidv2</string>
   <string name="AppPrivacyPolicyUrl">http://jurasdev.com/privacy_policy.html</string>
   
   <!-- Login / Logout -->

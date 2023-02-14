@@ -1,20 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
-using AniDroid.Adapters.Base;
-using AniDroid.Adapters.ViewModels;
-using AniDroid.AniList.Interfaces;
-using AniDroid.AniList.Models;
-using AniDroid.AniList.Models.RecommendationModels;
-using AniDroid.AniListObject.Media;
-using AniDroid.Base;
+using AniDroidv2.Adapters.Base;
+using AniDroidv2.Adapters.ViewModels;
+using AniDroidv2.AniList.Interfaces;
+using AniDroidv2.AniList.Models;
+using AniDroidv2.AniList.Models.RecommendationModels;
+using AniDroidv2.AniListObject.Media;
+using AniDroidv2.Base;
 using Google.Android.Material.Snackbar;
 using OneOf;
 
-namespace AniDroid.Adapters.RecommendationAdapters
+namespace AniDroidv2.Adapters.RecommendationAdapters
 {
-    public class RecommendationEdgeRecyclerAdapter : AniDroidRecyclerAdapter<RecommendationEdgeViewModel,ConnectionEdge<Recommendation>>
+    public class RecommendationEdgeRecyclerAdapter : AniDroidv2RecyclerAdapter<RecommendationEdgeViewModel,ConnectionEdge<Recommendation>>
     {
-        public RecommendationEdgeRecyclerAdapter(BaseAniDroidActivity context, IAsyncEnumerable<OneOf<IPagedData<ConnectionEdge<Recommendation>>, IAniListError>> enumerable, RecyclerCardType cardType, Func<ConnectionEdge<Recommendation>, RecommendationEdgeViewModel> createViewModelFunc) : base(context, enumerable, cardType, createViewModelFunc)
+        public RecommendationEdgeRecyclerAdapter(BaseAniDroidv2Activity context, IAsyncEnumerable<OneOf<IPagedData<ConnectionEdge<Recommendation>>, IAniListError>> enumerable, RecyclerCardType cardType, Func<ConnectionEdge<Recommendation>, RecommendationEdgeViewModel> createViewModelFunc) : base(context, enumerable, cardType, createViewModelFunc)
         {
             SetDefaultClickActions();
 
@@ -24,7 +24,7 @@ namespace AniDroid.Adapters.RecommendationAdapters
         private void SetDefaultClickActions()
         {
             ClickAction = (viewModel, position) =>
-                MediaActivity.StartActivity(Context, viewModel.Model.Node.MediaRecommendation.Id, BaseAniDroidActivity.ObjectBrowseRequestCode);
+                MediaActivity.StartActivity(Context, viewModel.Model.Node.MediaRecommendation.Id, BaseAniDroidv2Activity.ObjectBrowseRequestCode);
 
             LongClickAction = (viewModel, position) =>
                 Context.DisplaySnackbarMessage(viewModel.Model.Node.MediaRecommendation.Title?.UserPreferred, Snackbar.LengthLong);

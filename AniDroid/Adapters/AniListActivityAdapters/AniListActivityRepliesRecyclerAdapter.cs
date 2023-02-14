@@ -4,22 +4,22 @@ using Android.Content.Res;
 using Android.Graphics;
 using Android.Views;
 using AndroidX.RecyclerView.Widget;
-using AniDroid.Adapters.Base;
-using AniDroid.Adapters.ViewModels;
-using AniDroid.AniList.Models.ActivityModels;
-using AniDroid.AniListObject;
-using AniDroid.AniListObject.User;
-using AniDroid.Base;
-using AniDroid.Utils;
+using AniDroidv2.Adapters.Base;
+using AniDroidv2.Adapters.ViewModels;
+using AniDroidv2.AniList.Models.ActivityModels;
+using AniDroidv2.AniListObject;
+using AniDroidv2.AniListObject.User;
+using AniDroidv2.Base;
+using AniDroidv2.Utils;
 
-namespace AniDroid.Adapters.AniListActivityAdapters
+namespace AniDroidv2.Adapters.AniListActivityAdapters
 {
-    public class AniListActivityRepliesRecyclerAdapter : AniDroidRecyclerAdapter<AniListActivityReplyViewModel, ActivityReply>
+    public class AniListActivityRepliesRecyclerAdapter : AniDroidv2RecyclerAdapter<AniListActivityReplyViewModel, ActivityReply>
     {
         private readonly IAniListActivityPresenter _presenter;
         private readonly Color _userNameColor;
 
-        public AniListActivityRepliesRecyclerAdapter(BaseAniDroidActivity context, IAniListActivityPresenter presenter,
+        public AniListActivityRepliesRecyclerAdapter(BaseAniDroidv2Activity context, IAniListActivityPresenter presenter,
             List<AniListActivityReplyViewModel> items) : base(context, items, RecyclerCardType.Custom)
         {
             _presenter = presenter;

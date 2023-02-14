@@ -1,9 +1,9 @@
 ﻿using System.Linq;
-using AniDroid.AniList.Models.CharacterModels;
+using AniDroidv2.AniList.Models.CharacterModels;
 
-namespace AniDroid.Adapters.ViewModels
+namespace AniDroidv2.Adapters.ViewModels
 {
-    public class CharacterEdgeViewModel : AniDroidAdapterViewModel<CharacterEdge>
+    public class CharacterEdgeViewModel : AniDroidv2AdapterViewModel<CharacterEdge>
     {
         public CharacterEdgeViewModel(CharacterEdge model, CharacterEdgeDetailType primaryCharacterEdgeDetailType,
             CharacterEdgeDetailType secondaryCharacterEdgeDetailType, bool isButtonVisible, int? buttonIcon) : base(model)

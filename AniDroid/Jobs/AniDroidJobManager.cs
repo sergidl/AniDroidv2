@@ -2,9 +2,9 @@
 using Android.Content;
 using AndroidX.Work;
 
-namespace AniDroid.Jobs
+namespace AniDroidv2.Jobs
 {
-    public static class AniDroidJobManager
+    public static class AniDroidv2JobManager
     {
         public static void EnableAniListNotificationJob(Context context)
         {

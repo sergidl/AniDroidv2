@@ -3,7 +3,7 @@ using Android.Views;
 using AndroidX.ViewPager.Widget;
 using Java.Lang;
 
-namespace AniDroid.Adapters
+namespace AniDroidv2.Adapters
 {
     public class FragmentlessViewPagerAdapter : PagerAdapter
     {

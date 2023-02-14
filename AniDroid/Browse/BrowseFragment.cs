@@ -5,19 +5,19 @@ using Android.Content.Res;
 using Android.OS;
 using Android.Views;
 using AndroidX.RecyclerView.Widget;
-using AniDroid.Adapters.Base;
-using AniDroid.Adapters.MediaAdapters;
-using AniDroid.Adapters.ViewModels;
-using AniDroid.AniList.Dto;
-using AniDroid.AniList.Enums.MediaEnums;
-using AniDroid.AniList.Interfaces;
-using AniDroid.AniList.Models.MediaModels;
-using AniDroid.Base;
-using AniDroid.Dialogs;
-using AniDroid.MediaList;
+using AniDroidv2.Adapters.Base;
+using AniDroidv2.Adapters.MediaAdapters;
+using AniDroidv2.Adapters.ViewModels;
+using AniDroidv2.AniList.Dto;
+using AniDroidv2.AniList.Enums.MediaEnums;
+using AniDroidv2.AniList.Interfaces;
+using AniDroidv2.AniList.Models.MediaModels;
+using AniDroidv2.Base;
+using AniDroidv2.Dialogs;
+using AniDroidv2.MediaList;
 using OneOf;
 
-namespace AniDroid.Browse
+namespace AniDroidv2.Browse
 {
     public class BrowseFragment : BaseMainActivityFragment<BrowsePresenter>, IBrowseView
     {
@@ -114,7 +114,7 @@ namespace AniDroid.Browse
         public override View CreateMainActivityFragmentView(ViewGroup container, Bundle savedInstanceState)
         {
             CreatePresenter(savedInstanceState).GetAwaiter().GetResult();
-            _cardType = Presenter.AniDroidSettings.CardType;
+            _cardType = Presenter.AniDroidv2Settings.CardType;
 
             return LayoutInflater.Inflate(Resource.Layout.View_List, container, false);
         }

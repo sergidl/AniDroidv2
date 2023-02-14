@@ -1,9 +1,9 @@
 ﻿using Android.Graphics;
-using AniDroid.AniList.Models.ReviewModels;
+using AniDroidv2.AniList.Models.ReviewModels;
 
-namespace AniDroid.Adapters.ViewModels
+namespace AniDroidv2.Adapters.ViewModels
 {
-    public class ReviewViewModel : AniDroidAdapterViewModel<Review>
+    public class ReviewViewModel : AniDroidv2AdapterViewModel<Review>
     {
         public Color ImageColor { get; protected set; }
 

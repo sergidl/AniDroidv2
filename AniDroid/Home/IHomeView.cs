@@ -1,12 +1,12 @@
 ﻿using System.Collections.Generic;
-using AniDroid.AniList.Interfaces;
-using AniDroid.AniList.Models.ActivityModels;
-using AniDroid.Base;
+using AniDroidv2.AniList.Interfaces;
+using AniDroidv2.AniList.Models.ActivityModels;
+using AniDroidv2.Base;
 using OneOf;
 
-namespace AniDroid.Home
+namespace AniDroidv2.Home
 {
-    public interface IHomeView : IAniDroidView
+    public interface IHomeView : IAniDroidv2View
     {
         void ShowUserActivity(IAsyncEnumerable<OneOf<IPagedData<AniListActivity>, IAniListError>> activityEnumerable, int userId);
         void ShowAllActivity(IAsyncEnumerable<OneOf<IPagedData<AniListActivity>, IAniListError>> activityEnumerable, int userId);

@@ -1,8 +1,8 @@
-﻿using AniDroid.AniList.Enums.MediaEnums;
-using AniDroid.AniList.Models.UserModels;
-using AniDroid.Base;
+﻿using AniDroidv2.AniList.Enums.MediaEnums;
+using AniDroidv2.AniList.Models.UserModels;
+using AniDroidv2.Base;
 
-namespace AniDroid.AniListObject.Media
+namespace AniDroidv2.AniListObject.Media
 {
     public interface IMediaView : IAniListObjectView
     {

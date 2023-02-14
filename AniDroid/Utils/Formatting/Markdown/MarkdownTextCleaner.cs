@@ -1,10 +1,10 @@
 ﻿using System.Linq;
 using System.Text.RegularExpressions;
 using Android.Text;
-using AniDroid.Base;
+using AniDroidv2.Base;
 using Markdig;
 
-namespace AniDroid.Utils.Formatting.Markdown
+namespace AniDroidv2.Utils.Formatting.Markdown
 {
     public static class MarkdownTextCleaner
     {
@@ -25,7 +25,7 @@ namespace AniDroid.Utils.Formatting.Markdown
 
             var cleanedText = FormatMarkdownText(text);
             var parsedText = Markdig.Markdown.ToHtml(cleanedText, pipeline);
-            return BaseAniDroidActivity.FromHtml(parsedText);
+            return BaseAniDroidv2Activity.FromHtml(parsedText);
         }
 
         private static string AddSpaceToMarkup(Match match)

@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using Android.OS;
 using Android.Views;
 using Android.Widget;
-using AniDroid.AniList.Interfaces;
-using AniDroid.AniList.Models.MediaModels;
-using AniDroid.Base;
+using AniDroidv2.AniList.Interfaces;
+using AniDroidv2.AniList.Models.MediaModels;
+using AniDroidv2.Base;
 using OneOf;
 
-namespace AniDroid.CurrentSeason
+namespace AniDroidv2.CurrentSeason
 {
     public class CurrentSeasonFragment : BaseMainActivityFragment<CurrentSeasonPresenter>, ICurrentSeasonView
     {

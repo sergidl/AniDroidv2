@@ -52,7 +52,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:gravity="center_vertical" />
-        <AniDroid.Widgets.BadgeImageView
+        <AniDroidv2.Widgets.BadgeImageView
             android:id="@+id/Navigation_NotificationIcon"
             android:background="@android:color/transparent"
             app:srcCompat="@drawable/ic_mode_comment_white_24px"

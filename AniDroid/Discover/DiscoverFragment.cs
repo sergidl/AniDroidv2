@@ -3,19 +3,19 @@ using System.Collections.Generic;
 using Android.OS;
 using Android.Views;
 using Android.Widget;
-using AniDroid.Adapters.Base;
-using AniDroid.Adapters.MediaAdapters;
-using AniDroid.Adapters.ViewModels;
-using AniDroid.AniList.Enums.MediaEnums;
-using AniDroid.AniList.Interfaces;
-using AniDroid.AniList.Models.MediaModels;
-using AniDroid.Base;
-using AniDroid.Dialogs;
-using AniDroid.MediaList;
-using AniDroid.Widgets;
+using AniDroidv2.Adapters.Base;
+using AniDroidv2.Adapters.MediaAdapters;
+using AniDroidv2.Adapters.ViewModels;
+using AniDroidv2.AniList.Enums.MediaEnums;
+using AniDroidv2.AniList.Interfaces;
+using AniDroidv2.AniList.Models.MediaModels;
+using AniDroidv2.Base;
+using AniDroidv2.Dialogs;
+using AniDroidv2.MediaList;
+using AniDroidv2.Widgets;
 using OneOf;
 
-namespace AniDroid.Discover
+namespace AniDroidv2.Discover
 {
     public class DiscoverFragment : BaseMainActivityFragment<DiscoverPresenter>, IDiscoverView
     {

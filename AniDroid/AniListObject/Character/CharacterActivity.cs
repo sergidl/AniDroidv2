@@ -8,17 +8,17 @@ using Android.OS;
 using Android.Views;
 using Android.Widget;
 using AndroidX.RecyclerView.Widget;
-using AniDroid.Adapters;
-using AniDroid.Adapters.MediaAdapters;
-using AniDroid.Adapters.ViewModels;
-using AniDroid.AniList.Enums.MediaEnums;
-using AniDroid.Base;
-using AniDroid.Utils;
+using AniDroidv2.Adapters;
+using AniDroidv2.Adapters.MediaAdapters;
+using AniDroidv2.Adapters.ViewModels;
+using AniDroidv2.AniList.Enums.MediaEnums;
+using AniDroidv2.Base;
+using AniDroidv2.Utils;
 
-namespace AniDroid.AniListObject.Character
+namespace AniDroidv2.AniListObject.Character
 {
     [Activity(Label = "Character")]
-    [IntentFilter(new[] { Intent.ActionView }, Categories = new[] { Intent.CategoryDefault, Intent.CategoryBrowsable }, DataHost = "anilist.co", DataSchemes = new[] { "http", "https" }, DataPathPattern = "/character/.*", Label = "AniDroid")]
+    [IntentFilter(new[] { Intent.ActionView }, Categories = new[] { Intent.CategoryDefault, Intent.CategoryBrowsable }, DataHost = "anilist.co", DataSchemes = new[] { "http", "https" }, DataPathPattern = "/character/.*", Label = "AniDroidv2")]
     public class CharacterActivity : BaseAniListObjectActivity<CharacterPresenter>, ICharacterView
     {
         public const string CharacterIdIntentKey = "CHARACTER_ID";
@@ -52,7 +52,7 @@ namespace AniDroid.AniListObject.Character
             await CreatePresenter(savedInstanceState);
         }
 
-        public static void StartActivity(BaseAniDroidActivity context, int characterId, int? requestCode = null)
+        public static void StartActivity(BaseAniDroidv2Activity context, int characterId, int? requestCode = null)
         {
             var intent = new Intent(context, typeof(CharacterActivity));
             intent.PutExtra(CharacterIdIntentKey, characterId);

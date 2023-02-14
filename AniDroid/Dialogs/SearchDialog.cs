@@ -3,14 +3,14 @@ using System.Linq;
 using Android.Content;
 using Android.Widget;
 using AndroidX.AppCompat.App;
-using AniDroid.Base;
-using AniDroid.SearchResults;
+using AniDroidv2.Base;
+using AniDroidv2.SearchResults;
 
-namespace AniDroid.Dialogs
+namespace AniDroidv2.Dialogs
 {
     public class SearchDialog
     {
-        public static void Create(BaseAniDroidActivity context, Action<string, string> searchAction, string searchType = "", string searchTerm = null)
+        public static void Create(BaseAniDroidv2Activity context, Action<string, string> searchAction, string searchType = "", string searchTerm = null)
         {
             var dialogue = context.LayoutInflater.Inflate(Resource.Layout.Dialog_Search, null);
             var searchTypeView = dialogue.FindViewById<Spinner>(Resource.Id.Search_Type);

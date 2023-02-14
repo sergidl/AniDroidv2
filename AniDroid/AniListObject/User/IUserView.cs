@@ -1,7 +1,7 @@
-﻿using AniDroid.AniList.Models.ActivityModels;
-using AniDroid.Base;
+﻿using AniDroidv2.AniList.Models.ActivityModels;
+using AniDroidv2.Base;
 
-namespace AniDroid.AniListObject.User
+namespace AniDroidv2.AniListObject.User
 {
     public interface IUserView : IAniListObjectView
     {

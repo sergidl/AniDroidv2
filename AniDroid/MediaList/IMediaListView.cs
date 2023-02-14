@@ -1,10 +1,10 @@
-﻿using AniDroid.AniList.Enums.MediaEnums;
-using AniDroid.AniList.Models.MediaModels;
-using AniDroid.Base;
+﻿using AniDroidv2.AniList.Enums.MediaEnums;
+using AniDroidv2.AniList.Models.MediaModels;
+using AniDroidv2.Base;
 
-namespace AniDroid.MediaList
+namespace AniDroidv2.MediaList
 {
-    public interface IMediaListView : IAniDroidView
+    public interface IMediaListView : IAniDroidv2View
     {
         MediaType GetMediaType();
         void SetCollection(MediaListCollection collection);

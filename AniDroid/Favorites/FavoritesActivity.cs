@@ -5,25 +5,25 @@ using Android.Views;
 using System.Threading.Tasks;
 using AndroidX.AppCompat.Widget;
 using AndroidX.RecyclerView.Widget;
-using AniDroid.Adapters;
-using AniDroid.Adapters.Base;
-using AniDroid.Adapters.CharacterAdapters;
-using AniDroid.Adapters.MediaAdapters;
-using AniDroid.Adapters.StaffAdapters;
-using AniDroid.Adapters.StudioAdapters;
-using AniDroid.Adapters.ViewModels;
-using AniDroid.AniList.Interfaces;
-using AniDroid.Base;
-using AniDroid.Utils;
+using AniDroidv2.Adapters;
+using AniDroidv2.Adapters.Base;
+using AniDroidv2.Adapters.CharacterAdapters;
+using AniDroidv2.Adapters.MediaAdapters;
+using AniDroidv2.Adapters.StaffAdapters;
+using AniDroidv2.Adapters.StudioAdapters;
+using AniDroidv2.Adapters.ViewModels;
+using AniDroidv2.AniList.Interfaces;
+using AniDroidv2.Base;
+using AniDroidv2.Utils;
 using Google.Android.Material.Snackbar;
 using Google.Android.Material.Tabs;
 using AndroidX.ViewPager.Widget;
 using AndroidX.CoordinatorLayout.Widget;
 
-namespace AniDroid.Favorites
+namespace AniDroidv2.Favorites
 {
     [Activity(Label = "Favorites")]
-    public class FavoritesActivity : BaseAniDroidActivity<FavoritesPresenter>, IFavoritesView
+    public class FavoritesActivity : BaseAniDroidv2Activity<FavoritesPresenter>, IFavoritesView
     {
         public const string UserIdIntentKey = "USER_ID";
         public const int PageLength = 25;
@@ -74,7 +74,7 @@ namespace AniDroid.Favorites
             _tabLayout.SetupWithViewPager(_viewPager);
         }
 
-        public static void StartActivity(BaseAniDroidActivity context, int userId, int? requestCode = null)
+        public static void StartActivity(BaseAniDroidv2Activity context, int userId, int? requestCode = null)
         {
             var intent = new Intent(context, typeof(FavoritesActivity));
             intent.PutExtra(UserIdIntentKey, userId);

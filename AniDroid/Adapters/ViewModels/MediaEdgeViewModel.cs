@@ -1,8 +1,8 @@
-﻿using AniDroid.AniList.Models.MediaModels;
+﻿using AniDroidv2.AniList.Models.MediaModels;
 
-namespace AniDroid.Adapters.ViewModels
+namespace AniDroidv2.Adapters.ViewModels
 {
-    public class MediaEdgeViewModel : AniDroidAdapterViewModel<MediaEdge>
+    public class MediaEdgeViewModel : AniDroidv2AdapterViewModel<MediaEdge>
     {
         public MediaEdgeViewModel(MediaEdge model, MediaEdgeDetailType primaryMediaEdgeDetailType,
             MediaEdgeDetailType secondaryMediaEdgeDetailType) : base(model)

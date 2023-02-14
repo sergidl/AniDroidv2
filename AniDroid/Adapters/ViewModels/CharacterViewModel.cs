@@ -1,8 +1,8 @@
-﻿using AniDroid.AniList.Models.CharacterModels;
+﻿using AniDroidv2.AniList.Models.CharacterModels;
 
-namespace AniDroid.Adapters.ViewModels
+namespace AniDroidv2.Adapters.ViewModels
 {
-    public class CharacterViewModel : AniDroidAdapterViewModel<Character>
+    public class CharacterViewModel : AniDroidv2AdapterViewModel<Character>
     {
         private CharacterViewModel(Character model, CharacterDetailType primaryCharacterDetailType, CharacterDetailType secondaryCharacterDetailType, bool isButtonVisible) : base(model)
         {

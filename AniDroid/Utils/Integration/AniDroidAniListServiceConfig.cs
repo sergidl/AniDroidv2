@@ -1,10 +1,10 @@
-﻿using AniDroid.AniList.Interfaces;
+﻿using AniDroidv2.AniList.Interfaces;
 
-namespace AniDroid.Utils.Integration
+namespace AniDroidv2.Utils.Integration
 {
-    internal class AniDroidAniListServiceConfig : IAniListServiceConfig
+    internal class AniDroidv2AniListServiceConfig : IAniListServiceConfig
     {
-        public AniDroidAniListServiceConfig(string baseUrl)
+        public AniDroidv2AniListServiceConfig(string baseUrl)
         {
             BaseUrl = baseUrl;
         }

@@ -1,18 +1,18 @@
 ﻿using System.Threading;
 using System.Threading.Tasks;
-using AniDroid.AniList.Interfaces;
-using AniDroid.Base;
-using AniDroid.Utils.Interfaces;
-using AniDroid.Utils.Logging;
+using AniDroidv2.AniList.Interfaces;
+using AniDroidv2.Base;
+using AniDroidv2.Utils.Interfaces;
+using AniDroidv2.Utils.Logging;
 
-namespace AniDroid.Login
+namespace AniDroidv2.Login
 {
-    public class LoginPresenter : BaseAniDroidPresenter<ILoginView>
+    public class LoginPresenter : BaseAniDroidv2Presenter<ILoginView>
     {
         private readonly IAniListAuthConfig _authConfig;
 
-        public LoginPresenter(IAniListService service, IAniDroidSettings settings,
-            IAniListAuthConfig authConfig, IAniDroidLogger logger) : base(service, settings, logger)
+        public LoginPresenter(IAniListService service, IAniDroidv2Settings settings,
+            IAniListAuthConfig authConfig, IAniDroidv2Logger logger) : base(service, settings, logger)
         {
             _authConfig = authConfig;
         }
@@ -24,7 +24,7 @@ namespace AniDroid.Login
 
         public async Task Login(CancellationToken token)
         {
-            AniDroidSettings.ClearUserAuthentication();
+            AniDroidv2Settings.ClearUserAuthentication();
             var authCode = View.GetAuthCode();
 
             if (string.IsNullOrWhiteSpace(authCode))
@@ -38,17 +38,17 @@ namespace AniDroid.Login
             authResp.Switch((IAniListError error) => View.OnErrorAuthorizing())
                 .Switch(async auth =>
                 {
-                    AniDroidSettings.UserAccessCode = auth.AccessToken;
+                    AniDroidv2Settings.UserAccessCode = auth.AccessToken;
 
                     var currentUser = await AniListService.GetCurrentUser(token);
 
                     currentUser.Switch((IAniListError error) =>
                     {
-                        AniDroidSettings.ClearUserAuthentication();
+                        AniDroidv2Settings.ClearUserAuthentication();
                         View.OnErrorAuthorizing();
                     }).Switch(user =>
                     {
-                        AniDroidSettings.LoggedInUser = user;
+                        AniDroidv2Settings.LoggedInUser = user;
                         View.OnAuthorized();
                     });
                 });

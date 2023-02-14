@@ -176,7 +176,7 @@
                         android:textSize="14dp"
                         android:textColor="?Primary_Dark"
                         android:layout_gravity="top" />
-                    <AniDroid.Widgets.Picker
+                    <AniDroidv2.Widgets.Picker
                         android:id="@+id/MediaListFilterDialog_YearPicker"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"

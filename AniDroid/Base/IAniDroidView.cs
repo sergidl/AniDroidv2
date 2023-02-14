@@ -1,8 +1,8 @@
-﻿using AniDroid.AniList.Interfaces;
+﻿using AniDroidv2.AniList.Interfaces;
 
-namespace AniDroid.Base
+namespace AniDroidv2.Base
 {
-    public interface IAniDroidView
+    public interface IAniDroidv2View
     {
         void OnError(IAniListError error);
         void DisplaySnackbarMessage(string message, int length);

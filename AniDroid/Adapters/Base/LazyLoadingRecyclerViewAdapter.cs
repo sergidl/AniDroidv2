@@ -5,12 +5,12 @@ using Android.Graphics;
 using Android.Views;
 using Android.Views.Animations;
 using AndroidX.RecyclerView.Widget;
-using AniDroid.AniList.Interfaces;
-using AniDroid.Base;
+using AniDroidv2.AniList.Interfaces;
+using AniDroidv2.Base;
 using Google.Android.Material.Snackbar;
 using OneOf;
 
-namespace AniDroid.Adapters.Base
+namespace AniDroidv2.Adapters.Base
 {
     public abstract class LazyLoadingRecyclerViewAdapter<T> : BaseRecyclerAdapter<T> where T : class
     {
@@ -24,13 +24,13 @@ namespace AniDroid.Adapters.Base
 
         public Color? LoadingItemBackgroundColor { get; set; }
 
-        protected LazyLoadingRecyclerViewAdapter(BaseAniDroidActivity context, IAsyncEnumerable<OneOf<IPagedData<T>, IAniListError>> enumerable, RecyclerCardType cardType) : base(context, new List<T> { null }, cardType)
+        protected LazyLoadingRecyclerViewAdapter(BaseAniDroidv2Activity context, IAsyncEnumerable<OneOf<IPagedData<T>, IAniListError>> enumerable, RecyclerCardType cardType) : base(context, new List<T> { null }, cardType)
         {
             _asyncEnumerable = enumerable;
             _asyncEnumerator = enumerable.GetAsyncEnumerator();
         }
 
-        protected LazyLoadingRecyclerViewAdapter(BaseAniDroidActivity context,
+        protected LazyLoadingRecyclerViewAdapter(BaseAniDroidv2Activity context,
             LazyLoadingRecyclerViewAdapter<T> adapter) : base(context, adapter.Items, adapter.CardType)
         {
             _asyncEnumerable = adapter._asyncEnumerable;

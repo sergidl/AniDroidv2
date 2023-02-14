@@ -1,13 +1,13 @@
 ﻿using System;
 using System.Text;
 using Android.Graphics;
-using AniDroid.Adapters.MediaAdapters;
-using AniDroid.AniList.Enums.MediaEnums;
-using AniDroid.AniList.Enums.UserEnums;
+using AniDroidv2.Adapters.MediaAdapters;
+using AniDroidv2.AniList.Enums.MediaEnums;
+using AniDroidv2.AniList.Enums.UserEnums;
 
-namespace AniDroid.Adapters.ViewModels
+namespace AniDroidv2.Adapters.ViewModels
 {
-    public class MediaListViewModel : AniDroidAdapterViewModel<AniList.Models.MediaModels.MediaList>
+    public class MediaListViewModel : AniDroidv2AdapterViewModel<AniList.Models.MediaModels.MediaList>
     {
         public bool IsPriority { get; protected set; }
         public MediaListWatchingStatus WatchingStatus { get; protected set; }

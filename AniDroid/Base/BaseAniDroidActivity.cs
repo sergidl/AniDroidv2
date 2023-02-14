@@ -10,22 +10,22 @@ using Android.Views;
 using Android.Widget;
 using AndroidX.AppCompat.App;
 using AndroidX.Core.Content;
-using AniDroid.Adapters.Base;
-using AniDroid.AniList.Interfaces;
-using AniDroid.Start;
-using AniDroid.Utils;
-using AniDroid.Utils.Interfaces;
-using AniDroid.Utils.Logging;
+using AniDroidv2.Adapters.Base;
+using AniDroidv2.AniList.Interfaces;
+using AniDroidv2.Start;
+using AniDroidv2.Utils;
+using AniDroidv2.Utils.Interfaces;
+using AniDroidv2.Utils.Logging;
 using Google.Android.Material.Snackbar;
 using Square.Picasso;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace AniDroid.Base
+namespace AniDroidv2.Base
 {
-    public abstract class BaseAniDroidActivity<T> : BaseAniDroidActivity, IAniDroidView where T : BaseAniDroidPresenter
+    public abstract class BaseAniDroidv2Activity<T> : BaseAniDroidv2Activity, IAniDroidv2View where T : BaseAniDroidv2Presenter
     {
         private const string PresenterStateKey = "KEY_PRESENTER_STATE";
-        protected IAniDroidView View => this;
+        protected IAniDroidv2View View => this;
 
         protected T Presenter { get; set; }
 
@@ -38,7 +38,7 @@ namespace AniDroid.Base
             }
             else
             {
-                Presenter = AniDroidApplication.ServiceProvider.GetService<T>();
+                Presenter = AniDroidv2Application.ServiceProvider.GetService<T>();
                 await Presenter.BaseInit(View).ConfigureAwait(false);
             }
         }
@@ -95,13 +95,13 @@ namespace AniDroid.Base
     }
 
     [Activity(Label = "@string/AppName")]
-    public abstract class BaseAniDroidActivity : AppCompatActivity
+    public abstract class BaseAniDroidv2Activity : AppCompatActivity
     {
         public const int ObjectBrowseRequestCode = 9;
 
-        private static AniDroidTheme _theme;
-        public IAniDroidSettings Settings { get; private set; }
-        public IAniDroidLogger Logger { get; private set; }
+        private static AniDroidv2Theme _theme;
+        public IAniDroidv2Settings Settings { get; private set; }
+        public IAniDroidv2Logger Logger { get; private set; }
         protected bool HasError { get; set; }
         public sealed override LayoutInflater LayoutInflater => ThemedInflater;
         public BaseRecyclerAdapter.RecyclerCardType CardType { get; private set; }
@@ -112,8 +112,8 @@ namespace AniDroid.Base
         {
             base.OnCreate(savedInstanceState);
 
-            Logger = AniDroidApplication.ServiceProvider.GetService<IAniDroidLogger>();
-            Settings = AniDroidApplication.ServiceProvider.GetService<IAniDroidSettings>();
+            Logger = AniDroidv2Application.ServiceProvider.GetService<IAniDroidv2Logger>();
+            Settings = AniDroidv2Application.ServiceProvider.GetService<IAniDroidv2Settings>();
             _theme = Settings.Theme;
             CardType = Settings.CardType;
             SetTheme(GetThemeResource());
@@ -149,13 +149,13 @@ namespace AniDroid.Base
 
             switch (_theme)
             {
-                case AniDroidTheme.Black:
+                case AniDroidv2Theme.Black:
                     theme = Resource.Style.Black;
                     break;
-                case AniDroidTheme.AniListDark:
+                case AniDroidv2Theme.AniListDark:
                     theme = Resource.Style.AniListDark;
                     break;
-                case AniDroidTheme.Dark:
+                case AniDroidv2Theme.Dark:
                     theme = Resource.Style.Dark;
                     break;
             }
@@ -188,7 +188,7 @@ namespace AniDroid.Base
             }
         }
 
-        public enum AniDroidTheme
+        public enum AniDroidv2Theme
         {
             AniList = 0,
             Black = 1,
@@ -212,7 +212,7 @@ namespace AniDroid.Base
             return TypedValue.ApplyDimension(ComplexUnitType.Dip, dpVal, Resources.DisplayMetrics);
         }
 
-        public void RestartAniDroid()
+        public void RestartAniDroidv2()
         {
             var intent = new Intent(this, typeof(StartActivity));
             FinishAffinity();

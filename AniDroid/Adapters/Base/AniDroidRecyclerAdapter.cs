@@ -7,16 +7,16 @@ using Android.Views;
 using Android.Views.Animations;
 using AndroidX.Core.Content;
 using AndroidX.RecyclerView.Widget;
-using AniDroid.Adapters.ViewModels;
-using AniDroid.AniList.Interfaces;
-using AniDroid.Base;
-using AniDroid.Utils;
+using AniDroidv2.Adapters.ViewModels;
+using AniDroidv2.AniList.Interfaces;
+using AniDroidv2.Base;
+using AniDroidv2.Utils;
 using Google.Android.Material.Snackbar;
 using OneOf;
 
-namespace AniDroid.Adapters.Base
+namespace AniDroidv2.Adapters.Base
 {
-    public abstract class AniDroidRecyclerAdapter<T, TModel> : BaseRecyclerAdapter<T> where T : AniDroidAdapterViewModel<TModel> where TModel : class
+    public abstract class AniDroidv2RecyclerAdapter<T, TModel> : BaseRecyclerAdapter<T> where T : AniDroidv2AdapterViewModel<TModel> where TModel : class
     {
         private readonly IAsyncEnumerable<OneOf<IPagedData<TModel>, IAniListError>> _asyncEnumerable;
         private IAsyncEnumerator<OneOf<IPagedData<TModel>, IAniListError>> _asyncEnumerator;
@@ -31,13 +31,13 @@ namespace AniDroid.Adapters.Base
         public Func<TModel, T> CreateViewModelFunc { get; set; }
         public Func<TModel, bool> ValidateItemFunc { get; set; }
 
-        public Action<AniDroidAdapterViewModel<TModel>, int> ClickAction { get; set; }
-        public Action<AniDroidAdapterViewModel<TModel>, int> LongClickAction { get; set; }
+        public Action<AniDroidv2AdapterViewModel<TModel>, int> ClickAction { get; set; }
+        public Action<AniDroidv2AdapterViewModel<TModel>, int> LongClickAction { get; set; }
 
-        public Action<AniDroidAdapterViewModel<TModel>, int, Action> ButtonClickAction { get; set; }
-        public Action<AniDroidAdapterViewModel<TModel>, int, Action> ButtonLongClickAction { get; set; }
+        public Action<AniDroidv2AdapterViewModel<TModel>, int, Action> ButtonClickAction { get; set; }
+        public Action<AniDroidv2AdapterViewModel<TModel>, int, Action> ButtonLongClickAction { get; set; }
 
-        protected AniDroidRecyclerAdapter(BaseAniDroidActivity context,
+        protected AniDroidv2RecyclerAdapter(BaseAniDroidv2Activity context,
             IAsyncEnumerable<OneOf<IPagedData<TModel>, IAniListError>> enumerable, RecyclerCardType cardType,
             Func<TModel, T> createViewModelFunc) : this(context, new List<T> {null}, cardType)
         {
@@ -46,7 +46,7 @@ namespace AniDroid.Adapters.Base
             _asyncEnumerator = enumerable.GetAsyncEnumerator();
         }
 
-        protected AniDroidRecyclerAdapter(BaseAniDroidActivity context,
+        protected AniDroidv2RecyclerAdapter(BaseAniDroidv2Activity context,
             List<T> items, RecyclerCardType cardType) : base(context, items, cardType)
         {
             Items = items ?? throw new ArgumentNullException(nameof(items));
@@ -55,8 +55,8 @@ namespace AniDroid.Adapters.Base
             FavoriteIconColor = ColorStateList.ValueOf(new Color(ContextCompat.GetColor(context, Resource.Color.Favorite_Red)));
         }
 
-        protected AniDroidRecyclerAdapter(BaseAniDroidActivity context,
-            AniDroidRecyclerAdapter<T, TModel> adapter) : base(context, adapter.Items, adapter.CardType)
+        protected AniDroidv2RecyclerAdapter(BaseAniDroidv2Activity context,
+            AniDroidv2RecyclerAdapter<T, TModel> adapter) : base(context, adapter.Items, adapter.CardType)
         {
             _asyncEnumerable = adapter._asyncEnumerable;
             _asyncEnumerator = adapter._asyncEnumerator;

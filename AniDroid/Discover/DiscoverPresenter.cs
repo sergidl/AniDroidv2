@@ -1,22 +1,22 @@
 ﻿using System;
 using System.Collections.Generic;
-using AniDroid.AniList.Dto;
-using AniDroid.AniList.Enums.MediaEnums;
-using AniDroid.AniList.Interfaces;
-using AniDroid.AniList.Models.UserModels;
-using AniDroid.AniListObject.Media;
-using AniDroid.Base;
-using AniDroid.Utils.Interfaces;
-using AniDroid.Utils.Logging;
+using AniDroidv2.AniList.Dto;
+using AniDroidv2.AniList.Enums.MediaEnums;
+using AniDroidv2.AniList.Interfaces;
+using AniDroidv2.AniList.Models.UserModels;
+using AniDroidv2.AniListObject.Media;
+using AniDroidv2.Base;
+using AniDroidv2.Utils.Interfaces;
+using AniDroidv2.Utils.Logging;
 using Google.Android.Material.Snackbar;
 using Task = System.Threading.Tasks.Task;
 
-namespace AniDroid.Discover
+namespace AniDroidv2.Discover
 {
-    public class DiscoverPresenter : BaseAniDroidPresenter<IDiscoverView>, IAniListMediaListEditPresenter
+    public class DiscoverPresenter : BaseAniDroidv2Presenter<IDiscoverView>, IAniListMediaListEditPresenter
     {
-        public DiscoverPresenter(IAniListService service, IAniDroidSettings settings,
-            IAniDroidLogger logger) : base(service, settings, logger)
+        public DiscoverPresenter(IAniListService service, IAniDroidv2Settings settings,
+            IAniDroidv2Logger logger) : base(service, settings, logger)
         {
         }
 
@@ -60,12 +60,12 @@ namespace AniDroid.Discover
 
         public bool GetIsUserAuthenticated()
         {
-            return AniDroidSettings.IsUserAuthenticated;
+            return AniDroidv2Settings.IsUserAuthenticated;
         }
 
         public User GetLoggedInUser()
         {
-            return AniDroidSettings.LoggedInUser;
+            return AniDroidv2Settings.LoggedInUser;
         }
 
         public async Task SaveMediaListEntry(MediaListEditDto editDto, Action onSuccess, Action onError)

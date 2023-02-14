@@ -13,32 +13,32 @@ using AndroidX.CoordinatorLayout.Widget;
 using AndroidX.Core.View;
 using AndroidX.DrawerLayout.Widget;
 using AndroidX.Work;
-using AniDroid.AniList.Enums.MediaEnums;
-using AniDroid.AniList.Interfaces;
-using AniDroid.AniListObject.User;
-using AniDroid.Base;
-using AniDroid.Browse;
-using AniDroid.Dialogs;
-using AniDroid.Discover;
-using AniDroid.Home;
-using AniDroid.Jobs;
-using AniDroid.Login;
-using AniDroid.MediaList;
-using AniDroid.SearchResults;
-using AniDroid.Settings;
-using AniDroid.Start;
-using AniDroid.TorrentSearch;
-using AniDroid.Utils;
-using AniDroid.Widgets;
+using AniDroidv2.AniList.Enums.MediaEnums;
+using AniDroidv2.AniList.Interfaces;
+using AniDroidv2.AniListObject.User;
+using AniDroidv2.Base;
+using AniDroidv2.Browse;
+using AniDroidv2.Dialogs;
+using AniDroidv2.Discover;
+using AniDroidv2.Home;
+using AniDroidv2.Jobs;
+using AniDroidv2.Login;
+using AniDroidv2.MediaList;
+using AniDroidv2.SearchResults;
+using AniDroidv2.Settings;
+using AniDroidv2.Start;
+using AniDroidv2.TorrentSearch;
+using AniDroidv2.Utils;
+using AniDroidv2.Widgets;
 using Google.Android.Material.FloatingActionButton;
 using Google.Android.Material.Navigation;
 using Google.Android.Material.Snackbar;
 using Toolbar = AndroidX.AppCompat.Widget.Toolbar;
 
-namespace AniDroid.Main
+namespace AniDroidv2.Main
 {
     [Activity(LaunchMode = Android.Content.PM.LaunchMode.SingleTask, ConfigurationChanges = Android.Content.PM.ConfigChanges.Orientation | Android.Content.PM.ConfigChanges.KeyboardHidden | Android.Content.PM.ConfigChanges.ScreenSize, WindowSoftInputMode = SoftInput.StateHidden)]
-    public class MainActivity : BaseAniDroidActivity<MainPresenter>, IMainView, NavigationView.IOnNavigationItemSelectedListener
+    public class MainActivity : BaseAniDroidv2Activity<MainPresenter>, IMainView, NavigationView.IOnNavigationItemSelectedListener
     {
         public const string RecreateActivityIntentKey = "RECREATE_ACTIVITY";
         public const string NotificationTextIntentKey = "NOTIFICATION_TEXT";
@@ -206,11 +206,11 @@ namespace AniDroid.Main
 
             if (Settings.EnableNotificationService && Settings.IsUserAuthenticated)
             {
-                AniDroidJobManager.EnableAniListNotificationJob(this);
+                AniDroidv2JobManager.EnableAniListNotificationJob(this);
             }
             else
             {
-                AniDroidJobManager.DisableAniListNotificationJob(this);
+                AniDroidv2JobManager.DisableAniListNotificationJob(this);
             }
         }
 
@@ -346,7 +346,9 @@ namespace AniDroid.Main
                 userNameViewContainer.Click += (sender, args) =>
                 {
                     _navClosedAction = () =>
-                        AniListNotificationsDialog.Create(this, Presenter.GetNotificationsEnumerable(),
+                        AniListNotificationsDialog.Create(
+                            this, 
+                            Presenter.GetNotificationsEnumerable(),
                             _unreadNotificationCount, () => SetNotificationCount(0));
                     _navigationDrawer.CloseDrawer(GravityCompat.Start);
                 };

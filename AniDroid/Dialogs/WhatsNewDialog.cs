@@ -5,13 +5,13 @@ using Android.Graphics;
 using Android.Views;
 using Android.Widget;
 using AndroidX.AppCompat.App;
-using AniDroid.Base;
+using AniDroidv2.Base;
 
-namespace AniDroid.Dialogs
+namespace AniDroidv2.Dialogs
 {
     public static class WhatsNewDialog
     {
-        public static void Create(BaseAniDroidActivity context)
+        public static void Create(BaseAniDroidv2Activity context)
         {
             var textView = new TextView(context) {Text = "", LayoutParameters = new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MatchParent, ViewGroup.LayoutParams.WrapContent)};
             textView.SetPadding(15, 5, 15, 5);

@@ -1,19 +1,19 @@
-﻿using AniDroid.AniList.Interfaces;
-using AniDroid.Utils.Interfaces;
+﻿using AniDroidv2.AniList.Interfaces;
+using AniDroidv2.Utils.Interfaces;
 
-namespace AniDroid.Utils.Integration
+namespace AniDroidv2.Utils.Integration
 {
-    internal class AniDroidAuthCodeResolver : IAuthCodeResolver
+    internal class AniDroidv2AuthCodeResolver : IAuthCodeResolver
     {
-        private readonly IAniDroidSettings _aniDroidSettings;
+        private readonly IAniDroidv2Settings _AniDroidv2Settings;
 
-        public AniDroidAuthCodeResolver(IAniDroidSettings settings)
+        public AniDroidv2AuthCodeResolver(IAniDroidv2Settings settings)
         {
-            _aniDroidSettings = settings;
+            _AniDroidv2Settings = settings;
         }
 
-        public string AuthCode => _aniDroidSettings.UserAccessCode;
-        public bool IsAuthorized => _aniDroidSettings.IsUserAuthenticated;
-        public void Invalidate() => _aniDroidSettings.ClearUserAuthentication();
+        public string AuthCode => _AniDroidv2Settings.UserAccessCode;
+        public bool IsAuthorized => _AniDroidv2Settings.IsUserAuthenticated;
+        public void Invalidate() => _AniDroidv2Settings.ClearUserAuthentication();
     }
 }

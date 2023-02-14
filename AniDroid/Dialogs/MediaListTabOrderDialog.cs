@@ -3,16 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using AndroidX.AppCompat.App;
 using AndroidX.RecyclerView.Widget;
-using AniDroid.Adapters.Base;
-using AniDroid.Adapters.MediaAdapters;
-using AniDroid.Base;
-using AniDroid.Utils.Extensions;
+using AniDroidv2.Adapters.Base;
+using AniDroidv2.Adapters.MediaAdapters;
+using AniDroidv2.Base;
+using AniDroidv2.Utils.Extensions;
 
-namespace AniDroid.Dialogs
+namespace AniDroidv2.Dialogs
 {
     public class MediaListTabOrderDialog
     {
-        public static void Create(BaseAniDroidActivity context, List<KeyValuePair<string, bool>> mediaListTabs, Action<List<KeyValuePair<string, bool>>> onDismissAction)
+        public static void Create(BaseAniDroidv2Activity context, List<KeyValuePair<string, bool>> mediaListTabs, Action<List<KeyValuePair<string, bool>>> onDismissAction)
         {
             var view = context.LayoutInflater.Inflate(Resource.Layout.View_List, null);
             var recyclerView = view.FindViewById<RecyclerView>(Resource.Id.List_RecyclerView);

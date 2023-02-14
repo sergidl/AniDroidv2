@@ -37,7 +37,7 @@
         android:id="@+id/Main_SearchFab"
         app:srcCompat="@drawable/ic_search_white_24px"
         style="?FabLarge_Style"
-        app:layout_behavior="AniDroid.Utils.Behaviors.FloatingActionButtonScrollBehavior"
+        app:layout_behavior="AniDroidv2.Utils.Behaviors.FloatingActionButtonScrollBehavior"
         android:elevation="10dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

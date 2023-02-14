@@ -1,16 +1,16 @@
 ﻿using System.Threading.Tasks;
-using AniDroid.AniList.Interfaces;
-using AniDroid.Base;
-using AniDroid.Torrent.NyaaSi;
-using AniDroid.Utils.Interfaces;
-using AniDroid.Utils.Logging;
+using AniDroidv2.AniList.Interfaces;
+using AniDroidv2.Base;
+using AniDroidv2.Torrent.NyaaSi;
+using AniDroidv2.Utils.Interfaces;
+using AniDroidv2.Utils.Logging;
 
-namespace AniDroid.TorrentSearch
+namespace AniDroidv2.TorrentSearch
 {
-    public class TorrentSearchPresenter : BaseAniDroidPresenter<ITorrentSearchView>
+    public class TorrentSearchPresenter : BaseAniDroidv2Presenter<ITorrentSearchView>
     {
-        public TorrentSearchPresenter(IAniListService service, IAniDroidSettings settings,
-            IAniDroidLogger logger) : base(service, settings, logger)
+        public TorrentSearchPresenter(IAniListService service, IAniDroidv2Settings settings,
+            IAniDroidv2Logger logger) : base(service, settings, logger)
         {
         }
 

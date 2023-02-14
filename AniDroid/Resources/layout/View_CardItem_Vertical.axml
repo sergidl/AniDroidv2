@@ -18,7 +18,7 @@
       app:cardUseCompatPadding="true"
       app:cardPreventCornerOverlap="false"
       android:id="@+id/CardItem_Card">
-    <AniDroid.Widgets.ScalingImageView
+    <AniDroidv2.Widgets.ScalingImageView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/CardItem_Image"

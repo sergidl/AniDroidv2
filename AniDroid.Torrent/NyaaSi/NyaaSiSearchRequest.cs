@@ -1,4 +1,4 @@
-﻿namespace AniDroid.Torrent.NyaaSi
+﻿namespace AniDroidv2.Torrent.NyaaSi
 {
     public class NyaaSiSearchRequest
     {

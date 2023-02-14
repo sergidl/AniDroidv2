@@ -3,14 +3,14 @@ using System.Threading.Tasks;
 using Android.App;
 using Android.Content.PM;
 using Android.OS;
-using AniDroid.AniList.Interfaces;
-using AniDroid.Base;
-using AniDroid.Main;
+using AniDroidv2.AniList.Interfaces;
+using AniDroidv2.Base;
+using AniDroidv2.Main;
 
-namespace AniDroid.Start
+namespace AniDroidv2.Start
 {
     [Activity(MainLauncher = true, LaunchMode = LaunchMode.SingleTop)]
-    public class StartActivity : BaseAniDroidActivity
+    public class StartActivity : BaseAniDroidv2Activity
     {
         public override void OnError(IAniListError error)
         {

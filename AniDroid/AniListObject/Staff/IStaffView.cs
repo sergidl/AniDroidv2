@@ -1,6 +1,6 @@
-﻿using AniDroid.Base;
+﻿using AniDroidv2.Base;
 
-namespace AniDroid.AniListObject.Staff
+namespace AniDroidv2.AniListObject.Staff
 {
     public interface IStaffView : IAniListObjectView
     {

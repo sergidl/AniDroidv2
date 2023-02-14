@@ -1,23 +1,23 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using AniDroid.Adapters.Base;
-using AniDroid.Adapters.MediaAdapters;
-using AniDroid.AniList.Models.MediaModels;
-using AniDroid.AniList.Models.UserModels;
-using AniDroid.Base;
-using AniDroid.Main;
-using AniDroid.Utils.Comparers;
-using AniDroid.Utils.Interfaces;
-using AniDroid.Utils.Storage;
+using AniDroidv2.Adapters.Base;
+using AniDroidv2.Adapters.MediaAdapters;
+using AniDroidv2.AniList.Models.MediaModels;
+using AniDroidv2.AniList.Models.UserModels;
+using AniDroidv2.Base;
+using AniDroidv2.Main;
+using AniDroidv2.Utils.Comparers;
+using AniDroidv2.Utils.Interfaces;
+using AniDroidv2.Utils.Storage;
 
-namespace AniDroid.Utils
+namespace AniDroidv2.Utils
 {
-    internal class AniDroidSettings : IAniDroidSettings
+    internal class AniDroidv2Settings : IAniDroidv2Settings
     {
         private readonly SettingsStorage _settingStorage;
         private readonly AuthSettingsStorage _authSettingStorage;
 
-        public AniDroidSettings(SettingsStorage settingsStorage, AuthSettingsStorage authSettingsStorage)
+        public AniDroidv2Settings(SettingsStorage settingsStorage, AuthSettingsStorage authSettingsStorage)
         {
             _settingStorage = settingsStorage;
             _authSettingStorage = authSettingsStorage;
@@ -37,9 +37,9 @@ namespace AniDroid.Utils
             set => _settingStorage.Put(UnauthenticatedKeys.CardTypeKey, value);
         }
 
-        public BaseAniDroidActivity.AniDroidTheme Theme
+        public BaseAniDroidv2Activity.AniDroidv2Theme Theme
         {
-            get => _settingStorage.Get(UnauthenticatedKeys.ThemeKey, BaseAniDroidActivity.AniDroidTheme.AniList);
+            get => _settingStorage.Get(UnauthenticatedKeys.ThemeKey, BaseAniDroidv2Activity.AniDroidv2Theme.AniList);
             set => _settingStorage.Put(UnauthenticatedKeys.ThemeKey, value);
         }
 

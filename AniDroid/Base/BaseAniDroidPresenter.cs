@@ -1,23 +1,23 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
-using AniDroid.AniList.Interfaces;
-using AniDroid.Utils.Interfaces;
-using AniDroid.Utils.Logging;
+using AniDroidv2.AniList.Interfaces;
+using AniDroidv2.Utils.Interfaces;
+using AniDroidv2.Utils.Logging;
 
-namespace AniDroid.Base
+namespace AniDroidv2.Base
 {
-    public abstract class BaseAniDroidPresenter
+    public abstract class BaseAniDroidv2Presenter
     {
-        public IAniDroidView View { get; set; }
-        public IAniDroidSettings AniDroidSettings { get; }
-        public IAniDroidLogger Logger { get; }
+        public IAniDroidv2View View { get; set; }
+        public IAniDroidv2Settings AniDroidv2Settings { get; }
+        public IAniDroidv2Logger Logger { get; }
 
         protected IAniListService AniListService { get; }
 
-        protected BaseAniDroidPresenter(IAniListService service, IAniDroidSettings settings,
-            IAniDroidLogger logger)
+        protected BaseAniDroidv2Presenter(IAniListService service, IAniDroidv2Settings settings,
+            IAniDroidv2Logger logger)
         {
-            AniDroidSettings = settings;
+            AniDroidv2Settings = settings;
             Logger = logger;
             AniListService = service;
         }
@@ -26,7 +26,7 @@ namespace AniDroid.Base
         //Do not put initialization in the constructor because Android may need to recreate the presenter from a saved state
         public abstract Task Init();
 
-        public abstract Task BaseInit(IAniDroidView view);
+        public abstract Task BaseInit(IAniDroidv2View view);
 
         //These methods are to allow the presenter to be restored properly on Android when the View is killed by the system
         public virtual Task RestoreState(IList<string> savedState)
@@ -40,16 +40,16 @@ namespace AniDroid.Base
         }
     }
 
-    public abstract class BaseAniDroidPresenter<T> : BaseAniDroidPresenter where T : IAniDroidView
+    public abstract class BaseAniDroidv2Presenter<T> : BaseAniDroidv2Presenter where T : IAniDroidv2View
     {
-        protected BaseAniDroidPresenter(IAniListService service, IAniDroidSettings settings,
-            IAniDroidLogger logger) : base(service, settings, logger)
+        protected BaseAniDroidv2Presenter(IAniListService service, IAniDroidv2Settings settings,
+            IAniDroidv2Logger logger) : base(service, settings, logger)
         {
         }
 
         public new T View { get; set; }
 
-        public sealed override Task BaseInit(IAniDroidView view)
+        public sealed override Task BaseInit(IAniDroidv2View view)
         {
             View = (T)view;
 

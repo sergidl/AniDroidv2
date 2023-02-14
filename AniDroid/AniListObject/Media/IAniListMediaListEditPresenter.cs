@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Threading.Tasks;
-using AniDroid.AniList.Dto;
+using AniDroidv2.AniList.Dto;
 
-namespace AniDroid.AniListObject.Media
+namespace AniDroidv2.AniListObject.Media
 {
     public interface IAniListMediaListEditPresenter
     {

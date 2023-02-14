@@ -7,20 +7,20 @@ using Android.Text;
 using Android.Views;
 using Android.Widget;
 using AndroidX.RecyclerView.Widget;
-using AniDroid.Adapters.Base;
-using AniDroid.AniList.Enums.ActivityEnums;
-using AniDroid.AniList.Interfaces;
-using AniDroid.AniList.Models.ActivityModels;
-using AniDroid.AniListObject;
-using AniDroid.AniListObject.Media;
-using AniDroid.AniListObject.User;
-using AniDroid.Base;
-using AniDroid.Dialogs;
-using AniDroid.Utils;
-using AniDroid.Utils.Formatting.Markdown;
+using AniDroidv2.Adapters.Base;
+using AniDroidv2.AniList.Enums.ActivityEnums;
+using AniDroidv2.AniList.Interfaces;
+using AniDroidv2.AniList.Models.ActivityModels;
+using AniDroidv2.AniListObject;
+using AniDroidv2.AniListObject.Media;
+using AniDroidv2.AniListObject.User;
+using AniDroidv2.Base;
+using AniDroidv2.Dialogs;
+using AniDroidv2.Utils;
+using AniDroidv2.Utils.Formatting.Markdown;
 using OneOf;
 
-namespace AniDroid.Adapters.AniListActivityAdapters
+namespace AniDroidv2.Adapters.AniListActivityAdapters
 {
     public class AniListActivityRecyclerAdapter : LazyLoadingRecyclerViewAdapter<AniListActivity>
     {
@@ -30,7 +30,7 @@ namespace AniDroid.Adapters.AniListActivityAdapters
         private readonly int? _userId;
         private readonly Color _defaultIconColor;
 
-        public AniListActivityRecyclerAdapter(BaseAniDroidActivity context, IAniListActivityPresenter presenter,
+        public AniListActivityRecyclerAdapter(BaseAniDroidv2Activity context, IAniListActivityPresenter presenter,
             IAsyncEnumerable<OneOf<IPagedData<AniListActivity>, IAniListError>> enumerable, int? currentUserId) : base(context, enumerable, RecyclerCardType.Custom)
         {
             _presenter = presenter;
@@ -41,7 +41,7 @@ namespace AniDroid.Adapters.AniListActivityAdapters
             CustomCardUseItemDecoration = true;
         }
 
-        public AniListActivityRecyclerAdapter(BaseAniDroidActivity context, AniListActivityRecyclerAdapter adapter) :
+        public AniListActivityRecyclerAdapter(BaseAniDroidv2Activity context, AniListActivityRecyclerAdapter adapter) :
             base(context, adapter)
         {
             _presenter = adapter._presenter;
@@ -126,7 +126,7 @@ namespace AniDroid.Adapters.AniListActivityAdapters
 
         private void BindTextActivityViewHolder(AniListActivityViewHolder viewHolder, AniListActivity item)
         {
-            viewHolder.Title.TextFormatted = BaseAniDroidActivity.FromHtml($"<b><font color='{_userNameColorHex}'>{item.User?.Name}</font></b>");
+            viewHolder.Title.TextFormatted = BaseAniDroidv2Activity.FromHtml($"<b><font color='{_userNameColorHex}'>{item.User?.Name}</font></b>");
             viewHolder.ContentImageContainer.Visibility = ViewStates.Gone;
 
             var builder = new SpannableStringBuilder(MarkdownTextCleaner.ConvertToSpanned(item.Text));
@@ -140,7 +140,7 @@ namespace AniDroid.Adapters.AniListActivityAdapters
 
         private void BindMessageActivityViewHolder(AniListActivityViewHolder viewHolder, AniListActivity item)
         {
-            viewHolder.Title.TextFormatted = BaseAniDroidActivity.FromHtml($"<b><font color='{_userNameColorHex}'>{item.Messenger?.Name}</font></b>");
+            viewHolder.Title.TextFormatted = BaseAniDroidv2Activity.FromHtml($"<b><font color='{_userNameColorHex}'>{item.Messenger?.Name}</font></b>");
             viewHolder.ContentImageContainer.Visibility = ViewStates.Gone;
 
             var builder = new SpannableStringBuilder(MarkdownTextCleaner.ConvertToSpanned(item.Message));
@@ -154,7 +154,7 @@ namespace AniDroid.Adapters.AniListActivityAdapters
 
         private void BindListActivityViewHolder(AniListActivityViewHolder viewHolder, AniListActivity item)
         {
-            viewHolder.Title.TextFormatted = BaseAniDroidActivity.FromHtml($"<b><font color='{_userNameColorHex}'>{item.User?.Name}</font></b> {item.Status} {(!string.IsNullOrWhiteSpace(item.Progress) ? $"{item.Progress} of" : "")} <b><font color='{_actionColorHex}'>{item.Media?.Title?.UserPreferred}</font></b>");
+            viewHolder.Title.TextFormatted = BaseAniDroidv2Activity.FromHtml($"<b><font color='{_userNameColorHex}'>{item.User?.Name}</font></b> {item.Status} {(!string.IsNullOrWhiteSpace(item.Progress) ? $"{item.Progress} of" : "")} <b><font color='{_actionColorHex}'>{item.Media?.Title?.UserPreferred}</font></b>");
             viewHolder.ContentText.Visibility = ViewStates.Gone;
             viewHolder.ContentImageContainer.Visibility = ViewStates.Visible;
             viewHolder.ContentImageContainer.RemoveAllViews();

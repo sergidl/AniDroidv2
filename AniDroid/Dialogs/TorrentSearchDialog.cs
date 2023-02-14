@@ -3,14 +3,14 @@ using System.Linq;
 using Android.Content;
 using Android.Widget;
 using AndroidX.AppCompat.App;
-using AniDroid.Base;
-using AniDroid.Torrent.NyaaSi;
+using AniDroidv2.Base;
+using AniDroidv2.Torrent.NyaaSi;
 
-namespace AniDroid.Dialogs
+namespace AniDroidv2.Dialogs
 {
     public class TorrentSearchDialog
     {
-        public static void Create(BaseAniDroidActivity context, Action<NyaaSiSearchRequest> searchAction, NyaaSiSearchRequest previousSearchRequest = null)
+        public static void Create(BaseAniDroidv2Activity context, Action<NyaaSiSearchRequest> searchAction, NyaaSiSearchRequest previousSearchRequest = null)
         {
             var dialogue = context.LayoutInflater.Inflate(Resource.Layout.Dialog_TorrentSearch, null);
             var searchCategorySpinner = dialogue.FindViewById<Spinner>(Resource.Id.TorrentSearch_CategorySpinner);

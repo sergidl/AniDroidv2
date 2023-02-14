@@ -1,9 +1,9 @@
 ﻿using System;
-using AniDroid.AniList.Models.MediaModels;
+using AniDroidv2.AniList.Models.MediaModels;
 
-namespace AniDroid.Utils.Comparers
+namespace AniDroidv2.Utils.Comparers
 {
-    public class MediaSortComparer : BaseAniDroidComparer<Media>
+    public class MediaSortComparer : BaseAniDroidv2Comparer<Media>
     {
         private readonly MediaSortType _sort;
 

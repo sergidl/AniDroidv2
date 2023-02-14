@@ -1,6 +1,6 @@
-﻿using AniDroid.Base;
+﻿using AniDroidv2.Base;
 
-namespace AniDroid.AniListObject.Character
+namespace AniDroidv2.AniListObject.Character
 {
     public interface ICharacterView : IAniListObjectView
     {

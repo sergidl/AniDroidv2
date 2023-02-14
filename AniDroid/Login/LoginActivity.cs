@@ -6,16 +6,16 @@ using Android.Content;
 using Android.Content.PM;
 using Android.OS;
 using AndroidX.Browser.CustomTabs;
-using AniDroid.AniList.Interfaces;
-using AniDroid.Base;
-using AniDroid.Main;
+using AniDroidv2.AniList.Interfaces;
+using AniDroidv2.Base;
+using AniDroidv2.Main;
 using Google.Android.Material.Snackbar;
 
-namespace AniDroid.Login
+namespace AniDroidv2.Login
 {
     [Activity(Label = "Login", LaunchMode = LaunchMode.SingleTask)]
-    [IntentFilter(new[] { Intent.ActionView }, Categories = new[] { Intent.CategoryDefault, Intent.CategoryBrowsable }, DataHost = "login", DataSchemes = new[] { "anidroid" }, Label = "AniDroid")]
-    public class LoginActivity : BaseAniDroidActivity<LoginPresenter>, ILoginView
+    [IntentFilter(new[] { Intent.ActionView }, Categories = new[] { Intent.CategoryDefault, Intent.CategoryBrowsable }, DataHost = "login", DataSchemes = new[] { "anidroidv2" }, Label = "AniDroidv2")]
+    public class LoginActivity : BaseAniDroidv2Activity<LoginPresenter>, ILoginView
     {
         private string _authCode;
         private bool _loginSequenceStarted;

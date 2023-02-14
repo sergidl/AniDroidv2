@@ -9,34 +9,34 @@ using Android.Views;
 using AndroidX.AppCompat.Widget;
 using AndroidX.CoordinatorLayout.Widget;
 using AndroidX.RecyclerView.Widget;
-using AniDroid.Adapters.Base;
-using AniDroid.Adapters.CharacterAdapters;
-using AniDroid.Adapters.ForumThreadAdapters;
-using AniDroid.Adapters.MediaAdapters;
-using AniDroid.Adapters.StaffAdapters;
-using AniDroid.Adapters.StudioAdapters;
-using AniDroid.Adapters.UserAdapters;
-using AniDroid.Adapters.ViewModels;
-using AniDroid.AniList.Enums.MediaEnums;
-using AniDroid.AniList.Interfaces;
-using AniDroid.AniList.Models.CharacterModels;
-using AniDroid.AniList.Models.ForumModels;
-using AniDroid.AniList.Models.MediaModels;
-using AniDroid.AniList.Models.StaffModels;
-using AniDroid.AniList.Models.StudioModels;
-using AniDroid.AniList.Models.UserModels;
-using AniDroid.Base;
-using AniDroid.Dialogs;
-using AniDroid.MediaList;
-using AniDroid.Utils;
+using AniDroidv2.Adapters.Base;
+using AniDroidv2.Adapters.CharacterAdapters;
+using AniDroidv2.Adapters.ForumThreadAdapters;
+using AniDroidv2.Adapters.MediaAdapters;
+using AniDroidv2.Adapters.StaffAdapters;
+using AniDroidv2.Adapters.StudioAdapters;
+using AniDroidv2.Adapters.UserAdapters;
+using AniDroidv2.Adapters.ViewModels;
+using AniDroidv2.AniList.Enums.MediaEnums;
+using AniDroidv2.AniList.Interfaces;
+using AniDroidv2.AniList.Models.CharacterModels;
+using AniDroidv2.AniList.Models.ForumModels;
+using AniDroidv2.AniList.Models.MediaModels;
+using AniDroidv2.AniList.Models.StaffModels;
+using AniDroidv2.AniList.Models.StudioModels;
+using AniDroidv2.AniList.Models.UserModels;
+using AniDroidv2.Base;
+using AniDroidv2.Dialogs;
+using AniDroidv2.MediaList;
+using AniDroidv2.Utils;
 using Google.Android.Material.FloatingActionButton;
 using Google.Android.Material.Snackbar;
 using OneOf;
 
-namespace AniDroid.SearchResults
+namespace AniDroidv2.SearchResults
 {
     [Activity(Label = "Search Results", ConfigurationChanges = Android.Content.PM.ConfigChanges.Orientation | Android.Content.PM.ConfigChanges.KeyboardHidden | Android.Content.PM.ConfigChanges.ScreenSize)]
-    public class SearchResultsActivity : BaseAniDroidActivity<SearchResultsPresenter>, ISearchResultsView
+    public class SearchResultsActivity : BaseAniDroidv2Activity<SearchResultsPresenter>, ISearchResultsView
     {
         private string _searchType;
         private string _searchTerm;
@@ -171,7 +171,7 @@ namespace AniDroid.SearchResults
 
             await CreatePresenter(savedInstanceState);
 
-            _cardType = Presenter.AniDroidSettings.CardType;
+            _cardType = Presenter.AniDroidv2Settings.CardType;
 
             _searchType = Intent.GetStringExtra(IntentKeys.SearchType);
             _searchTerm = Intent.GetStringExtra(IntentKeys.SearchTerm);

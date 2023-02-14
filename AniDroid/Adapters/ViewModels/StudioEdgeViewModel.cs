@@ -1,9 +1,9 @@
 ﻿using Android.Views;
-using AniDroid.AniList.Models.StudioModels;
+using AniDroidv2.AniList.Models.StudioModels;
 
-namespace AniDroid.Adapters.ViewModels
+namespace AniDroidv2.Adapters.ViewModels
 {
-    public class StudioEdgeViewModel : AniDroidAdapterViewModel<StudioEdge>
+    public class StudioEdgeViewModel : AniDroidv2AdapterViewModel<StudioEdge>
     {
         public override ViewStates ImageVisibility => ViewStates.Gone;
 

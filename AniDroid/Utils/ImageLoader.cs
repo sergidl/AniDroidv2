@@ -10,7 +10,7 @@ using System.Linq;
 using System.Text;
 using Square.Picasso;
 
-namespace AniDroid.Utils
+namespace AniDroidv2.Utils
 {
     public static class ImageLoader
     {

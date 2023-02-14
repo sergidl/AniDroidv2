@@ -1,9 +1,9 @@
 ﻿using Android.Views;
-using AniDroid.Utils;
+using AniDroidv2.Utils;
 
-namespace AniDroid.Adapters.ViewModels
+namespace AniDroidv2.Adapters.ViewModels
 {
-    public abstract class AniDroidAdapterViewModel<T> where T : class
+    public abstract class AniDroidv2AdapterViewModel<T> where T : class
     {
         public T Model { get; }
 
@@ -21,7 +21,7 @@ namespace AniDroid.Adapters.ViewModels
         public virtual ViewStates ButtonVisibility => IsButtonVisible ? ViewStates.Visible : ViewStates.Gone;
         public virtual ViewStates ImageVisibility => ImageUri != null ? ViewStates.Visible : ViewStates.Invisible;
 
-        protected AniDroidAdapterViewModel(T model)
+        protected AniDroidv2AdapterViewModel(T model)
         {
             Model = model;
             LoadImage = true;

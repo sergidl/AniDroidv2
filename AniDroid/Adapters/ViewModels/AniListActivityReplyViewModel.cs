@@ -2,12 +2,12 @@
 using Android.Content.Res;
 using Android.Graphics;
 using Android.Text;
-using AniDroid.AniList.Models.ActivityModels;
-using AniDroid.Base;
+using AniDroidv2.AniList.Models.ActivityModels;
+using AniDroidv2.Base;
 
-namespace AniDroid.Adapters.ViewModels
+namespace AniDroidv2.Adapters.ViewModels
 {
-    public class AniListActivityReplyViewModel : AniDroidAdapterViewModel<ActivityReply>
+    public class AniListActivityReplyViewModel : AniDroidv2AdapterViewModel<ActivityReply>
     {
         public ISpanned DetailFormatted { get; protected set; }
         public string TimestampText { get; protected set; }
@@ -33,7 +33,7 @@ namespace AniDroid.Adapters.ViewModels
         private void SetupViewModel()
         {
             TitleText = Model.User?.Name;
-            DetailFormatted = BaseAniDroidActivity.FromHtml(Model.Text);
+            DetailFormatted = BaseAniDroidv2Activity.FromHtml(Model.Text);
             TimestampText = Model.GetAgeString(Model.CreatedAt);
             LikeCount = (Model.Likes?.Count ?? 0).ToString();
             ImageUri = Model.User.Avatar.Large ?? Model.User.Avatar.Medium;

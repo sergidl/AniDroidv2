@@ -1,11 +1,11 @@
 ﻿using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
-using AniDroid.AniList.DataTypes;
-using AniDroid.AniList.Interfaces;
+using AniDroidv2.AniList.DataTypes;
+using AniDroidv2.AniList.Interfaces;
 using OneOf;
 
-namespace AniDroid.Torrent.NyaaSi
+namespace AniDroidv2.Torrent.NyaaSi
 {
     public class NyaaSiAsyncEnumerable : IAsyncEnumerable<OneOf<IPagedData<NyaaSiSearchResult>,IAniListError>>
     {

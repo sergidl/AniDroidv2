@@ -1,8 +1,8 @@
-﻿using AniDroid.AniList.Models.ForumModels;
+﻿using AniDroidv2.AniList.Models.ForumModels;
 
-namespace AniDroid.Adapters.ViewModels
+namespace AniDroidv2.Adapters.ViewModels
 {
-    public class ForumThreadViewModel : AniDroidAdapterViewModel<ForumThread>
+    public class ForumThreadViewModel : AniDroidv2AdapterViewModel<ForumThread>
     {
         public ForumThreadViewModel(ForumThread model, ForumThreadDetailType primaryForumThreadDetailType, ForumThreadDetailType secondaryForumThreadDetailType) : base(model)
         {

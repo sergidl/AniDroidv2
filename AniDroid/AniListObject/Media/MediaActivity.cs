@@ -11,41 +11,41 @@ using Android.Views;
 using Android.Widget;
 using AndroidX.Core.Content;
 using AndroidX.RecyclerView.Widget;
-using AniDroid.Adapters;
-using AniDroid.Adapters.CharacterAdapters;
-using AniDroid.Adapters.ForumThreadAdapters;
-using AniDroid.Adapters.MediaAdapters;
-using AniDroid.Adapters.RecommendationAdapters;
-using AniDroid.Adapters.ReviewAdapters;
-using AniDroid.Adapters.StaffAdapters;
-using AniDroid.Adapters.StudioAdapters;
-using AniDroid.Adapters.ViewModels;
-using AniDroid.AniList.Dto;
-using AniDroid.AniList.Enums.MediaEnums;
-using AniDroid.AniList.Models;
-using AniDroid.AniList.Models.MediaModels;
-using AniDroid.AniList.Models.StudioModels;
-using AniDroid.AniList.Models.UserModels;
-using AniDroid.AniListObject.User;
-using AniDroid.Base;
-using AniDroid.Browse;
-using AniDroid.Dialogs;
-using AniDroid.MediaList;
-using AniDroid.Utils;
-using AniDroid.Utils.Extensions;
-using AniDroid.Utils.Formatting;
-using AniDroid.Widgets;
+using AniDroidv2.Adapters;
+using AniDroidv2.Adapters.CharacterAdapters;
+using AniDroidv2.Adapters.ForumThreadAdapters;
+using AniDroidv2.Adapters.MediaAdapters;
+using AniDroidv2.Adapters.RecommendationAdapters;
+using AniDroidv2.Adapters.ReviewAdapters;
+using AniDroidv2.Adapters.StaffAdapters;
+using AniDroidv2.Adapters.StudioAdapters;
+using AniDroidv2.Adapters.ViewModels;
+using AniDroidv2.AniList.Dto;
+using AniDroidv2.AniList.Enums.MediaEnums;
+using AniDroidv2.AniList.Models;
+using AniDroidv2.AniList.Models.MediaModels;
+using AniDroidv2.AniList.Models.StudioModels;
+using AniDroidv2.AniList.Models.UserModels;
+using AniDroidv2.AniListObject.User;
+using AniDroidv2.Base;
+using AniDroidv2.Browse;
+using AniDroidv2.Dialogs;
+using AniDroidv2.MediaList;
+using AniDroidv2.Utils;
+using AniDroidv2.Utils.Extensions;
+using AniDroidv2.Utils.Formatting;
+using AniDroidv2.Widgets;
 using Google.Android.Material.Snackbar;
 using Google.Flexbox;
 using MikePhil.Charting.Charts;
 using MikePhil.Charting.Components;
 using MikePhil.Charting.Data;
 
-namespace AniDroid.AniListObject.Media
+namespace AniDroidv2.AniListObject.Media
 {
 
     [Activity(Label = "Media")]
-    [IntentFilter(new[] { Intent.ActionView }, Categories = new[] { Intent.CategoryDefault, Intent.CategoryBrowsable }, DataHost = "anilist.co", DataSchemes = new[] { "http", "https" }, DataPathPatterns = new[] { "/anime/.*", "/manga/.*" }, Label = "AniDroid")]
+    [IntentFilter(new[] { Intent.ActionView }, Categories = new[] { Intent.CategoryDefault, Intent.CategoryBrowsable }, DataHost = "anilist.co", DataSchemes = new[] { "http", "https" }, DataPathPatterns = new[] { "/anime/.*", "/manga/.*" }, Label = "AniDroidv2")]
     public class MediaActivity : BaseAniListObjectActivity<MediaPresenter>, IMediaView
     {
         public const string MediaIdIntentKey = "MEDIA_ID";
@@ -85,7 +85,7 @@ namespace AniDroid.AniListObject.Media
             await CreatePresenter(savedInstanceState);
         }
 
-        public static void StartActivity(BaseAniDroidActivity context, int mediaId, int? requestCode = null)
+        public static void StartActivity(BaseAniDroidv2Activity context, int mediaId, int? requestCode = null)
         {
             var intent = new Intent(context, typeof(MediaActivity));
             intent.PutExtra(MediaIdIntentKey, mediaId);

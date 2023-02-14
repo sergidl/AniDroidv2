@@ -1,113 +1,113 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using AniDroid.Adapters.MediaAdapters;
-using AniDroid.AniList.Interfaces;
-using AniDroid.Base;
-using AniDroid.Utils.Comparers;
-using AniDroid.Utils.Interfaces;
-using AniDroid.Utils.Logging;
+using AniDroidv2.Adapters.MediaAdapters;
+using AniDroidv2.AniList.Interfaces;
+using AniDroidv2.Base;
+using AniDroidv2.Utils.Comparers;
+using AniDroidv2.Utils.Interfaces;
+using AniDroidv2.Utils.Logging;
 
-namespace AniDroid.Settings.MediaListSettings
+namespace AniDroidv2.Settings.MediaListSettings
 {
-    public class MediaListSettingsPresenter : BaseAniDroidPresenter<IMediaListSettingsView>
+    public class MediaListSettingsPresenter : BaseAniDroidv2Presenter<IMediaListSettingsView>
     {
-        public MediaListSettingsPresenter(IAniListService service, IAniDroidSettings settings, IAniDroidLogger logger) : base(service, settings, logger)
+        public MediaListSettingsPresenter(IAniListService service, IAniDroidv2Settings settings, IAniDroidv2Logger logger) : base(service, settings, logger)
         {
         }
 
         public override Task Init()
         {
-            if (AniDroidSettings.AnimeListOrder?.Any() == true)
+            if (AniDroidv2Settings.AnimeListOrder?.Any() == true)
             {
-                View.CreateAnimeListTabOrderItem(() => AniDroidSettings.AnimeListOrder);
+                View.CreateAnimeListTabOrderItem(() => AniDroidv2Settings.AnimeListOrder);
             }
 
-            if (AniDroidSettings.MangaListOrder?.Any() == true)
+            if (AniDroidv2Settings.MangaListOrder?.Any() == true)
             {
-                View.CreateMangaListTabOrderItem(() => AniDroidSettings.MangaListOrder);
+                View.CreateMangaListTabOrderItem(() => AniDroidv2Settings.MangaListOrder);
             }
 
-            View.CreateGroupCompletedSettingItem(AniDroidSettings.GroupCompletedLists);
-            View.CreateMediaListViewTypeSettingItem(AniDroidSettings.MediaViewType);
-            View.CreateMediaListProgressDisplayItem(AniDroidSettings.MediaListProgressDisplay);
-            View.CreateAnimeListSortItem(AniDroidSettings.AnimeListSortType,
-                AniDroidSettings.AnimeListSortDirection);
-            View.CreateMangaListSortItem(AniDroidSettings.MangaListSortType,
-                AniDroidSettings.MangaListSortDirection);
-            View.CreateHighlightPriorityMediaListItemsItem(AniDroidSettings.HighlightPriorityMediaListItems);
-            View.CreateUseLongClickForEpisodeAddItem(AniDroidSettings.UseLongClickForEpisodeAdd);
-            View.CreateUseSwipeToRefreshOnMediaListsItem(AniDroidSettings.UseSwipeToRefreshOnMediaLists);
-            View.CreateShowEpisodeAddButtonForRepeatingMediaItem(AniDroidSettings
+            View.CreateGroupCompletedSettingItem(AniDroidv2Settings.GroupCompletedLists);
+            View.CreateMediaListViewTypeSettingItem(AniDroidv2Settings.MediaViewType);
+            View.CreateMediaListProgressDisplayItem(AniDroidv2Settings.MediaListProgressDisplay);
+            View.CreateAnimeListSortItem(AniDroidv2Settings.AnimeListSortType,
+                AniDroidv2Settings.AnimeListSortDirection);
+            View.CreateMangaListSortItem(AniDroidv2Settings.MangaListSortType,
+                AniDroidv2Settings.MangaListSortDirection);
+            View.CreateHighlightPriorityMediaListItemsItem(AniDroidv2Settings.HighlightPriorityMediaListItems);
+            View.CreateUseLongClickForEpisodeAddItem(AniDroidv2Settings.UseLongClickForEpisodeAdd);
+            View.CreateUseSwipeToRefreshOnMediaListsItem(AniDroidv2Settings.UseSwipeToRefreshOnMediaLists);
+            View.CreateShowEpisodeAddButtonForRepeatingMediaItem(AniDroidv2Settings
                 .ShowEpisodeAddButtonForRepeatingMedia);
-            View.CreateAutoFillDateForMediaListItem(AniDroidSettings.AutoFillDateForMediaListItem);
+            View.CreateAutoFillDateForMediaListItem(AniDroidv2Settings.AutoFillDateForMediaListItem);
 
             return Task.CompletedTask;
         }
 
         public void SetGroupCompleted(bool groupCompleted)
         {
-            AniDroidSettings.GroupCompletedLists = groupCompleted;
+            AniDroidv2Settings.GroupCompletedLists = groupCompleted;
         }
 
         public void SetMediaListViewType(MediaListRecyclerAdapter.MediaListItemViewType viewType)
         {
-            AniDroidSettings.MediaViewType = viewType;
+            AniDroidv2Settings.MediaViewType = viewType;
         }
 
         public void SetHighlightPriorityMediaListItems(bool highlightListItems)
         {
-            AniDroidSettings.HighlightPriorityMediaListItems = highlightListItems;
+            AniDroidv2Settings.HighlightPriorityMediaListItems = highlightListItems;
         }
 
         public void SetAnimeListTabOrder(List<KeyValuePair<string, bool>> animeLists)
         {
-            AniDroidSettings.AnimeListOrder = animeLists;
+            AniDroidv2Settings.AnimeListOrder = animeLists;
         }
 
         public void SetMangaListTabOrder(List<KeyValuePair<string, bool>> mangaLists)
         {
-            AniDroidSettings.MangaListOrder = mangaLists;
+            AniDroidv2Settings.MangaListOrder = mangaLists;
         }
 
         public void SetAnimeListSort(MediaListSortComparer.MediaListSortType sort,
             MediaListSortComparer.SortDirection direction)
         {
-            AniDroidSettings.AnimeListSortType = sort;
-            AniDroidSettings.AnimeListSortDirection = direction;
+            AniDroidv2Settings.AnimeListSortType = sort;
+            AniDroidv2Settings.AnimeListSortDirection = direction;
         }
 
         public void SetMangaListSort(MediaListSortComparer.MediaListSortType sort,
             MediaListSortComparer.SortDirection direction)
         {
-            AniDroidSettings.MangaListSortType = sort;
-            AniDroidSettings.MangaListSortDirection = direction;
+            AniDroidv2Settings.MangaListSortType = sort;
+            AniDroidv2Settings.MangaListSortDirection = direction;
         }
 
         public void SetUseLongClickForEpisodeAdd(bool useLongClickForEpisodeAdd)
         {
-            AniDroidSettings.UseLongClickForEpisodeAdd = useLongClickForEpisodeAdd;
+            AniDroidv2Settings.UseLongClickForEpisodeAdd = useLongClickForEpisodeAdd;
         }
 
         public void SetMediaListProgressDisplay(
             MediaListRecyclerAdapter.MediaListProgressDisplayType mediaListProgressDisplay)
         {
-            AniDroidSettings.MediaListProgressDisplay = mediaListProgressDisplay;
+            AniDroidv2Settings.MediaListProgressDisplay = mediaListProgressDisplay;
         }
 
         public void SetUseSwipeToRefreshOnMediaLists(bool useSwipeToRefreshOnMediaLists)
         {
-            AniDroidSettings.UseSwipeToRefreshOnMediaLists = useSwipeToRefreshOnMediaLists;
+            AniDroidv2Settings.UseSwipeToRefreshOnMediaLists = useSwipeToRefreshOnMediaLists;
         }
 
         public void SetShowEpisodeAddButtonForRepeatingMedia(bool showEpisodeAddButtonForRewatchingAnime)
         {
-            AniDroidSettings.ShowEpisodeAddButtonForRepeatingMedia = showEpisodeAddButtonForRewatchingAnime;
+            AniDroidv2Settings.ShowEpisodeAddButtonForRepeatingMedia = showEpisodeAddButtonForRewatchingAnime;
         }
         
         public void SetAutoFillDateForMediaListItem(bool autoFillDateForNewMediaListItem)
         {
-            AniDroidSettings.AutoFillDateForMediaListItem = autoFillDateForNewMediaListItem;
+            AniDroidv2Settings.AutoFillDateForMediaListItem = autoFillDateForNewMediaListItem;
         }
     }
 }

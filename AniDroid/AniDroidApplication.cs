@@ -4,31 +4,31 @@ using System.Reflection;
 using Android.App;
 using Android.OS;
 using Android.Runtime;
-using AniDroid.AniList.Interfaces;
-using AniDroid.AniList.Service;
-using AniDroid.AniListObject.Character;
-using AniDroid.AniListObject.Media;
-using AniDroid.AniListObject.Staff;
-using AniDroid.AniListObject.Studio;
-using AniDroid.AniListObject.User;
-using AniDroid.Browse;
-using AniDroid.CurrentSeason;
-using AniDroid.Discover;
-using AniDroid.Favorites;
-using AniDroid.Home;
-using AniDroid.Jobs;
-using AniDroid.Login;
-using AniDroid.Main;
-using AniDroid.MediaList;
-using AniDroid.SearchResults;
-using AniDroid.Settings;
-using AniDroid.Settings.MediaListSettings;
-using AniDroid.TorrentSearch;
-using AniDroid.Utils;
-using AniDroid.Utils.Integration;
-using AniDroid.Utils.Interfaces;
-using AniDroid.Utils.Logging;
-using AniDroid.Utils.Storage;
+using AniDroidv2.AniList.Interfaces;
+using AniDroidv2.AniList.Service;
+using AniDroidv2.AniListObject.Character;
+using AniDroidv2.AniListObject.Media;
+using AniDroidv2.AniListObject.Staff;
+using AniDroidv2.AniListObject.Studio;
+using AniDroidv2.AniListObject.User;
+using AniDroidv2.Browse;
+using AniDroidv2.CurrentSeason;
+using AniDroidv2.Discover;
+using AniDroidv2.Favorites;
+using AniDroidv2.Home;
+using AniDroidv2.Jobs;
+using AniDroidv2.Login;
+using AniDroidv2.Main;
+using AniDroidv2.MediaList;
+using AniDroidv2.SearchResults;
+using AniDroidv2.Settings;
+using AniDroidv2.Settings.MediaListSettings;
+using AniDroidv2.TorrentSearch;
+using AniDroidv2.Utils;
+using AniDroidv2.Utils.Integration;
+using AniDroidv2.Utils.Interfaces;
+using AniDroidv2.Utils.Logging;
+using AniDroidv2.Utils.Storage;
 using Microsoft.AppCenter;
 using Microsoft.AppCenter.Analytics;
 using Microsoft.AppCenter.Crashes;
@@ -39,18 +39,18 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Xamarin.Essentials;
 
-namespace AniDroid
+namespace AniDroidv2
 {
 #if DEBUG
     [Application(AllowBackup = true, Theme = "@style/AniList", Label= "@string/AppName", Icon = "@drawable/IconDebug")]
 #else
     [Application(AllowBackup = true, Theme = "@style/AniList", Label= "@string/AppName", Icon = "@drawable/Icon")]
 #endif
-    public class AniDroidApplication : Application
+    public class AniDroidv2Application : Application
     {
         public static IServiceProvider ServiceProvider { get; set; }
 
-        protected AniDroidApplication(IntPtr javaReference, JniHandleOwnership transfer) : base(javaReference, transfer)
+        protected AniDroidv2Application(IntPtr javaReference, JniHandleOwnership transfer) : base(javaReference, transfer)
         {
         }
 
@@ -87,8 +87,8 @@ namespace AniDroid
 
         public static IServiceProvider InitServiceProvider()
         {
-            var configFile = ExtractResource("AniDroid.appsettings.json", FileSystem.AppDataDirectory);
-            var secretConfigFile = ExtractResource("AniDroid.appsettings.secret.json", FileSystem.AppDataDirectory);
+            var configFile = ExtractResource("AniDroidv2.appsettings.json", FileSystem.AppDataDirectory);
+            var secretConfigFile = ExtractResource("AniDroidv2.appsettings.secret.json", FileSystem.AppDataDirectory);
 
             var host = new HostBuilder()
                 .UseContentRoot(FileSystem.AppDataDirectory)
@@ -121,14 +121,14 @@ namespace AniDroid
         {
             services.AddHttpClient();
 
-            services.TryAddSingleton<IAniDroidLogger, AppCenterLogger>();
+            services.TryAddSingleton<IAniDroidv2Logger, AppCenterLogger>();
 
-            services.TryAddSingleton<IAniListAuthConfig>(x => new AniDroidAniListAuthConfig(ctx.Configuration["ApiConfiguration:ClientId"],
+            services.TryAddSingleton<IAniListAuthConfig>(x => new AniDroidv2AniListAuthConfig(ctx.Configuration["ApiConfiguration:ClientId"],
                 ctx.Configuration["ApiConfiguration:ClientSecret"], ctx.Configuration["ApiConfiguration:RedirectUrl"],
                 ctx.Configuration["ApiConfiguration:AuthUrl"]));
-            services.TryAddSingleton<IAniDroidSettings>(x => new AniDroidSettings(new SettingsStorage(Application.Context), new AuthSettingsStorage(Application.Context)));
-            services.TryAddSingleton<IAuthCodeResolver, AniDroidAuthCodeResolver>();
-            services.TryAddSingleton<IAniListServiceConfig>(x => new AniDroidAniListServiceConfig(ctx.Configuration["ApiConfiguration:BaseUrl"]));
+            services.TryAddSingleton<IAniDroidv2Settings>(x => new AniDroidv2Settings(new SettingsStorage(Application.Context), new AuthSettingsStorage(Application.Context)));
+            services.TryAddSingleton<IAuthCodeResolver, AniDroidv2AuthCodeResolver>();
+            services.TryAddSingleton<IAniListServiceConfig>(x => new AniDroidv2AniListServiceConfig(ctx.Configuration["ApiConfiguration:BaseUrl"]));
 
             services.TryAddTransient<IAniListService, AniListService>();
 

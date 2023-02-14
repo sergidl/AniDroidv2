@@ -3,17 +3,17 @@ using System.Linq;
 using Android.Views;
 using AndroidX.AppCompat.App;
 using AndroidX.RecyclerView.Widget;
-using AniDroid.Adapters.Base;
-using AniDroid.Adapters.StaffAdapters;
-using AniDroid.Adapters.ViewModels;
-using AniDroid.AniList.Models.StaffModels;
-using AniDroid.Base;
+using AniDroidv2.Adapters.Base;
+using AniDroidv2.Adapters.StaffAdapters;
+using AniDroidv2.Adapters.ViewModels;
+using AniDroidv2.AniList.Models.StaffModels;
+using AniDroidv2.Base;
 
-namespace AniDroid.Dialogs
+namespace AniDroidv2.Dialogs
 {
     public class StaffListDialog
     {
-        public static void Create(BaseAniDroidActivity context, ICollection<Staff> staff)
+        public static void Create(BaseAniDroidv2Activity context, ICollection<Staff> staff)
         {
             var dialogView = context.LayoutInflater.Inflate(Resource.Layout.View_List, null);
             dialogView.LayoutParameters = new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MatchParent,

@@ -1,18 +1,18 @@
 ﻿using System;
 using System.Threading.Tasks;
 using Android.Content;
-using AniDroid.AniList.Utils;
+using AniDroidv2.AniList.Utils;
 using Trace = System.Diagnostics.Trace;
 
-namespace AniDroid.Utils.Storage
+namespace AniDroidv2.Utils.Storage
 {
-    internal abstract class AniDroidStorage
+    internal abstract class AniDroidv2Storage
     {
         protected abstract string Group { get; }
 
         private readonly ISharedPreferences _prefs;
 
-        protected AniDroidStorage(Context c)
+        protected AniDroidv2Storage(Context c)
         {
             _prefs = c.GetSharedPreferences(Group, FileCreationMode.Private);
         }

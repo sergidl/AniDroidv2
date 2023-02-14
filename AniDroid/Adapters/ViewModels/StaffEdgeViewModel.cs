@@ -1,8 +1,8 @@
-﻿using AniDroid.AniList.Models.StaffModels;
+﻿using AniDroidv2.AniList.Models.StaffModels;
 
-namespace AniDroid.Adapters.ViewModels
+namespace AniDroidv2.Adapters.ViewModels
 {
-    public class StaffEdgeViewModel : AniDroidAdapterViewModel<StaffEdge>
+    public class StaffEdgeViewModel : AniDroidv2AdapterViewModel<StaffEdge>
     {
         public StaffEdgeViewModel(StaffEdge model, StaffEdgeDetailType primaryStaffEdgeDetailType,
             StaffEdgeDetailType secondaryStaffEdgeDetailType) : base(model)

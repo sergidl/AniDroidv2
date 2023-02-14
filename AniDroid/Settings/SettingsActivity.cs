@@ -13,22 +13,22 @@ using Android.Widget;
 using AndroidX.AppCompat.Widget;
 using AndroidX.CoordinatorLayout.Widget;
 using AndroidX.Work;
-using AniDroid.About;
-using AniDroid.Adapters.Base;
-using AniDroid.AniList.Interfaces;
-using AniDroid.Base;
-using AniDroid.Dialogs;
-using AniDroid.Jobs;
-using AniDroid.Main;
-using AniDroid.Settings.MediaListSettings;
-using AniDroid.Utils;
+using AniDroidv2.About;
+using AniDroidv2.Adapters.Base;
+using AniDroidv2.AniList.Interfaces;
+using AniDroidv2.Base;
+using AniDroidv2.Dialogs;
+using AniDroidv2.Jobs;
+using AniDroidv2.Main;
+using AniDroidv2.Settings.MediaListSettings;
+using AniDroidv2.Utils;
 using Google.Android.Material.Snackbar;
 using Toolbar = AndroidX.AppCompat.Widget.Toolbar;
 
-namespace AniDroid.Settings
+namespace AniDroidv2.Settings
 {
     [Activity(Label = "Settings")]
-    public class SettingsActivity : BaseAniDroidActivity<SettingsPresenter>, ISettingsView
+    public class SettingsActivity : BaseAniDroidv2Activity<SettingsPresenter>, ISettingsView
     {
         [InjectView(Resource.Id.Settings_CoordLayout)]
         private CoordinatorLayout _coordLayout;
@@ -53,7 +53,7 @@ namespace AniDroid.Settings
         {
             var options = new List<string> {"Vertical", "Horizontal", "Flat Horizontal"};
             _settingsContainer.AddView(
-                CreateSpinnerSettingRow(this, "Card Display Type", "Choose how you would like to display lists in AniDroid",
+                CreateSpinnerSettingRow(this, "Card Display Type", "Choose how you would like to display lists in AniDroidv2",
                     options, (int) cardType,
                     (sender, args) =>
                     {
@@ -68,15 +68,15 @@ namespace AniDroid.Settings
             _settingsContainer.AddView(CreateSettingDivider(this));
         }
 
-        public void CreateAniDroidThemeSettingItem(AniDroidTheme theme)
+        public void CreateAniDroidv2ThemeSettingItem(AniDroidv2Theme theme)
         {
             var options = new List<string> { "AniList", "Black", "AniList Dark", "Dark" };
             _settingsContainer.AddView(
-                CreateSpinnerSettingRow(this, "AniDroid Theme", "Choose the theme you'd like to use", options, (int)theme, (sender, args) =>
+                CreateSpinnerSettingRow(this, "AniDroidv2 Theme", "Choose the theme you'd like to use", options, (int)theme, (sender, args) =>
                 {
-                    Presenter.SetTheme((AniDroidTheme) args.Position);
+                    Presenter.SetTheme((AniDroidv2Theme) args.Position);
 
-                    if (theme != (AniDroidTheme) args.Position)
+                    if (theme != (AniDroidv2Theme) args.Position)
                     {
                         Recreate();
                         Intent.PutExtra(MainActivity.RecreateActivityIntentKey, true);
@@ -174,11 +174,11 @@ namespace AniDroid.Settings
 
                         if (args.IsChecked)
                         {
-                            AniDroidJobManager.EnableAniListNotificationJob(this);
+                            AniDroidv2JobManager.EnableAniListNotificationJob(this);
                         }
                         else
                         {
-                            AniDroidJobManager.DisableAniListNotificationJob(this);
+                            AniDroidv2JobManager.DisableAniListNotificationJob(this);
                         }
                     }));
             _settingsContainer.AddView(CreateSettingDivider(this));
@@ -190,7 +190,7 @@ namespace AniDroid.Settings
 
             _settingsContainer.AddView(
                 CreateSpinnerSettingRow(this, "Default Tab",
-                    "Choose which tab you'd like to show by default when opening AniDroid", tabs,
+                    "Choose which tab you'd like to show by default when opening AniDroidv2", tabs,
                     tabs.IndexOf(defaultTab.ToString()),
                     (sender, args) => Presenter.SetDefaultTab((MainActivity.DefaultTab) args.Position)));
             _settingsContainer.AddView(CreateSettingDivider(this));
@@ -228,7 +228,7 @@ namespace AniDroid.Settings
 
         #region Settings Views
 
-        public static View CreateSettingRow(BaseAniDroidActivity context, string name, string description, EventHandler tapEvent)
+        public static View CreateSettingRow(BaseAniDroidv2Activity context, string name, string description, EventHandler tapEvent)
         {
             var view = context.LayoutInflater.Inflate(Resource.Layout.View_SettingItem, null);
             var nameView = view.FindViewById<TextView>(Resource.Id.SettingItem_Name);
@@ -258,7 +258,7 @@ namespace AniDroid.Settings
             return view;
         }
 
-        public static View CreateSwitchSettingRow(BaseAniDroidActivity context, string name, string description, bool switchState, bool useUniqueControlId, EventHandler<CompoundButton.CheckedChangeEventArgs> switchEvent)
+        public static View CreateSwitchSettingRow(BaseAniDroidv2Activity context, string name, string description, bool switchState, bool useUniqueControlId, EventHandler<CompoundButton.CheckedChangeEventArgs> switchEvent)
         {
             var view = context.LayoutInflater.Inflate(Resource.Layout.View_SettingItem_Switch, null);
             var nameView = view.FindViewById<TextView>(Resource.Id.SettingItem_Name);
@@ -296,7 +296,7 @@ namespace AniDroid.Settings
             return view;
         }
 
-        public static View CreateCheckboxSettingRow(BaseAniDroidActivity context, string name, string description, bool isChecked, EventHandler<CompoundButton.CheckedChangeEventArgs> checkEvent)
+        public static View CreateCheckboxSettingRow(BaseAniDroidv2Activity context, string name, string description, bool isChecked, EventHandler<CompoundButton.CheckedChangeEventArgs> checkEvent)
         {
             var view = context.LayoutInflater.Inflate(Resource.Layout.View_SettingItem_Checkbox, null);
 
@@ -330,7 +330,7 @@ namespace AniDroid.Settings
             return view;
         }
 
-        public static View CreateSpinnerSettingRow(BaseAniDroidActivity context, string name, string description, IList<string> items, int selectedPosition, EventHandler<AdapterView.ItemSelectedEventArgs> selectedEvent)
+        public static View CreateSpinnerSettingRow(BaseAniDroidv2Activity context, string name, string description, IList<string> items, int selectedPosition, EventHandler<AdapterView.ItemSelectedEventArgs> selectedEvent)
         {
             var view = context.LayoutInflater.Inflate(Resource.Layout.View_SettingItem_Spinner, null);
 
@@ -366,7 +366,7 @@ namespace AniDroid.Settings
             return view;
         }
 
-        public static View CreateChevronSettingRow(BaseAniDroidActivity context, string name, string description, EventHandler tapEvent)
+        public static View CreateChevronSettingRow(BaseAniDroidv2Activity context, string name, string description, EventHandler tapEvent)
         {
             var view = context.LayoutInflater.Inflate(Resource.Layout.View_SettingItem_Chevron, null);
             var nameView = view.FindViewById<TextView>(Resource.Id.SettingItem_Name);
@@ -396,7 +396,7 @@ namespace AniDroid.Settings
             return view;
         }
 
-        public static View CreateSettingDivider(BaseAniDroidActivity context)
+        public static View CreateSettingDivider(BaseAniDroidv2Activity context)
         {
             var typedValue = new TypedValue();
             context.Theme.ResolveAttribute(Resource.Attribute.ListItem_Divider, typedValue, true);

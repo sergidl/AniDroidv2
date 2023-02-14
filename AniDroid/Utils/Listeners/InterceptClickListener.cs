@@ -1,7 +1,7 @@
 ﻿using System;
 using Android.Views;
 
-namespace AniDroid.Utils.Listeners
+namespace AniDroidv2.Utils.Listeners
 {
     public class InterceptClickListener : Java.Lang.Object, View.IOnClickListener
     {

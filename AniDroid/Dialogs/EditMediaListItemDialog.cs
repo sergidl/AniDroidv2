@@ -10,27 +10,27 @@ using AndroidX.AppCompat.App;
 using AndroidX.AppCompat.Widget;
 using AndroidX.CoordinatorLayout.Widget;
 using AndroidX.Transitions;
-using AniDroid.AniList;
-using AniDroid.AniList.DataTypes;
-using AniDroid.AniList.Dto;
-using AniDroid.AniList.Enums.MediaEnums;
-using AniDroid.AniList.Enums.UserEnums;
-using AniDroid.AniList.Models.MediaModels;
-using AniDroid.AniList.Models.UserModels;
-using AniDroid.AniListObject.Media;
-using AniDroid.Base;
-using AniDroid.Settings;
-using AniDroid.Widgets;
+using AniDroidv2.AniList;
+using AniDroidv2.AniList.DataTypes;
+using AniDroidv2.AniList.Dto;
+using AniDroidv2.AniList.Enums.MediaEnums;
+using AniDroidv2.AniList.Enums.UserEnums;
+using AniDroidv2.AniList.Models.MediaModels;
+using AniDroidv2.AniList.Models.UserModels;
+using AniDroidv2.AniListObject.Media;
+using AniDroidv2.Base;
+using AniDroidv2.Settings;
+using AniDroidv2.Widgets;
 using Google.Android.Material.Snackbar;
 using Newtonsoft.Json.Linq;
 using AlertDialog = AndroidX.AppCompat.App.AlertDialog;
 using Toolbar = AndroidX.AppCompat.Widget.Toolbar;
 
-namespace AniDroid.Dialogs
+namespace AniDroidv2.Dialogs
 {
     public static class EditMediaListItemDialog
     {
-        public static void Create(BaseAniDroidActivity context, IAniListMediaListEditPresenter presenter, Media media, AniList.Models.MediaModels.MediaList mediaList, UserMediaListOptions mediaListOptions, bool completeMedia = false)
+        public static void Create(BaseAniDroidv2Activity context, IAniListMediaListEditPresenter presenter, Media media, AniList.Models.MediaModels.MediaList mediaList, UserMediaListOptions mediaListOptions, bool completeMedia = false)
         {
             var dialog = new EditMediaListItemDialogFragment(presenter, media, mediaList, mediaListOptions, completeMedia) {Cancelable = true};
             var transaction = context.SupportFragmentManager.BeginTransaction();
@@ -52,7 +52,7 @@ namespace AniDroid.Dialogs
             private readonly HashSet<string> _customLists;
             private readonly bool _completeMedia;
             private bool _customScoringEnabled;
-            private new BaseAniDroidActivity Activity => base.Activity as BaseAniDroidActivity;
+            private new BaseAniDroidv2Activity Activity => base.Activity as BaseAniDroidv2Activity;
             private bool _isPrivate;
             private bool _hideFromStatusLists;
             private int _priority;

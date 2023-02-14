@@ -9,21 +9,21 @@ using AndroidX.AppCompat.App;
 using AndroidX.AppCompat.Widget;
 using AndroidX.RecyclerView.Widget;
 using AndroidX.Transitions;
-using AniDroid.Adapters.General;
-using AniDroid.AniList;
-using AniDroid.AniList.Dto;
-using AniDroid.AniList.Enums.MediaEnums;
-using AniDroid.Base;
-using AniDroid.Browse;
-using AniDroid.Widgets;
+using AniDroidv2.Adapters.General;
+using AniDroidv2.AniList;
+using AniDroidv2.AniList.Dto;
+using AniDroidv2.AniList.Enums.MediaEnums;
+using AniDroidv2.Base;
+using AniDroidv2.Browse;
+using AniDroidv2.Widgets;
 using AlertDialog = AndroidX.AppCompat.App.AlertDialog;
 using Toolbar = AndroidX.AppCompat.Widget.Toolbar;
 
-namespace AniDroid.Dialogs
+namespace AniDroidv2.Dialogs
 {
     public static class BrowseFilterDialog
     {
-        public static void Create(BaseAniDroidActivity context, IBrowsePresenter presenter)
+        public static void Create(BaseAniDroidv2Activity context, IBrowsePresenter presenter)
         {
             var dialog =
                 new BrowseFilterDialogFragment(context, presenter)
@@ -41,7 +41,7 @@ namespace AniDroid.Dialogs
             public const string BackstackTag = "BROWSE_FILTER_DIALOG";
             private const int MinimumYear = 1950;
 
-            private readonly BaseAniDroidActivity _context;
+            private readonly BaseAniDroidv2Activity _context;
             private readonly IBrowsePresenter _presenter;
             private readonly BrowseMediaDto _browseModel;
 
@@ -62,7 +62,7 @@ namespace AniDroid.Dialogs
             private ICollection<string> _selectedTags;
             private ICollection<string> _selectedStreamingOn;
 
-            public BrowseFilterDialogFragment(BaseAniDroidActivity context, IBrowsePresenter presenter)
+            public BrowseFilterDialogFragment(BaseAniDroidv2Activity context, IBrowsePresenter presenter)
             {
                 _context = context;
                 _presenter = presenter;

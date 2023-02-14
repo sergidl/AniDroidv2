@@ -1,8 +1,8 @@
-﻿using AniDroid.Base;
+﻿using AniDroidv2.Base;
 
-namespace AniDroid.Main
+namespace AniDroidv2.Main
 {
-    public interface IMainView : IAniDroidView
+    public interface IMainView : IAniDroidv2View
     {
         int GetVersionCode();
         void DisplayWhatsNewDialog();

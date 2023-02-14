@@ -8,16 +8,16 @@ using Android.Views;
 using Android.Widget;
 using AndroidX.CoordinatorLayout.Widget;
 using AndroidX.ViewPager.Widget;
-using AniDroid.AniList.Interfaces;
-using AniDroid.Utils;
+using AniDroidv2.AniList.Interfaces;
+using AniDroidv2.Utils;
 using Google.Android.Material.AppBar;
 using Google.Android.Material.Snackbar;
 using Google.Android.Material.Tabs;
 using Toolbar = AndroidX.AppCompat.Widget.Toolbar;
 
-namespace AniDroid.Base
+namespace AniDroidv2.Base
 {
-    public abstract class BaseAniListObjectActivity<T> : BaseAniDroidActivity<T>, IAniListObjectView where T : BaseAniDroidPresenter
+    public abstract class BaseAniListObjectActivity<T> : BaseAniDroidv2Activity<T>, IAniListObjectView where T : BaseAniDroidv2Presenter
     {
         protected const int PageLength = 20;
 
@@ -135,7 +135,7 @@ namespace AniDroid.Base
 
         public void SetIsFavorite(bool isFavorite, bool showNotification = false)
         {
-            _canFavorite = Presenter.AniDroidSettings.IsUserAuthenticated;
+            _canFavorite = Presenter.AniDroidv2Settings.IsUserAuthenticated;
             _isFavorite = isFavorite;
             _menu?.FindItem(Resource.Id.Menu_AniListObject_Favorite)?.SetIcon(_isFavorite
                 ? Resource.Drawable.ic_favorite_white_24px

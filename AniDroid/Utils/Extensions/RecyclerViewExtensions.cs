@@ -2,7 +2,7 @@
 using System;
 using AndroidX.RecyclerView.Widget;
 
-namespace AniDroid.Utils.Extensions
+namespace AniDroidv2.Utils.Extensions
 {
     public static class RecyclerViewExtensions
     {

@@ -2,33 +2,33 @@
 using Android.Content;
 using Android.Graphics;
 using Android.Text;
-using AniDroid.AniList.Enums.ActivityEnums;
-using AniDroid.AniList.Models.ActivityModels;
-using AniDroid.AniListObject.Media;
-using AniDroid.AniListObject.User;
-using AniDroid.Base;
+using AniDroidv2.AniList.Enums.ActivityEnums;
+using AniDroidv2.AniList.Models.ActivityModels;
+using AniDroidv2.AniListObject.Media;
+using AniDroidv2.AniListObject.User;
+using AniDroidv2.Base;
 
-namespace AniDroid.Adapters.ViewModels
+namespace AniDroidv2.Adapters.ViewModels
 {
-    public class AniListNotificationViewModel : AniDroidAdapterViewModel<AniListNotification>
+    public class AniListNotificationViewModel : AniDroidv2AdapterViewModel<AniListNotification>
     {
         public Action ClickAction { get; protected set; }
         public ISpanned FormattedTitle { get; protected set; }
         public string Timestamp { get; protected set; }
 
-        private readonly BaseAniDroidActivity _context;
+        private readonly BaseAniDroidv2Activity _context;
 
-        public AniListNotificationViewModel(AniListNotification model, BaseAniDroidActivity context, Color accentColor) : base(model)
+        public AniListNotificationViewModel(AniListNotification model, BaseAniDroidv2Activity context, Color accentColor) : base(model)
         {
             _context = context;
 
-            FormattedTitle = BaseAniDroidActivity.FromHtml(Model.GetNotificationHtml($"#{accentColor & 0xffffff:X6}"));
+            FormattedTitle = BaseAniDroidv2Activity.FromHtml(Model.GetNotificationHtml($"#{accentColor & 0xffffff:X6}"));
             Timestamp = Model.GetAgeString(model.CreatedAt);
             ImageUri = Model.GetImageUri();
             ClickAction = GetNotificationClickAction();
         }
 
-        public static AniListNotificationViewModel CreateViewModel(AniListNotification model, BaseAniDroidActivity context, Color accentColor)
+        public static AniListNotificationViewModel CreateViewModel(AniListNotification model, BaseAniDroidv2Activity context, Color accentColor)
         {
             return new AniListNotificationViewModel(model, context, accentColor);
         }

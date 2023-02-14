@@ -9,8 +9,8 @@
     <ProjectTypeGuids>{EFBA0AD7-5A72-4C68-AF49-83D382785DCF};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>AniDroid</RootNamespace>
-    <AssemblyName>AniDroid</AssemblyName>
+    <RootNamespace>AniDroidv2</RootNamespace>
+    <AssemblyName>AniDroidv2</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <AndroidApplication>True</AndroidApplication>
     <AndroidResgenFile>Resources\Resource.Designer.cs</AndroidResgenFile>
@@ -815,13 +815,13 @@
     </AndroidResource>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\AniDroid.AniList\AniDroid.AniList\AniDroid.AniList.csproj">
+    <ProjectReference Include="..\AniDroid.AniList\AniDroid.AniList\AniDroidv2.AniList.csproj">
       <Project>{49fb1693-b542-4c68-82f9-19762a6afb29}</Project>
-      <Name>AniDroid.AniList</Name>
+      <Name>AniDroidv2.AniList</Name>
     </ProjectReference>
-    <ProjectReference Include="..\AniDroid.Torrent\AniDroid.Torrent.csproj">
+    <ProjectReference Include="..\AniDroid.Torrent\AniDroidv2.Torrent.csproj">
       <Project>{6e34b7af-7e77-4f94-b56a-fdf1462edc34}</Project>
-      <Name>AniDroid.Torrent</Name>
+      <Name>AniDroidv2.Torrent</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
@@ -903,7 +903,6 @@
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
 		Other similar extension points exist, see Microsoft.Common.targets.

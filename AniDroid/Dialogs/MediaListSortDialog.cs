@@ -1,14 +1,14 @@
 ﻿using System;
 using Android.Widget;
 using AndroidX.AppCompat.App;
-using AniDroid.Base;
-using AniDroid.Utils.Comparers;
+using AniDroidv2.Base;
+using AniDroidv2.Utils.Comparers;
 
-namespace AniDroid.Dialogs
+namespace AniDroidv2.Dialogs
 {
     public static class MediaListSortDialog
     {
-        public static void Create(BaseAniDroidActivity context,
+        public static void Create(BaseAniDroidv2Activity context,
             MediaListSortComparer.MediaListSortType currentSort, MediaListSortComparer.SortDirection currentDirection,
             Action<MediaListSortComparer.MediaListSortType, MediaListSortComparer.SortDirection> onSelectSortAction)
         {

@@ -5,21 +5,21 @@ using System.Collections.Generic;
 using System.Linq;
 using AndroidX.Core.App;
 using AndroidX.Work;
-using AniDroid.AniList.Interfaces;
-using AniDroid.AniList.Models.ActivityModels;
-using AniDroid.Base;
-using AniDroid.Main;
-using AniDroid.Utils.Interfaces;
+using AniDroidv2.AniList.Interfaces;
+using AniDroidv2.AniList.Models.ActivityModels;
+using AniDroidv2.Base;
+using AniDroidv2.Main;
+using AniDroidv2.Utils.Interfaces;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace AniDroid.Jobs
+namespace AniDroidv2.Jobs
 {
     public class AniListNotificationJobWorker : Worker
     {
         public const string Tag = "ANILIST_NOTIFICATION_JOB";
 
         private const string NotificationTitle = "{0} new notification{1}";
-        private const string BasicNotificationContent = "Tap here to open AniDroid.";
+        private const string BasicNotificationContent = "Tap here to open AniDroidv2.";
         private const string NotificationGroup = "ANILIST_NOTIFICATION_GROUP";
         private const string ChannelId = "AniList Notifications";
         private const int NotificationId = 1000;
@@ -33,9 +33,9 @@ namespace AniDroid.Jobs
 
         public override Result DoWork()
         {
-            if (AniDroidApplication.ServiceProvider.GetService<IAniDroidSettings>()?.EnableNotificationService != true)
+            if (AniDroidv2Application.ServiceProvider.GetService<IAniDroidv2Settings>()?.EnableNotificationService != true)
             {
-                AniDroidJobManager.DisableAniListNotificationJob(_context);
+                AniDroidv2JobManager.DisableAniListNotificationJob(_context);
                 return Result.InvokeFailure();
             }
 
@@ -45,7 +45,7 @@ namespace AniDroid.Jobs
                 return Result.InvokeSuccess();
             }
 
-            var aniListService = AniDroidApplication.ServiceProvider.GetService<IAniListService>();
+            var aniListService = AniDroidv2Application.ServiceProvider.GetService<IAniListService>();
 
             if (aniListService == null)
             {
@@ -94,7 +94,7 @@ namespace AniDroid.Jobs
             var inboxStyle = new NotificationCompat.InboxStyle();
 
             var notificationTexts =
-                notifications.Select(x => BaseAniDroidActivity.FromHtml(x.GetNotificationHtml("fff"))).ToList();
+                notifications.Select(x => BaseAniDroidv2Activity.FromHtml(x.GetNotificationHtml("fff"))).ToList();
 
             notificationTexts.ForEach(n => inboxStyle.AddLine(n));
 
@@ -129,7 +129,7 @@ namespace AniDroid.Jobs
             {
                 try
                 {
-                    var service = AniDroidApplication.ServiceProvider.GetService<IAniListService>();
+                    var service = AniDroidv2Application.ServiceProvider.GetService<IAniListService>();
                     var notificationEnum = service?.GetAniListNotifications(true, 1);
                     var enumerator = notificationEnum?.GetAsyncEnumerator();
 
@@ -137,7 +137,7 @@ namespace AniDroid.Jobs
                 }
                 catch (Exception e)
                 {
-                    var activityContext = context as BaseAniDroidActivity;
+                    var activityContext = context as BaseAniDroidv2Activity;
 
                     activityContext?.Logger?.Error(nameof(AniListNotificationJobDismissReceiver),
                         "Error occurred while removing AniList notifications", e);

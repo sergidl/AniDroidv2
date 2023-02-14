@@ -1,24 +1,24 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using AniDroid.AniList.Dto;
-using AniDroid.AniList.Interfaces;
-using AniDroid.AniList.Models.MediaModels;
-using AniDroid.AniList.Models.UserModels;
-using AniDroid.AniListObject.Media;
-using AniDroid.Base;
-using AniDroid.Utils.Interfaces;
-using AniDroid.Utils.Logging;
+using AniDroidv2.AniList.Dto;
+using AniDroidv2.AniList.Interfaces;
+using AniDroidv2.AniList.Models.MediaModels;
+using AniDroidv2.AniList.Models.UserModels;
+using AniDroidv2.AniListObject.Media;
+using AniDroidv2.Base;
+using AniDroidv2.Utils.Interfaces;
+using AniDroidv2.Utils.Logging;
 using Google.Android.Material.Snackbar;
 
-namespace AniDroid.Browse
+namespace AniDroidv2.Browse
 {
-    public class BrowsePresenter : BaseAniDroidPresenter<IBrowseView>, IAniListMediaListEditPresenter, IBrowsePresenter
+    public class BrowsePresenter : BaseAniDroidv2Presenter<IBrowseView>, IAniListMediaListEditPresenter, IBrowsePresenter
     {
         private BrowseMediaDto _browseDto;
 
-        public BrowsePresenter(IAniListService service, IAniDroidSettings settings,
-            IAniDroidLogger logger) : base(service, settings, logger)
+        public BrowsePresenter(IAniListService service, IAniDroidv2Settings settings,
+            IAniDroidv2Logger logger) : base(service, settings, logger)
         {
         }
 
@@ -36,12 +36,12 @@ namespace AniDroid.Browse
 
         public bool GetIsUserAuthenticated()
         {
-            return AniDroidSettings.IsUserAuthenticated;
+            return AniDroidv2Settings.IsUserAuthenticated;
         }
 
         public User GetAuthenticatedUser()
         {
-            return AniDroidSettings.LoggedInUser;
+            return AniDroidv2Settings.LoggedInUser;
         }
 
         public async Task SaveMediaListEntry(MediaListEditDto editDto, Action onSuccess, Action onError)
@@ -76,12 +76,12 @@ namespace AniDroid.Browse
 
         public IList<MediaTag> GetMediaTags()
         {
-            return AniDroidSettings.MediaTagCache;
+            return AniDroidv2Settings.MediaTagCache;
         }
 
         public IList<string> GetGenres()
         {
-            return AniDroidSettings.GenreCache;
+            return AniDroidv2Settings.GenreCache;
         }
     }
 }

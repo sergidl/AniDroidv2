@@ -11,26 +11,26 @@ using Android.Widget;
 using AndroidX.CoordinatorLayout.Widget;
 using AndroidX.RecyclerView.Widget;
 using AndroidX.ViewPager.Widget;
-using AniDroid.Adapters;
-using AniDroid.Adapters.MediaAdapters;
-using AniDroid.Adapters.ViewModels;
-using AniDroid.AniList;
-using AniDroid.AniList.Enums.MediaEnums;
-using AniDroid.AniList.Interfaces;
-using AniDroid.AniList.Models.MediaModels;
-using AniDroid.Base;
-using AniDroid.Dialogs;
-using AniDroid.Utils;
-using AniDroid.Utils.Comparers;
+using AniDroidv2.Adapters;
+using AniDroidv2.Adapters.MediaAdapters;
+using AniDroidv2.Adapters.ViewModels;
+using AniDroidv2.AniList;
+using AniDroidv2.AniList.Enums.MediaEnums;
+using AniDroidv2.AniList.Interfaces;
+using AniDroidv2.AniList.Models.MediaModels;
+using AniDroidv2.Base;
+using AniDroidv2.Dialogs;
+using AniDroidv2.Utils;
+using AniDroidv2.Utils.Comparers;
 using Google.Android.Material.AppBar;
 using Google.Android.Material.Snackbar;
 using Google.Android.Material.Tabs;
 using Toolbar = AndroidX.AppCompat.Widget.Toolbar;
 
-namespace AniDroid.MediaList
+namespace AniDroidv2.MediaList
 {
     [Activity(Label = "MediaListActivity")]
-    public class MediaListActivity : BaseAniDroidActivity<MediaListPresenter>, IMediaListView
+    public class MediaListActivity : BaseAniDroidv2Activity<MediaListPresenter>, IMediaListView
     {
         public const string UserIdIntentKey = "USER_ID";
         public const string MediaTypeIntentKey = "MEDIA_TYPE";
@@ -187,7 +187,7 @@ namespace AniDroid.MediaList
             return _filterModel;
         }
 
-        public static void StartActivity(BaseAniDroidActivity context, int userId, MediaType mediaType)
+        public static void StartActivity(BaseAniDroidv2Activity context, int userId, MediaType mediaType)
         {
             var intent = new Intent(context, typeof(MediaListActivity));
             intent.PutExtra(UserIdIntentKey, userId);
@@ -204,14 +204,14 @@ namespace AniDroid.MediaList
                 var lists = _collection.User.MediaListOptions?.AnimeList?.SectionOrder?
                                 .Union(_collection.User.MediaListOptions.AnimeList.CustomLists ?? new List<string>()) ?? new List<string>();
 
-                retList = Presenter.AniDroidSettings.AnimeListOrder ?? lists.Select(x => new KeyValuePair<string, bool>(x, true)).ToList();
+                retList = Presenter.AniDroidv2Settings.AnimeListOrder ?? lists.Select(x => new KeyValuePair<string, bool>(x, true)).ToList();
             }
             else if (_mediaType == MediaType.Manga)
             {
                 var lists = _collection.User.MediaListOptions?.MangaList?.SectionOrder?
                                 .Union(_collection.User.MediaListOptions.MangaList.CustomLists ?? new List<string>()) ?? new List<string>();
 
-                retList = Presenter.AniDroidSettings.MangaListOrder ?? lists.Select(x => new KeyValuePair<string, bool>(x, true)).ToList();
+                retList = Presenter.AniDroidv2Settings.MangaListOrder ?? lists.Select(x => new KeyValuePair<string, bool>(x, true)).ToList();
             }
 
             return retList;

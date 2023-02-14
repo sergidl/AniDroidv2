@@ -1,14 +1,14 @@
 ﻿using System;
 using Android.Widget;
 using AndroidX.AppCompat.App;
-using AniDroid.AniList.Enums.MediaEnums;
-using AniDroid.Base;
+using AniDroidv2.AniList.Enums.MediaEnums;
+using AniDroidv2.Base;
 
-namespace AniDroid.Dialogs
+namespace AniDroidv2.Dialogs
 {
     public class BrowseSortDialog
     {
-        public static void Create(BaseAniDroidActivity context, MediaSort currentSort,
+        public static void Create(BaseAniDroidv2Activity context, MediaSort currentSort,
             Action<MediaSort> onSelectSortAction)
         {
             var view = context.LayoutInflater.Inflate(Resource.Layout.Dialog_BrowseSort, null);

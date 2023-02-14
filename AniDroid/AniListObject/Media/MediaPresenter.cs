@@ -3,28 +3,28 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-using AniDroid.AniList.Dto;
-using AniDroid.AniList.Enums.MediaEnums;
-using AniDroid.AniList.Interfaces;
-using AniDroid.AniList.Models;
-using AniDroid.AniList.Models.CharacterModels;
-using AniDroid.AniList.Models.ForumModels;
-using AniDroid.AniList.Models.MediaModels;
-using AniDroid.AniList.Models.RecommendationModels;
-using AniDroid.AniList.Models.ReviewModels;
-using AniDroid.AniList.Models.StaffModels;
-using AniDroid.Base;
-using AniDroid.Utils.Interfaces;
-using AniDroid.Utils.Logging;
+using AniDroidv2.AniList.Dto;
+using AniDroidv2.AniList.Enums.MediaEnums;
+using AniDroidv2.AniList.Interfaces;
+using AniDroidv2.AniList.Models;
+using AniDroidv2.AniList.Models.CharacterModels;
+using AniDroidv2.AniList.Models.ForumModels;
+using AniDroidv2.AniList.Models.MediaModels;
+using AniDroidv2.AniList.Models.RecommendationModels;
+using AniDroidv2.AniList.Models.ReviewModels;
+using AniDroidv2.AniList.Models.StaffModels;
+using AniDroidv2.Base;
+using AniDroidv2.Utils.Interfaces;
+using AniDroidv2.Utils.Logging;
 using Google.Android.Material.Snackbar;
 using OneOf;
 
-namespace AniDroid.AniListObject.Media
+namespace AniDroidv2.AniListObject.Media
 {
-    public class MediaPresenter : BaseAniDroidPresenter<IMediaView>, IAniListMediaListEditPresenter
+    public class MediaPresenter : BaseAniDroidv2Presenter<IMediaView>, IAniListMediaListEditPresenter
     {
-        public MediaPresenter(IAniListService service, IAniDroidSettings settings,
-            IAniDroidLogger logger) : base(service, settings, logger)
+        public MediaPresenter(IAniListService service, IAniDroidv2Settings settings,
+            IAniDroidv2Logger logger) : base(service, settings, logger)
         {
         }
 
@@ -35,7 +35,7 @@ namespace AniDroid.AniListObject.Media
             var mediaResp = AniListService.GetMediaById(mediaId, default);
             var userResp = AniListService.GetCurrentUser(default);
 
-            if (AniDroidSettings.IsUserAuthenticated)
+            if (AniDroidv2Settings.IsUserAuthenticated)
             {
                 View.SetCanEditListItem();
             }
@@ -44,7 +44,7 @@ namespace AniDroid.AniListObject.Media
 
             userResp.Result.Switch(user => View.SetCurrentUserMediaListOptions(user.MediaListOptions))
                 .Switch(error => {
-                    if (AniDroidSettings.IsUserAuthenticated)
+                    if (AniDroidv2Settings.IsUserAuthenticated)
                     {
                         View.DisplaySnackbarMessage("Error occurred while getting user settings", Snackbar.LengthLong);
                     }
