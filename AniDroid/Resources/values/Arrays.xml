@@ -1,0 +1,208 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<resources>
+<array name="Chart_Colors">
+    <item>#6fc1ea</item>
+    <item>#48c76d</item>
+    <item>#f7464a</item>
+    <item>#46bfbd</item>
+    <item>#fba640</item>
+    <item>#615ae8</item>
+    <item>#ec89cb</item>
+    <item>#87837e</item>
+    <item>#8BC34A</item>
+    <item>#46529a</item>
+  </array>
+
+  <array name="Application_WhatsNew">
+    <item>11-06-2016|Added this dialog</item>
+    <item>11-06-2016|Added list tab reordering (check the settings)</item>
+    <item>11-06-2016|Custom lists now display list items like they would appear on their non-custom lists</item>
+    <item>11-07-2016|Fixed massive bug that caused crashes on devices before 6.0 whenever viewing pretty much anything. Someday I will be a real developer.</item>
+    <item>11-07-2016|Added ability to mark Anime as Priority and/or Private</item>
+    <item>11-07-2016|Items marked as Priority have the option to be shown with a green highlight (check the settings)</item>
+    <item>11-07-2016|Added ability to edit custom list assignments for Anime</item>
+    <item>11-10-2016|Added ability to mark Manga as Priority and/or Private</item>
+    <item>11-10-2016|Added ability to edit custom list assignments for Manga</item>
+    <item>11-10-2016|Added option to display list items in a compact format (check the settings)</item>
+    <item>11-19-2016|Added ability to filter anime and manga lists by type</item>
+    <item>11-21-2016|Added ability to sort anime and manga lists by completion progress (both percentage and chapter/episode number)</item>
+    <item>12-15-2016|Added user-selected scoring method for Anime.</item>
+    <item>12-15-2016|Fixed the "Search All" function</item>
+    <item>12-20-2016|Added user-selected scoring method for Manga.</item>
+    <item>12-20-2016|Disabled data-refresh service for now.</item>
+    <item>12-22-2016|Adding AniList notifiations. PROTIP: The floating button will pulse when you have new ones!</item>
+    <item>12-22-2016|Adding Home screen. Find it in the navigation drawer.</item>
+    <item>12-24-2016|Home screen activity list now shows user replies, and allows you to reply as well!</item>
+    <item>12-28-2016|Bug fixes</item>
+    <item>03-01-2017|Fix for authentication not working (new features soon, hopefully!)</item>
+    <item>03-20-2017|Adding more "view more" functionality. Try tapping on "Characters" or "Staff" headers when viewing an Anime or Manga. Most of these should show stuff now!</item>
+    <item>03-20-2017|Bug fixes</item>
+    <item>03-21-2017|Added ability to see likes on Activity Feed</item>
+    <item>03-21-2017|Fixed bug causing endless "timeouts"</item>
+    <item>03-22-2017|Added header for navigation drawer! Still have some changes in the works for the nav drawer in general.</item>
+    <item>03-23-2017|Added option in settings to disable auto refresh of data</item>
+    <item>03-23-2017|Refreshing data will no longer change to the default screen</item>
+    <item>03-24-2017|Added ability to view other users Anime and Manga lists! Still somewhat buggy, and it does not look pretty yet, but work is ongoing</item>
+    <item>03-26-2017|Added ability to logout (finally, right?)</item>
+    <item>03-26-2017|Added ability to set anime, character, etc. as favorite</item>
+    <item>03-26-2017|Various bug fixes, including one that caused users with smiley face or star ratings to not be able to add things to their lists</item>
+    <item>04-08-2017|Added ability to sort lists by airing/publishing status</item>
+    <item>04-08-2017|Bug fixes</item>
+    <item>04-09-2017|Added ability to post activity from the Home screen</item>
+    <item>04-09-2017|Refactored a few things, including how the app authorizes with AniList. If it starts crashing on you (more frequently than normal), please let me know!</item>
+    <item>04-09-2017|Long standing bug related to adding manga when you use the 5-star rating system has finally been fixed</item>
+    <item>04-12-2017|Bug fixes</item>
+    <item>04-14-2017|More bug fixes</item>
+    <item>04-15-2017|More more bug fixes</item>
+    <item>04-27-2017|Improved crash detection and reporting</item>
+    <item>05-02-2017|Bug fix for auth problem</item>
+    <item>05-05-2017|It is a sad day, but NyaaTorrents has been shutdown for good. Until a suitable replacement is created, torrent searching now uses the Nyaa backup at https://nyaa.pantsu.cat/</item>
+    <item>05-10-2017|Airing items in your "watching" list now show the number of episodes aired. Try turning on "Highlight airing/publishing items" in the settings!</item>
+    <item>08-06-2017|Slightly reworked Anime page! More updates coming!</item>
+    <item>08-06-2017|Rewrote some networking stuff. Let me know if anything is slow or crashing!</item>
+    <item>08-07-2017|Added tags to Anime page</item>
+    <item>08-07-2017|Added review summaries to Anime page</item>
+    <item>08-07-2017|Fixed bug that caused manga list to crash app</item>
+    <item>08-10-2017|Revamped Manga page! Anime and Manga now look and feel the same. Let me know if anything seems off!</item>
+    <item>08-10-2017|Substantial behind the scenes changes to improve network speed and get app ready for AniList API v2 switch</item>
+    <item>08-10-2017|Fixed a few outstanding bugs</item>
+    <item>08-12-2017|Clicking on certain AniList links can now open them in the app! Anime, Manga, Characters, Staff, and Users are now supported. More to come later!</item>
+    <item>08-12-2017|Added series ranking information</item>
+    <item>08-12-2017|Added series score distribution chart</item>
+    <item>08-12-2017|Many bug fixes</item>
+    <item>08-15-2017|Started reworking of User page! Added a few data points and the genre overview. More to come!</item>
+    <item>08-15-2017|A couple small bug fixes</item>
+    <item>08-16-2017|Added a couple more charts to the user page! Still more in the pipeline!</item>
+    <item>08-16-2017|Overhauled how images are being loaded. They should be much quicker now! And cause fewer crashes!</item>
+    <item>08-16-2017|A couple bug fixes and stability improvements</item>
+    <item>08-17-2017|Fixed Nyaa.si torrent searching</item>
+    <item>08-17-2017|Bug fixes and stability enhancements</item>
+    <item>08-28-2017|More bug fixes. New features coming Soon™</item>
+    <item>08-30-2017|Added score progression chart to Series</item>
+    <item>08-30-2017|Another attempt at fixing the "crash when opening after a while" bug. Maybe I\'ll finally get it right this time?</item>
+    <item>09-03-2017|Added Score Distribution and Anime Type Distribution charts to user page</item>
+    <item>10-23-2017|Fixed a few bugs that were causing crashes. More features coming soon!</item>
+    <item>11-06-2017|Added new dark them! Still very much in development, and only a few screens will be themed properly right now. If you see any bugs (like screens with a black background and black text), please let me know!</item>
+    <item>11-07-2017|More updates to the dark theme (and some updates to the regular one as well).</item>
+    <item>11-08-2017|Continuing to refine dark theme. App may look a little wonky for the time being, but it should still be functional!</item>
+    <item>11-08-2017|Small bug fix when saving changes to manga score</item>
+    <item>12-13-2017|Small fix for crash when accessing user page</item>
+    <item>12-13-2017|More updates to dark theme</item>
+    <item>02-03-2018|More updates to theming. The dark theme is almost complete!</item>
+    <item>02-03-2018|A couple bug fixes. Overall app stability work will begin soon</item>
+    <item>02-05-2018|Fixed crash related to faulty custom list data</item>
+    <item>03-27-2018|Welcome to the rewrite of AniDroid! Most of the functionality from the original version of the app should be in place, and it should all-around be much faster, smoother, and more crash-free!\n\nIf you find something out of place or missing, or just have general questions or thoughts, feel free to email me at verydanejuras@gmail.com, or leave a comment in the thread on AniList!\n\n(Note: You\'ll have to log in again. Sorry for the inconvenience!)</item>
+    <item>03-30-2018|Added animations back to media list buttons. It should be easier to see when you are adding an episode now.</item>
+    <item>03-30-2018|Media edit screen shows the save progress now.</item>
+    <item>04-05-2018|Added media list progress colors back in (check the settings!)</item>
+    <item>04-05-2018|Added new section to media view that shows user\'s progress (if its on a list)</item>
+    <item>04-05-2018|Added priority back to media list items (check the settings!)</item>
+    <item>04-05-2018|Various bug fixes and stability improvements</item>
+    <item>07-05-2018|Fixed crash that occured when editing a list item\'s custom lists</item>
+    <item>07-05-2018|Development has started again! Check back soon for new features and improvements!</item>
+    <item>07-07-2018|Fix for editing literature list item chapters and volumes</item>
+    <item>07-09-2018|Minor bug fix</item>
+    <item>07-12-2018|Added ability to set start and finish dates for media</item>
+    <item>07-12-2018|Small crash fix for start and finish date setting</item>
+    <item>07-13-2018|Another small crash fix for start and finish date setting</item>
+    <item>07-14-2018|Added the ability to sort users lists! You are able to configure this both on the settings screen and on the lists screens themselves. Let me know if you want any other sort options!</item>
+    <item>07-14-2018|Added the ability to delete an item off your lists. Check the Edit Media dialog</item>
+    <item>07-14-2018|Small bug fixes</item>
+    <item>07-20-2018|Added list reordering! Check out the settings page. You can now change the order of lists, and even choose to hide them!</item>
+    <item>07-22-2018|Fix for media list item updates causing lists to scroll to top</item>
+    <item>07-24-2018|AniDroid can now open automatically when tapping certain links from AniList. (I forgot I hadn\'t enabled this feature. Sorry about that!)</item>
+    <item>10-03-2018|Added analytics back to app (so i can fix crashes better)</item>
+    <item>10-03-2018|Added privacy policy (because your privacy is important)</item>
+    <item>10-05-2018|Added following and follower lists to the User view</item>
+    <item>10-05-2018|Added some charts and other stuff to the User view</item>
+    <item>11-01-2018|Added torrent searching! Only Nyaa.si is implemented right now, but I will add more sites to search later. (Caution: it may be a bit buggy)</item>
+    <item>11-01-2018|Numerous bug and crash fixes</item>
+    <item>12-01-2018|More bug fixes, including one where other users\' lists would show up as your own (sorry about the delay in getting this fixed!)</item>
+    <item>12-04-2018|Added ability to filter your lists (as well as the lists of other users!). Try clicking the new icon at the top of your lists</item>
+    <item>12-04-2018|You can now add or edit anime and literature right from the search (or browse) results! Just long press like you normally would on your own lists</item>
+    <item>12-04-2018|Text activities (status updates) can now be edited and deleted! Just long press on the one you\'d like to change</item>
+    <item>12-04-2018|A few more optimizations and bug fixes</item>
+    <item>12-05-2018|Added the initial AniList Notification service! This will allow you to get native Android notifications when you get new notifications in AniList. Feel free to turn it off in the settings</item>
+    <item>12-05-2018|Bug and crash fixes</item>
+    <item>12-08-2018|Rewrote notifications to be more reliable and show better information</item>
+    <item>12-08-2018|Added option to sort media lists by Last Updated</item>
+    <item>12-08-2018|Tapping the "Mark as Complate" button on your media lists will now display the Complete Media dialog, allowing you to enter a rating</item>
+    <item>12-08-2018|You are now able to properly edit media list items from the Discover screen</item>
+    <item>12-08-2018|Added setting option for displaying Next Episode information as a countdown instead of a date</item>
+    <item>12-15-2018|Refactored lists significantly. They should now function a little better across the board, and you should start seeing better information when looking at lists of media, characters, etc</item>
+    <item>12-16-2018|Various bug fixes</item>
+    <item>12-28-2018|Added setting for always displaying your Current anime list with title colors depending on how much you\'ve watched</item>
+    <item>12-28-2018|Fixed bug where Display Upcoming Episode Times As Countdowns setting was being ignored</item>
+    <item>12-28-2018|Various other small bug fixes</item>
+    <item>12-29-2018|Added new setting for changing when to show anime progress title colors</item>
+    <item>12-29-2018|Moved Media List settings to their own screen (inside Settings)</item>
+    <item>12-29-2018|A couple small bug fixes, including some modifications to how images are loaded. This will hopefully result in fewer crashes!</item>
+    <item>12-31-2018|Last update of the year! Added forum thread, reviews, and user media list status lists to Media page</item>
+    <item>12-31-2018|Added reviews to User page</item>
+    <item>12-31-2018|Bug fixes</item>
+    <item>01-02-2019|First update of the new year! Added advanced scoring. If you have it enabled on AniList, you should now see an option to edit those scores when editing a list item</item>
+    <item>01-02-2019|All notifications now have an action when tapped on. Some just go to AniList (for now), but all of them will be handled in the app in the future</item>
+    <item>01-02-2019|Bug fixes</item>
+    <item>01-03-2019|Added swipe to refresh for the home screen and media lists! Check the settings to enable them</item>
+    <item>01-03-2019|Manga list re-ordering now works</item>
+    <item>01-03-2019|Attempted to fix bug where users who use a comma as the decimal seperator character weren\'t able to properly enter scores. This fix may not work, so please give feedback if it isn\'t!</item>
+    <item>01-07-2019|Adding some initial markdown support for the activity feed! Most (maybe) tags are supported at this point, and I will work to add proper markdown support to user profiles and other places. Coming soon!</item>
+    <item>01-07-2019|Added option in Media List Settings to allow you to turn on the plus button on media you are repeating</item>
+    <item>01-07-2019|Bug fixes</item>
+    <item>01-31-2019|Adding initial markdown support to user profiles. More improvements are coming!</item>
+    <item>01-31-2019|The Current Season section on the Discover screen now shows the actual current season</item>
+    <item>01-31-2019|A few fixes to torrent searching and opening</item>
+    <item>01-31-2019|You can now see the progress of users you are following on airing shows and manga</item>
+    <item>02-11-2019|Split Trending section into Trending Anime and Trending Manga</item>
+    <item>02-11-2019|Added some more markdown support</item>
+    <item>02-22-2019|Adding some initial browse support! Filtering by tags and genres isn\'t supported yet, but should be coming soon!</item>
+    <item>02-22-2019|Adding ability to set your default tab when you open the app. Check the settings!</item>
+    <item>02-22-2019|Fixed torrent searching (mostly)</item>
+    <item>02-22-2019|Fixed bug where activity replies could cover up the reply text box</item>
+    <item>02-24-2019|Added new AniList Dark theme! (Still a work in progress)</item>
+    <item>02-24-2019|Small bug fix for edit media list and browse filter dialogs</item>
+    <item>02-27-2019|Added a new Dark theme! The old Dark theme has been renamed to Black</item>
+    <item>02-27-2019|Finished up Browse support. Try it out!</item>
+    <item>02-27-2019|Added ability to select and copy certain text</item>
+    <item>05-03-2019|Fixing crash when trying to get notifications</item>
+    <item>11-08-2019|A few bug fixes and backend updates. New features will be coming Soon!</item>
+    <item>11-10-2019|Fix for all the crashes after the last update. Sorry about that!</item>
+    <item>12-11-2019|Added list sorting by Completed and Started dates. Thanks to turtletowerz for the contribution!</item>
+    <item>01-21-2020|Added Anime and Manga Recommendations</item>
+    <item>01-21-2020|Adding an item to your lists will now have the status set to Planning by default</item>
+    <item>04-16-2020|Fixed a big bug where the app would stop working</item>
+    <item>04-16-2020|Lots of internal changes to help the app run more smoothly</item>
+    <item>04-18-2020|Added ability to edit, delete, and like activity replies</item>
+    <item>04-18-2020|Fixed bug where shows would show up as non-private when editing them from your list</item>
+    <item>04-18-2020|Fixed several crashes</item>
+    <item>04-21-2020|Added better list filtering!</item>
+    <item>04-21-2020|Media tags and characters are now sorted by relevance</item>
+    <item>04-21-2020|Fixed crash when viewing certain anime pages</item>
+    <item>04-22-2020|Tapping on tags in the browse or media list filter window now shows their description</item>
+    <item>04-22-2020|Added About screen</item>
+    <item>04-22-2020|Fixed bug where app would freeze when notification was dismissed</item>
+    <item>04-22-2020|Fixed tag sorting on Anime and Manga</item>
+    <item>11-16-2020|Bug fix for viewing Anime and Manga</item>
+    <item>11-16-2020|Adding support for Hiatus media status</item>
+    <item>12-26-2020|Adding ability to sort Media lists by the date of the next episode</item>
+    <item>01-22-2021|Fixed very old bug that caused the app to stop working after the user authorization token expired</item>
+    <item>01-29-2021|Added the ability to quickly filter your lists by title from the toolbar. Filtering on other user\'s lists is coming soon!</item>
+    <item>01-29-2021|Fixed media scoring bug when using stars or smileys</item>
+    <item>01-29-2021|Various backend changes and small tweaks</item>
+    <item>01-31-2021|Small bug fixes</item>
+    <item>02-02-2021|Improved media trend graphs a bit</item>
+    <item>02-02-2021|Various bug and crash fixes</item>
+    <item>02-04-2021|Added ability to view user favorites</item>
+    <item>02-04-2021|Added ability to quickly filter other users\' lists</item>
+    <item>02-04-2021|Lots of behind-the-scenes changes</item>
+    <item>05-23-2021|Adding ability to control whether Start and End dates are assigned when editing a list item. Check the Media List Settings!</item>
+    <item>05-24-2021|Fixed bug that caused the keyboard to popup when opening the app</item>
+	<item>02-14-2023|Forking the original app</item>
+	<item>02-14-2023|Changed app icon</item>
+	<item>02-14-2023|Changed app name</item>
+	<item>02-14-2023|Fixed bug that causes crash when haves a notification with modified or deleted Media</item>
+	<item>02-14-2023|Modified notifications view</item>
+	<item>03-12-2023|Updated API</item>
+	<item>03-12-2023|Fixed incorrect days watched value</item>
+  </array>
+</resources>

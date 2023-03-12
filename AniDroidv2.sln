@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33213.308
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AniDroidv2", "AniDroid\AniDroidv2.csproj", "{A25395EE-107E-4EEF-88F2-AA17E94CDB44}"
+	ProjectSection(ProjectDependencies) = postProject
+		{49FB1693-B542-4C68-82F9-19762A6AFB29} = {49FB1693-B542-4C68-82F9-19762A6AFB29}
+		{6E34B7AF-7E77-4F94-B56A-FDF1462EDC34} = {6E34B7AF-7E77-4F94-B56A-FDF1462EDC34}
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AniDroidv2.AniList", "AniDroid.AniList\AniDroid.AniList\AniDroidv2.AniList.csproj", "{49FB1693-B542-4C68-82F9-19762A6AFB29}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AniDroidv2.Torrent", "AniDroid.Torrent\AniDroidv2.Torrent.csproj", "{6E34B7AF-7E77-4F94-B56A-FDF1462EDC34}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A25395EE-107E-4EEF-88F2-AA17E94CDB44}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A25395EE-107E-4EEF-88F2-AA17E94CDB44}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A25395EE-107E-4EEF-88F2-AA17E94CDB44}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{A25395EE-107E-4EEF-88F2-AA17E94CDB44}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A25395EE-107E-4EEF-88F2-AA17E94CDB44}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A25395EE-107E-4EEF-88F2-AA17E94CDB44}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{49FB1693-B542-4C68-82F9-19762A6AFB29}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{49FB1693-B542-4C68-82F9-19762A6AFB29}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{49FB1693-B542-4C68-82F9-19762A6AFB29}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{49FB1693-B542-4C68-82F9-19762A6AFB29}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6E34B7AF-7E77-4F94-B56A-FDF1462EDC34}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6E34B7AF-7E77-4F94-B56A-FDF1462EDC34}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6E34B7AF-7E77-4F94-B56A-FDF1462EDC34}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6E34B7AF-7E77-4F94-B56A-FDF1462EDC34}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {37778DA3-7215-4714-8C24-F3F4027E10FE}
+	EndGlobalSection
+EndGlobal
