@@ -68,6 +68,7 @@ namespace AniDroidv2.Main
         private BadgeImageView _notificationImageView;
             private IMenuItem _selectedItem;
             private int _unreadNotificationCount;
+        long _lastPress;
 
         public override void OnError(IAniListError error)
         {
@@ -219,22 +220,16 @@ namespace AniDroidv2.Main
 
         public override void OnBackPressed()
         {
-            // detect if there is a dialog fragment being shown and exit out of it
-            if (SupportFragmentManager.Fragments.Any(x => x is AppCompatDialogFragment))
-            {
-                base.OnBackPressed();
-                return;
-            }
+            long currentTime = DateTime.UtcNow.Ticks / TimeSpan.TicksPerMillisecond;
 
-            if (_exitToast == null || _exitToast.View.WindowVisibility != ViewStates.Visible)
+            if (currentTime - _lastPress > 2000)
             {
-                _exitToast = Toast.MakeText(this, "Press back again to exit", ToastLength.Short);
-                _exitToast.Show();
+                Toast.MakeText(this, "Press back again to exit", ToastLength.Long).Show();
+                _lastPress = currentTime;
             }
             else
             {
-                _exitToast.Cancel();
-                Finish();
+                base.OnBackPressed();
             }
         }
 

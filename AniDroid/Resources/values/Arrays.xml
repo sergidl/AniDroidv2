@@ -204,5 +204,7 @@
 	<item>02-14-2023|Modified notifications view</item>
 	<item>03-12-2023|Updated API</item>
 	<item>03-12-2023|Fixed incorrect days watched value</item>
+  	<item>04-07-2023|Fixed crash when closing the app</item>
+
   </array>
 </resources>
