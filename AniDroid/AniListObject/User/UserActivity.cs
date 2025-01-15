@@ -169,8 +169,10 @@ namespace AniDroidv2.AniListObject.User
         private View CreateUserDetailsView(AniList.Models.UserModels.User user)
         {
             var retView = LayoutInflater.Inflate(Resource.Layout.View_UserDetails, null);
-            ImageLoader.LoadImage(retView.FindViewById<ImageView>(Resource.Id.User_Image), user.Avatar.Large);
-            retView.FindViewById<TextView>(Resource.Id.User_Name).Text = user.Name;
+			var imageView = retView.FindViewById<ImageView>(Resource.Id.User_Image);
+			ImageLoader.LoadImage(imageView, user.Avatar.Large);
+            imageView.Click += (sender, args) => MediaImageEnlarge.Create(this, user.Avatar.Large);
+			retView.FindViewById<TextView>(Resource.Id.User_Name).Text = user.Name;
 
             var aboutView = retView.FindViewById<ExpandableText>(Resource.Id.User_Description);
             if (!string.IsNullOrWhiteSpace(user.About))

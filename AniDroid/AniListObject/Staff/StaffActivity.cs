@@ -13,6 +13,7 @@ using AniDroidv2.Adapters.MediaAdapters;
 using AniDroidv2.Adapters.ViewModels;
 using AniDroidv2.AniList.Enums.MediaEnums;
 using AniDroidv2.Base;
+using AniDroidv2.Dialogs;
 using AniDroidv2.Utils;
 
 namespace AniDroidv2.AniListObject.Staff
@@ -109,7 +110,8 @@ namespace AniDroidv2.AniListObject.Staff
             var languageView = retView.FindViewById<TextView>(Resource.Id.Staff_Language);
 
             ImageLoader.LoadImage(imageView, staff.Image?.Large);
-            descriptionView.TextFormatted = FromHtml(staff.Description ?? "(No Description Available)");
+            imageView.Click += (sender, args) => MediaImageEnlarge.Create(this, staff.Image?.Large);
+			descriptionView.TextFormatted = FromHtml(staff.Description ?? "(No Description Available)");
             nameView.Text = staff.Name?.GetFormattedName(true);
             languageView.Text = staff.Language?.DisplayValue ?? "(Language Unknown)";
 

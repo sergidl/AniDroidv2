@@ -13,6 +13,7 @@ using AniDroidv2.Adapters.MediaAdapters;
 using AniDroidv2.Adapters.ViewModels;
 using AniDroidv2.AniList.Enums.MediaEnums;
 using AniDroidv2.Base;
+using AniDroidv2.Dialogs;
 using AniDroidv2.Utils;
 
 namespace AniDroidv2.AniListObject.Character
@@ -104,7 +105,8 @@ namespace AniDroidv2.AniListObject.Character
             var altNamesView = retView.FindViewById<TextView>(Resource.Id.Character_AltNames);
 
             ImageLoader.LoadImage(imageView, character.Image?.Large);
-            descriptionView.TextFormatted = FromHtml(character.Description ?? "(No Description Available)");
+            imageView.Click += (sender, args) => MediaImageEnlarge.Create(this, character.Image?.Large);
+			descriptionView.TextFormatted = FromHtml(character.Description ?? "(No Description Available)");
             nameView.Text = character.Name?.GetFormattedName(true);
 
             var altNames = character.Name?.Alternative?.Where(x => !string.IsNullOrWhiteSpace(x)).ToList();

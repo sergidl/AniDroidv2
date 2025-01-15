@@ -368,7 +368,8 @@ namespace AniDroidv2.Main
                     var bannerView = navHeader.FindViewById<ImageView>(Resource.Id.Navigation_ProfileBannerImage);
                     bannerView.Visibility = ViewStates.Visible;
                     ImageLoader.LoadImage(bannerView, user.BannerImage);
-                }
+                    bannerView.Click += (sender, args) => MediaImageEnlarge.Create(this, user.Avatar.Large);
+				}
             }
 
             _navigationView.SetNavigationItemSelectedListener(this);

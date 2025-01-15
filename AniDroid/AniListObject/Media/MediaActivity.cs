@@ -279,6 +279,7 @@ namespace AniDroidv2.AniListObject.Media
 
         #region Media Data
 
+
         private View CreateMediaDetailsView(AniList.Models.MediaModels.Media media)
         {
             var retView = LayoutInflater.Inflate(Resource.Layout.View_MediaDetails, null);
@@ -290,8 +291,9 @@ namespace AniDroidv2.AniListObject.Media
 
             var imageView = retView.FindViewById<ImageView>(Resource.Id.Media_Image);
             ImageLoader.LoadImage(imageView, media.CoverImage.ExtraLarge ?? media.CoverImage.Large);
+            imageView.Click += (sender, args) => MediaImageEnlarge.Create(this, media.CoverImage.ExtraLarge ?? media.CoverImage.Large);
 
-            var formatView = retView.FindViewById<TextView>(Resource.Id.Media_Format);
+			var formatView = retView.FindViewById<TextView>(Resource.Id.Media_Format);
             formatView.Text = (media.Format?.DisplayValue ?? "Unknown Format") +
                 (media.Episodes > 1 ? $" ({media.Episodes} episodes)" : "");
 
@@ -325,8 +327,8 @@ namespace AniDroidv2.AniListObject.Media
                     new BrowseMediaDto
                     {
                         Type = media.Type,
-                        IncludedGenres = new List<string> {genre},
-                        Sort = new List<MediaSort> {MediaSort.PopularityDesc}
+                        IncludedGenres = new List<string> { genre },
+                        Sort = new List<MediaSort> { MediaSort.PopularityDesc }
                     }, ObjectBrowseRequestCode);
                 genreContainer.AddView(genreView);
             }
@@ -386,7 +388,7 @@ namespace AniDroidv2.AniListObject.Media
                         Season = media.Season,
                         SeasonYear = media.StartDate?.Year,
                         Type = media.Type,
-                        Sort = new List<MediaSort> {MediaSort.PopularityDesc}
+                        Sort = new List<MediaSort> { MediaSort.PopularityDesc }
                     }, ObjectBrowseRequestCode);
             }
 
@@ -435,7 +437,7 @@ namespace AniDroidv2.AniListObject.Media
                     {
                         Type = media.Type,
                         AverageGreaterThan = media.AverageScore,
-                        Sort = new List<MediaSort> {MediaSort.ScoreDesc}
+                        Sort = new List<MediaSort> { MediaSort.ScoreDesc }
                     }, ObjectBrowseRequestCode);
 
                 var popContainer = retView.FindViewById(Resource.Id.Media_PopularityContainer);
@@ -446,7 +448,7 @@ namespace AniDroidv2.AniListObject.Media
                     {
                         Type = media.Type,
                         PopularityGreaterThan = media.Popularity,
-                        Sort = new List<MediaSort> {MediaSort.PopularityDesc}
+                        Sort = new List<MediaSort> { MediaSort.PopularityDesc }
                     }, ObjectBrowseRequestCode);
             }
             else

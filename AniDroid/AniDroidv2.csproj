@@ -232,6 +232,7 @@
     <Compile Include="Dialogs\MediaListTabOrderDialog.cs" />
     <Compile Include="Dialogs\MediaListSortDialog.cs" />
     <Compile Include="Dialogs\MediaStreamingEpisodeListDialog.cs" />
+    <Compile Include="Dialogs\MediaImageEnlarge.cs" />
     <Compile Include="Dialogs\MediaTitlesDialog.cs" />
     <Compile Include="Dialogs\SearchDialog.cs" />
     <Compile Include="Dialogs\StaffListDialog.cs" />
@@ -900,6 +901,12 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\Activity_Favorites.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\Dialog_MediaImageEnlarge.axml">
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>

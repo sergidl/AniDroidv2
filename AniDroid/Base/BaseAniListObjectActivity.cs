@@ -9,6 +9,8 @@ using Android.Widget;
 using AndroidX.CoordinatorLayout.Widget;
 using AndroidX.ViewPager.Widget;
 using AniDroidv2.AniList.Interfaces;
+using AniDroidv2.Dialogs;
+using AniDroidv2.Main;
 using AniDroidv2.Utils;
 using Google.Android.Material.AppBar;
 using Google.Android.Material.Snackbar;
@@ -168,8 +170,10 @@ namespace AniDroidv2.Base
             {
                 var bannerView = FindViewById<ImageView>(Resource.Id.AniListObject_BannerImage);
                 ImageLoader.LoadImage(bannerView, bannerUri, false);
-            }
-        }
+				bannerView.Click += (sender, args) => MediaImageEnlarge.Create(this, bannerUri);
+
+			}
+		}
 
         public void SetStandaloneActivity()
         {

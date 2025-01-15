@@ -42,8 +42,8 @@ namespace AniDroidv2.AniListObject.User
                     }
 
                     View.SetShareText(user.Name, user.SiteUrl);
-                    View.SetContentShown(false); // TODO: change this to switch based on banner presence
-                    View.SetupToolbar(user.Name);
+                    View.SetContentShown(!string.IsNullOrWhiteSpace(user.BannerImage));
+                    View.SetupToolbar(user.Name, user.BannerImage);
                     View.SetupUserView(user);
                 })
                 .Switch(error => View.OnError(error));
