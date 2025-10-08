@@ -11,7 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\AniDroid.AniList\AniDroid.AniList\AniDroidv2.AniList.csproj" />
+    <ProjectReference Include="..\AniDroidv2.AniList\AniDroidv2.AniList\AniDroidv2.AniList.csproj" />
   </ItemGroup>
 
   <ItemGroup>

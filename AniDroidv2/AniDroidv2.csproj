@@ -816,11 +816,11 @@
     </AndroidResource>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\AniDroid.AniList\AniDroid.AniList\AniDroidv2.AniList.csproj">
+    <ProjectReference Include="..\AniDroidv2.AniList\AniDroidv2.AniList\AniDroidv2.AniList.csproj">
       <Project>{49fb1693-b542-4c68-82f9-19762a6afb29}</Project>
       <Name>AniDroidv2.AniList</Name>
     </ProjectReference>
-    <ProjectReference Include="..\AniDroid.Torrent\AniDroidv2.Torrent.csproj">
+    <ProjectReference Include="..\AniDroidv2.Torrent\AniDroidv2.Torrent.csproj">
       <Project>{6e34b7af-7e77-4f94-b56a-fdf1462edc34}</Project>
       <Name>AniDroidv2.Torrent</Name>
     </ProjectReference>
