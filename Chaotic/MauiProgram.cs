@@ -7,11 +7,20 @@ public static class MauiProgram
 		var builder = MauiApp.CreateBuilder();
 		builder
 			.UseMauiApp<App>()
-			.UseSentry(options =>
-			{
-				// TODO: Set the Sentry Dsn
-				options.Dsn = "https://examplePublicKey@o0.ingest.sentry.io/0";
-			})
+			 .UseSentry(options => {
+				 // The DSN is the only required setting.
+				 options.Dsn = builder.Configuration["Sentry:Dsn"];
+
+				 // Use debug mode if you want to see what the SDK is doing.
+				 // Debug messages are written to stdout with Console.Writeline,
+				 // and are viewable in your IDE's debug console or with 'adb logcat', etc.
+				 // This option is not recommended when deploying your application.
+				 options.Debug = true;
+
+				 // Enable logs to be sent to Sentry
+				 options.EnableLogs = true;
+
+			 })
 			.UseMauiCommunityToolkit()
 #if DEBUG
 			.UseDebugRainbows(new DebugRainbowsOptions { })
