@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+	x:Class="Chaotic.AppShell"
+	xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+	xmlns:local="clr-namespace:Chaotic"
+	xmlns:views="clr-namespace:Chaotic.Views"
+	Title="Chaotic">
+
+	<ShellContent
+		Shell.NavBarIsVisible="true"
+		Title="Main"
+		Icon="iconblank.png"
+		ContentTemplate="{DataTemplate views:MainPage}"
+		Route="MainPage" />
+	<ShellContent
+		Shell.NavBarIsVisible="true"
+		Title="Search"
+		Icon="iconblank.png"
+		ContentTemplate="{DataTemplate views:SearchPage}"
+		Route="SearchPage" />
+	<ShellContent
+		Shell.NavBarIsVisible="true"
+		Title="AnimeList"
+		Icon="iconblank.png"
+		ContentTemplate="{DataTemplate views:AnimeListPage}"
+		Route="AnimeListPage" />
+	<ShellContent
+		Shell.NavBarIsVisible="true"
+		Title="Anime"
+		Icon="iconblank.png"
+		ContentTemplate="{DataTemplate views:AnimePage}"
+		Route="AnimePage" />
+	<ShellContent
+		Shell.NavBarIsVisible="true"
+		Title="MangaList"
+		Icon="iconblank.png"
+		ContentTemplate="{DataTemplate views:MangaListPage}"
+		Route="MangaListPage" />
+	<ShellContent
+		Shell.NavBarIsVisible="true"
+		Title="Manga"
+		Icon="iconblank.png"
+		ContentTemplate="{DataTemplate views:MangaPage}"
+		Route="MangaPage" />
+	<ShellContent
+		Shell.NavBarIsVisible="true"
+		Title="Character"
+		Icon="iconblank.png"
+		ContentTemplate="{DataTemplate views:CharacterPage}"
+		Route="CharacterPage" />
+	<ShellContent
+		Shell.NavBarIsVisible="true"
+		Title="Staff"
+		Icon="iconblank.png"
+		ContentTemplate="{DataTemplate views:StaffPage}"
+		Route="StaffPage" />
+	<ShellContent
+		Shell.NavBarIsVisible="true"
+		Title="Studios"
+		Icon="iconblank.png"
+		ContentTemplate="{DataTemplate views:StudiosPage}"
+		Route="StudiosPage" />
+	<ShellContent
+		Shell.NavBarIsVisible="true"
+		Title="UserInfo"
+		Icon="iconblank.png"
+		ContentTemplate="{DataTemplate views:UserInfoPage}"
+		Route="UserInfoPage" />
+	<ShellContent
+		Shell.NavBarIsVisible="true"
+		Title="Favorites"
+		Icon="iconblank.png"
+		ContentTemplate="{DataTemplate views:FavoritesPage}"
+		Route="FavoritesPage" />
+	<ShellContent
+		Shell.NavBarIsVisible="true"
+		Title="Activity"
+		Icon="iconblank.png"
+		ContentTemplate="{DataTemplate views:ActivityPage}"
+		Route="ActivityPage" />
+</Shell>
