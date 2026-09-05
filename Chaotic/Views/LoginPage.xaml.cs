@@ -1,8 +1,8 @@
-﻿namespace Chaotic.Views.Views;
+﻿namespace Chaotic.Views;
 
 public partial class LoginPage : ContentPage
 {
-	public LoginPage(LoginPageViewModel viewModel)
+	public LoginPage(LoginViewModel viewModel)
 	{
 		InitializeComponent();
 		BindingContext = viewModel;

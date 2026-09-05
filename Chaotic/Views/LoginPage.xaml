@@ -1,17 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <ContentPage
-    x:Class="Chaotic.Views.Views.LoginPage"
+    x:Class="Chaotic.Views.LoginPage"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:d="http://schemas.microsoft.com/dotnet/2021/maui/design"
-    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:vm="clr-namespace:Chaotic.ViewModels"
     xmlns:local="clr-namespace:Chaotic.Views"
-    x:DataType="vm:LoginPageViewModel"
-    mc:Ignorable="d">
-    <ContentPage.BindingContext>
-        <vm:LoginPageViewModel />
-    </ContentPage.BindingContext>
+    x:DataType="vm:LoginViewModel">
     <ContentPage.Content>
         <StackLayout>
             <Label

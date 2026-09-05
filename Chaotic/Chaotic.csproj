@@ -60,6 +60,7 @@
 	<ItemGroup>
 		<PackageReference Include="CommunityToolkit.Maui" Version="15.0.1" />
 		<PackageReference Include="CommunityToolkit.MVVM" Version="8.4.2" />
+		<PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="10.0.11" />
 		<PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
 		<PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="$(MauiVersion)" />
 		<PackageReference Include="Microsoft.Maui.Essentials" Version="$(MauiVersion)" />
@@ -73,12 +74,21 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <Compile Update="Properties\Resources.Designer.cs">
+	    <DesignTime>True</DesignTime>
+	    <AutoGen>True</AutoGen>
+	    <DependentUpon>Resources.resx</DependentUpon>
+	  </Compile>
 	  <Compile Update="Views\LoginPage.xaml.cs">
 	    <DependentUpon>LoginPage.xaml</DependentUpon>
 	  </Compile>
 	  <Compile Update="Views\MainPage.xaml.cs">
 	    <DependentUpon>MainPage.xaml</DependentUpon>
 	  </Compile>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <EmbeddedResource Include="appsettings.json" LogicalName="appsettings.json" />
 	</ItemGroup>
 
 	<ItemGroup>

@@ -7,13 +7,19 @@
 	xmlns:views="clr-namespace:Chaotic.Views"
 	Title="Chaotic">
 
-	<ShellContent
-		Shell.NavBarIsVisible="true"
-		Title="Main"
-		Icon="iconblank.png"
-		ContentTemplate="{DataTemplate views:MainPage}"
-		Route="MainPage" />
-	<ShellContent
+    <ShellContent
+	Shell.NavBarIsVisible="true"
+	Title="Main"
+	Icon="iconblank.png"
+	ContentTemplate="{DataTemplate views:MainPage}"
+	Route="MainPage" />
+    <ShellContent
+	Shell.NavBarIsVisible="true"
+	Title="Login"
+	Icon="iconblank.png"
+	ContentTemplate="{DataTemplate views:LoginPage}"
+	Route="LoginPage" />
+    <ShellContent
 		Shell.NavBarIsVisible="true"
 		Title="Search"
 		Icon="iconblank.png"
